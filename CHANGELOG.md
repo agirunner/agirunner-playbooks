@@ -8,6 +8,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- Initial community catalog structure
-- Authoring guidance, schema docs, and catalog manifests
-- Baseline contribution rules and repository layout guidance
+- Public catalog structure for community-contributed playbooks,
+  specialists, and skills
+- Authoring and review docs under `docs/`
+- Human-readable schema references under `schemas/`
+- Catalog manifests for skills, specialists, playbooks, categories, and
+  tool profiles under `catalog/`
+- 17 shared skills across engineering, operations, research, compliance,
+  and content
+- 15 shared specialists built on those skills
+- 12 stable playbooks across operations, research, compliance, and
+  content
+- 5 experimental engineering playbooks for narrow SDLC workflows
+
+### Changed
+
+- Standardized specialist tool configuration around the shared
+  `all-specialist-tools` profile
+- Standardized playbook prose conventions around `Preferred flow`,
+  `Recovery and exception handling`, `Completion rules`, and
+  `Guided closure rule`
+- Improved root documentation to match the current repository structure
+  and contribution model

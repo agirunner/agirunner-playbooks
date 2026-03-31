@@ -1,63 +1,151 @@
-# Contributing
+# Contributing to Agirunner Playbooks
+
+Thanks for contributing.
+
+This repository owns the shared community catalog for Agirunner:
+importable playbooks, specialists, skills, catalog manifests, and
+catalog authoring guidance.
+
+If your change is primarily about dashboard behavior, API import flows,
+or other control-plane product semantics, it probably belongs in
+[`agirunner-platform`](https://github.com/agirunner/agirunner-platform),
+not here.
+
+If your change is primarily about agent execution, workspace
+materialization, tool transport, or runtime-side behavior, it probably
+belongs in
+[`agirunner-runtime`](https://github.com/agirunner/agirunner-runtime),
+not here.
+
+For the broader multi-repo contribution overview, see
+[`agirunner/CONTRIBUTING.md`](https://github.com/agirunner/agirunner/blob/main/CONTRIBUTING.md).
+
+If you are looking for the main product entry point, start with
+[`agirunner`](https://github.com/agirunner/agirunner). Product and
+operator documentation lives at
+[`docs.agirunner.dev`](https://docs.agirunner.dev).
 
 ## Scope
 
-This repository accepts community contributions for:
+Contributions are welcome for:
 - shared skills
 - shared specialists
 - playbooks
-- authoring docs
 - catalog manifests
+- authoring and review documentation
 
-Do not add scripts, generators, or build-only infrastructure here.
+Do not add scripts, generators, build pipelines, or runtime code here.
+This repository should stay content-only.
 
-## Contribution Rules
+## General Rules
 
-- Keep the repository content-only: YAML and Markdown only.
+- Keep the repository YAML-and-Markdown only.
 - Keep artifact IDs flat. Folder paths are for organization only.
-- Do not add placeholder prompts or TODO sections.
-- Do not add half-authored playbooks that require operator rewrite.
-- Keep playbook launch inputs close to the current platform runtime shape.
+- Keep imported fields aligned with the live platform model.
+- Do not add placeholder prompts, TODO sections, or half-authored
+  playbooks.
+- Keep playbook launch inputs close to the current platform runtime
+  shape.
+- Author workflow governance in `definition.process_instructions`.
 - Do not reintroduce declarative governance fields such as
   `review_rules`, `assessment_rules`, `approval_rules`,
   `handoff_rules`, `checkpoints`, or `branch_policies`.
-- Author workflow semantics in `process_instructions`.
 
-## Adding A Skill
+## Quality Expectations
 
-1. Create `skills/<category>/<slug>/SKILL.md`.
-2. Use standard frontmatter only:
+- Skills should stay concise, usually at or under 100 lines.
+- Skills should use standard industry techniques or quality bars where
+  that helps the specialist act more consistently.
+- Specialists should be reusable across multiple playbooks.
+- Playbooks should be import-ready, not templates waiting for an
+  operator rewrite.
+- Experimental engineering playbooks should stay narrow and
+  human-gated.
+
+## Shared Tool Contract
+
+Most specialists should declare:
+
+```yaml
+allowed_tools: all-specialist-tools
+```
+
+That profile is defined in [`catalog/tool-profiles.yaml`](catalog/tool-profiles.yaml).
+Use an explicit tool list only when the specialist truly needs a smaller
+tool surface than the default profile.
+
+## Adding Or Updating A Skill
+
+1. Create or update `skills/<category>/<slug>/SKILL.md`.
+2. Use only the standard frontmatter keys:
    - `name`
    - `description`
-3. Keep the skill concise, reusable, and output-driven.
-4. Register the skill in `catalog/skills.yaml`.
+3. Keep the content reusable, output-driven, and concise.
+4. Register or update the artifact in [`catalog/skills.yaml`](catalog/skills.yaml).
 
-## Adding A Specialist
+Before considering the skill ready, confirm:
+- the scope is narrow and reusable
+- the output shape is explicit
+- the content is not copied verbatim from third-party skills
+- the skill does not hide playbook-specific governance
 
-1. Create `specialists/<category>/<slug>/specialist.yaml`.
-2. Author the full `system_prompt` in YAML.
-3. Default to `allowed_tools: all-specialist-tools` unless the
-   specialist truly needs a tighter restriction.
-4. Link only reviewed shared skills.
-5. Register the specialist in `catalog/specialists.yaml`.
+## Adding Or Updating A Specialist
 
-## Adding A Playbook
+1. Create or update `specialists/<category>/<slug>/specialist.yaml`.
+2. Store the full `system_prompt` inline in YAML.
+3. Default to `allowed_tools: all-specialist-tools` unless a tighter
+   restriction is truly needed.
+4. Reference only reviewed shared skills.
+5. Register or update the artifact in
+   [`catalog/specialists.yaml`](catalog/specialists.yaml).
 
-1. Create `playbooks/<category>/<slug>/playbook.yaml`.
-2. Create `playbooks/<category>/<slug>/README.md`.
-3. Author the full workflow contract in `process_instructions`.
-4. Reference shared specialists by flat ID.
-5. Register the playbook in `catalog/playbooks.yaml`.
+Before considering the specialist ready, confirm:
+- the prompt defines output expectations clearly
+- storage behavior is explicit when advisory mode matters
+- the specialist does not depend on one single playbook to make sense
 
-## Review Checklist
+## Adding Or Updating A Playbook
 
-Before proposing a new artifact, confirm:
+1. Create or update `playbooks/<category>/<slug>/playbook.yaml`.
+2. Create or update `playbooks/<category>/<slug>/README.md`.
+3. Author the full workflow contract in
+   `definition.process_instructions`.
+4. Reference shared specialists by flat catalog ID.
+5. Register or update the artifact in
+   [`catalog/playbooks.yaml`](catalog/playbooks.yaml).
+
+Playbook prose should normally include:
+- `Preferred flow`
+- `Recovery and exception handling`
+- `Completion rules`
+- `Guided closure rule`
+
+Before considering the playbook ready, confirm:
 - the scope is narrow and clear
-- the output is reviewable
-- unhappy-path behavior is explicit
-- storage behavior is explicit when needed
-- README import notes are useful and concise
-- catalog manifests stay in sync
+- the named stages are explicit
+- the recovery path is explicit
+- storage behavior is honest for `git`, `host_directory`, and `artifact`
+  contexts when relevant
+- the README helps an operator decide whether to import it
 
-See [`docs/skill-review-checklist.md`](docs/skill-review-checklist.md)
-and [`docs/playbook-quality-bar.md`](docs/playbook-quality-bar.md).
+## Keep The Catalog In Sync
+
+When you add or rename an artifact, update the related manifest in the
+same logical change:
+- [`catalog/skills.yaml`](catalog/skills.yaml)
+- [`catalog/specialists.yaml`](catalog/specialists.yaml)
+- [`catalog/playbooks.yaml`](catalog/playbooks.yaml)
+
+If you change authoring expectations or contributor workflow, update the
+root docs in the same change:
+- [`README.md`](README.md)
+- [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- [`CHANGELOG.md`](CHANGELOG.md)
+
+## Review References
+
+Use these docs during review:
+- [`docs/catalog-authoring-guide.md`](docs/catalog-authoring-guide.md)
+- [`docs/playbook-quality-bar.md`](docs/playbook-quality-bar.md)
+- [`docs/skill-review-checklist.md`](docs/skill-review-checklist.md)
+- [`docs/specialist-authoring-guide.md`](docs/specialist-authoring-guide.md)
