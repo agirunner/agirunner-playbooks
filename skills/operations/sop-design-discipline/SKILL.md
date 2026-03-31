@@ -16,6 +16,8 @@ Write procedures that stay useful after the original author is gone.
 ## Do
 - Define scope, trigger, owner, inputs, and expected outputs.
 - Keep each step at one clear level of abstraction.
+- Separate the standard path from exception handling and escalation points.
+- Walk the procedure from first trigger to final handoff as if a new operator must follow it cold.
 - Call out decision points and exception paths explicitly.
 - Specify what “done” means for the procedure.
 
@@ -23,6 +25,7 @@ Write procedures that stay useful after the original author is gone.
 - Mix policy rationale, operator steps, and troubleshooting without structure.
 - Leave exception handling to “use judgment” unless the judgment boundary
   is made explicit.
+- Hide ownership changes or handoffs inside narrative prose.
 - Write steps that only make sense to the original author.
 
 ## Output

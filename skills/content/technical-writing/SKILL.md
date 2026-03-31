@@ -15,13 +15,17 @@ Translate technical reality into documentation that helps the reader act.
 
 ## Do
 - Define the target reader and what they need to accomplish.
+- Define the reader's likely starting context and what they already know.
+- Structure the document before drafting full prose.
 - Lead with the task, not the internal implementation story.
 - Surface prerequisites, limits, and failure conditions early.
 - Prefer concrete language and examples over vague reassurance.
+- Check whether a new reader could complete the task without hidden context.
 
 ## Do Not
 - Mix reference material, process guidance, and release notes without structure.
 - Assume the reader already knows internal jargon.
+- Draft sections in final prose before the overall shape is clear.
 - Explain every detail at the same depth.
 
 ## Output

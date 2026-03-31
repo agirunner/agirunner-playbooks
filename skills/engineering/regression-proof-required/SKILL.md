@@ -17,12 +17,15 @@ change across workspace types, but the proof requirement does not.
 ## Do
 - Name the verification path actually used.
 - Prefer repository-native tests or deterministic checks when they exist.
+- Use observed behavior evidence when the change is primarily UI, API, or runtime-behavior facing.
+- Capture the evidence itself, not just the conclusion, so a reviewer can inspect it.
 - If no runnable verification path exists, state that clearly and define
   the best available manual or advisory proof.
 - Tie the proof directly to the changed behavior, not just nearby code.
 
 ## Do Not
 - Treat “looks right” as verification.
+- Treat one screenshot or one passing path as proof of broad coverage.
 - Hide missing tests behind vague confidence language.
 - Claim complete regression coverage if you only proved one path.
 

@@ -17,12 +17,15 @@ guessing hidden rules.
 ## Do
 - State what the endpoint does and when to use it.
 - Document inputs, outputs, auth, and error shapes.
+- Keep examples consistent with the declared contract.
+- Surface environment, versioning, and prerequisite assumptions when they matter.
 - Include concrete examples when they clarify the contract.
 - Separate reference facts from opinionated usage guidance.
 
 ## Do Not
 - Hide required parameters in examples only.
 - Assume internal knowledge about auth or environment setup.
+- Let examples contradict field names, required flags, or error behavior.
 - Describe unstable behavior as a firm contract.
 
 ## Output

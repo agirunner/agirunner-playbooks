@@ -30,6 +30,9 @@ is maintained as an ongoing catalog history rather than a release log.
 - Standardized playbook prose conventions around `Preferred flow`,
   `Recovery and exception handling`, `Completion rules`, and
   `Guided closure rule`
+- Strengthened content, SOP, and engineering verification skills around
+  reader testing, structured drafting, reconnaissance, and evidence
+  capture
 - Strengthened the engineering security review skill around provenance,
   privilege, injection, isolation, and governance checks
 - Improved root documentation to match the current repository structure

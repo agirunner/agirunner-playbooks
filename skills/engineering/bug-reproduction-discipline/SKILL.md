@@ -21,6 +21,8 @@ deliberate instead of guessed.
 - Name the trigger, environment, and smallest known path to the failure.
 - Identify the exact evidence available now: logs, tests, reports,
   screenshots, code paths, or operator notes.
+- Observe the system before changing it. Inspect the rendered state, logs,
+  or outputs that demonstrate the defect.
 - Reproduce the issue directly when possible.
 - If direct reproduction is not possible, bound the defect with the
   narrowest credible explanation and say what remains unproven.
@@ -29,6 +31,7 @@ deliberate instead of guessed.
 
 ## Do Not
 - Claim reproduction when you only inferred the failure.
+- Jump from the first plausible symptom straight to a fix.
 - Expand the scope into adjacent cleanup.
 - Treat a suspected root cause as proven without evidence.
 
