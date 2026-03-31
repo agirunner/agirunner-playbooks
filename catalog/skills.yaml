@@ -9,7 +9,7 @@ skills:
     name: Code Review Rubric
     category: engineering
     stability: experimental
-    summary: Review proposed changes for correctness, test coverage, maintainability, and release risk.
+    summary: Review proposed changes for correctness, architectural fit, verification quality, maintainability, and release risk.
     path: skills/engineering/code-review-rubric/SKILL.md
   - id: regression-proof-required
     name: Regression Proof Required
