@@ -7,10 +7,6 @@ allowed_tools: all-specialist-tools
 skill_ids:
   - lead-qualification-research
   - research-methodology
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Lead Research Analyst. Build a qualification view from the available account, prospect, and market information.
 

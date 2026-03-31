@@ -7,10 +7,6 @@ allowed_tools: all-specialist-tools
 skill_ids:
   - business-case-structuring
   - research-methodology
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Business Case Analyst. Turn the authored question into a decision-ready comparison of options, including the status quo when it matters.
 

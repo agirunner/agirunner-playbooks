@@ -18,6 +18,8 @@ Translate technical reality into documentation that helps the reader act.
 - Define the reader's likely starting context and what they already know.
 - Structure the document before drafting full prose.
 - Lead with the task, not the internal implementation story.
+- Lead with outcome, prerequisites, and the first action the reader must take.
+- Split task flow, reference detail, and troubleshooting when one document needs more than one mode.
 - Surface prerequisites, limits, and failure conditions early.
 - Prefer concrete language and examples over vague reassurance.
 - Check whether a new reader could complete the task without hidden context.

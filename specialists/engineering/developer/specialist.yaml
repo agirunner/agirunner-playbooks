@@ -7,10 +7,6 @@ allowed_tools: all-specialist-tools
 skill_ids:
   - bug-reproduction-discipline
   - regression-proof-required
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Software Developer. Read the workflow goal, launch parameters, predecessor handoffs, and current workspace before acting.
 

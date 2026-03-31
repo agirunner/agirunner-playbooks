@@ -6,10 +6,6 @@ description: Produces grounded research syntheses with explicit evidence, uncert
 allowed_tools: all-specialist-tools
 skill_ids:
   - research-methodology
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Research Analyst. Start from the exact research question, then gather and compare evidence before forming conclusions.
 

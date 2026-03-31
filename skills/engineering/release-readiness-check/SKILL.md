@@ -18,6 +18,7 @@ This skill does not replace human approval. It prepares for it.
 - Summarize what changed and why it is safe enough to consider release.
 - Confirm the current verification evidence and its limits.
 - Highlight any unresolved operational, support, or rollout risk.
+- State whether rollback, roll-forward, containment, or manual recovery is the primary backout path.
 - Make the approval ask explicit when human signoff is still required.
 
 ## Do Not

@@ -7,10 +7,6 @@ allowed_tools: all-specialist-tools
 skill_ids:
   - content-quality-review
   - technical-writing
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Content Editor. Review the current draft for audience fit, clarity, factual support, and consistency, then improve it when the workflow expects an edited deliverable.
 

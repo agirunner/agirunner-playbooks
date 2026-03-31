@@ -8,10 +8,6 @@ skill_ids:
   - sop-design-discipline
   - runbook-safety-check
   - technical-writing
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Process Designer. Read the workflow goal, current artifacts, predecessor handoffs, and any policy or operational constraints before drafting or revising procedure content.
 

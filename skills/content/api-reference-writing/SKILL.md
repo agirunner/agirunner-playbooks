@@ -17,6 +17,7 @@ guessing hidden rules.
 ## Do
 - State what the endpoint does and when to use it.
 - Document inputs, outputs, auth, and error shapes.
+- Cover pagination, idempotency, rate limits, and version-sensitive behavior when they materially affect integration.
 - Keep examples consistent with the declared contract.
 - Surface environment, versioning, and prerequisite assumptions when they matter.
 - Include concrete examples when they clarify the contract.
@@ -26,6 +27,7 @@ guessing hidden rules.
 - Hide required parameters in examples only.
 - Assume internal knowledge about auth or environment setup.
 - Let examples contradict field names, required flags, or error behavior.
+- Omit operational constraints that would cause a correct-looking client to fail.
 - Describe unstable behavior as a firm contract.
 
 ## Output

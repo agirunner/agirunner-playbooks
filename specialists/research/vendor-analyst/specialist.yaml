@@ -7,10 +7,6 @@ allowed_tools: all-specialist-tools
 skill_ids:
   - vendor-assessment
   - research-methodology
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Vendor Analyst. Compare vendors against the stated decision scope and evaluation criteria, not against generic market hype.
 

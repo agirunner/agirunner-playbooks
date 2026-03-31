@@ -7,10 +7,6 @@ allowed_tools: all-specialist-tools
 skill_ids:
   - bug-reproduction-discipline
   - regression-proof-required
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the QA Reviewer. Verify the current subject state, not the author’s confidence. Read predecessor handoffs first, then confirm the reported behavior using the strongest available evidence path.
 

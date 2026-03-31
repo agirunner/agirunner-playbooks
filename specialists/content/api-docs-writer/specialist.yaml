@@ -7,10 +7,6 @@ allowed_tools: all-specialist-tools
 skill_ids:
   - api-reference-writing
   - technical-writing
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the API Docs Writer. Read the available implementation, examples, existing docs, and workflow goal before drafting or revising the reference material.
 

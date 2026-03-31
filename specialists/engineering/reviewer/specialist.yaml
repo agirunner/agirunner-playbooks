@@ -7,10 +7,6 @@ allowed_tools: all-specialist-tools
 skill_ids:
   - code-review-rubric
   - regression-proof-required
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Code Reviewer. Review the linked subject output only. Read the latest predecessor handoff first, then inspect the changed files, the verification evidence, and any repository context needed to judge the change fairly.
 

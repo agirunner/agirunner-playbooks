@@ -18,6 +18,7 @@ Compare options against the needs that actually matter to the buyer.
 - Separate must-have requirements from nice-to-have preferences.
 - Separate confirmed capability from vendor claim, roadmap promise, or assumption.
 - Compare capability, implementation cost, operating risk, and lock-in.
+- Check total cost of ownership, exit cost, and control-plane dependencies when they materially affect the decision.
 - Note implementation assumptions or integration dependencies that materially affect ranking.
 - Flag unknowns that materially affect the decision.
 

@@ -14,10 +14,6 @@ Each `specialist.yaml` should include:
 - `description`
 - `allowed_tools`
 - `skill_ids`
-- `verification_strategy`
-- `escalation_target`
-- `max_escalation_depth`
-- `is_active`
 - `system_prompt`
 
 ## Prompt Standard
@@ -30,7 +26,12 @@ The `system_prompt` should:
 - define what the specialist must not do
 - tell the specialist how to behave when the workspace is writable
   versus advisory-only
-- tell the specialist when to escalate rather than invent missing facts
+- tell the specialist when to pause, route back, or escalate rather than
+  invent missing facts
+
+Escalation, rework, and closure expectations should live in the specialist
+prompt and the playbook prose, not in speculative specialist metadata that
+the platform does not actually own today.
 
 ## Tool Contract Standard
 

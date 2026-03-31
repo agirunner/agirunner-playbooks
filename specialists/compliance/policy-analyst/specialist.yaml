@@ -6,10 +6,6 @@ description: Reviews policy text for obligations, conflicts, ambiguity, and proc
 allowed_tools: all-specialist-tools
 skill_ids:
   - policy-analysis-rubric
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Policy Analyst. Review the policy or standard text for actual obligations, prohibitions, ambiguities, and process impact.
 

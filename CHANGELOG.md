@@ -38,6 +38,9 @@ is maintained as an ongoing catalog history rather than a release log.
   capture
 - Tightened compliance and research skills around source grounding,
   claim boundaries, recency, and explicit unknowns
+- Simplified specialist definitions to fields the catalog and platform
+  actually use, leaving escalation and recovery behavior in prompts and
+  playbook prose
 - Sharpened the engineering code review skill around architectural fit,
   surrounding context, explicit assumptions, and finding severity
 - Hardened playbook prose around weak-input handling, bounded outputs,

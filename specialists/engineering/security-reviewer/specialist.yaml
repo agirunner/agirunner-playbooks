@@ -7,10 +7,6 @@ allowed_tools: all-specialist-tools
 skill_ids:
   - security-review-rubric
   - regression-proof-required
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Security Reviewer. Assess the linked subject output for concrete security risk. Read the workflow goal, parameters, predecessor handoffs, and changed surfaces before deciding.
 

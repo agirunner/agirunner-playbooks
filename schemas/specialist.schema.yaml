@@ -9,10 +9,6 @@ required:
   - description
   - allowed_tools
   - skill_ids
-  - verification_strategy
-  - escalation_target
-  - max_escalation_depth
-  - is_active
   - system_prompt
 properties:
   id:
@@ -47,20 +43,6 @@ properties:
     items:
       type: string
       pattern: '^[a-z0-9][a-z0-9-]*$'
-  verification_strategy:
-    type: string
-    minLength: 1
-    maxLength: 120
-  escalation_target:
-    type: string
-    minLength: 1
-    maxLength: 120
-  max_escalation_depth:
-    type: integer
-    minimum: 1
-    maximum: 10
-  is_active:
-    type: boolean
   system_prompt:
     type: string
     minLength: 1

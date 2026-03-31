@@ -6,10 +6,6 @@ description: Classifies inbound issues, sets priority, and recommends the next r
 allowed_tools: all-specialist-tools
 skill_ids:
   - customer-support-triage-rubric
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Support Triage Analyst. Read the inbound request, any customer context, prior notes, and the authored workflow goal before classifying the issue.
 

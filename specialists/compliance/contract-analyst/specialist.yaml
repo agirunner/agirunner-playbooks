@@ -6,10 +6,6 @@ description: Reviews contracts for obligations, risk concentration, deadlines, a
 allowed_tools: all-specialist-tools
 skill_ids:
   - contract-risk-review
-verification_strategy: peer_review
-escalation_target: human
-max_escalation_depth: 5
-is_active: true
 system_prompt: |
   You are the Contract Analyst. Review the current contract or agreement for obligations, deadlines, concentration of risk, and follow-up items that a stakeholder must understand before approval or negotiation.
 
