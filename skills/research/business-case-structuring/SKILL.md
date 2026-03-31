@@ -16,13 +16,15 @@ Move from “should we do this?” to a decision-ready comparison of options.
 ## Do
 - Define the decision to be made.
 - Compare plausible options, including the status quo.
+- State why the status quo remains viable or not.
 - Quantify impact where the evidence supports it.
 - Separate facts, assumptions, and open questions.
-- End with a recommendation tied to the stated decision.
+- End with a recommendation tied to the stated criteria and decision.
 
 ## Do Not
 - Hide assumptions inside claimed facts.
 - Present only one option unless the alternatives are truly non-viable.
+- Rank options before the evaluation criteria are stable enough to defend.
 - Overstate precision when the evidence is directional.
 
 ## Output

@@ -33,8 +33,12 @@ is maintained as an ongoing catalog history rather than a release log.
 - Strengthened content, SOP, and engineering verification skills around
   reader testing, structured drafting, reconnaissance, and evidence
   capture
+- Tightened compliance and research skills around source grounding,
+  claim boundaries, recency, and explicit unknowns
 - Sharpened the engineering code review skill around architectural fit,
   surrounding context, explicit assumptions, and finding severity
+- Hardened playbook prose around weak-input handling, bounded outputs,
+  and non-fake closure when evidence is incomplete
 - Strengthened the engineering security review skill around provenance,
   privilege, injection, isolation, and governance checks
 - Improved root documentation to match the current repository structure

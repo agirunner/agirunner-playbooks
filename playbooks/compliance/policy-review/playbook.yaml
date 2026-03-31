@@ -20,11 +20,11 @@ definition:
 
     Use these roles deliberately: `Policy Analyst` reads the policy text, extracts what matters operationally, and prepares the final review packet.
 
-    Preferred flow: start with the earliest unfinished stage, dispatch `Policy Analyst`, and advance only when the policy scope is explicit enough that obligations and process impacts can be interpreted consistently. The final output should separate policy text from interpretation.
+    Preferred flow: start with the earliest unfinished stage, dispatch `Policy Analyst`, and advance only when the policy scope, available source text, and review goal are explicit enough that obligations and process impacts can be interpreted consistently. The final output should separate policy text from interpretation.
 
-    Recovery and exception handling: if the policy text is ambiguous, contradictory, or incomplete, keep the current stage open until the handoff records those issues directly. Do not close the playbook on a polished summary that hides missing enforcement detail or unresolved interpretation. Lack of a writable workspace is not blocking for this playbook.
+    Recovery and exception handling: if the policy text is ambiguous, contradictory, incomplete, or only partially available, keep the current stage open until the handoff records those issues directly. Do not treat local convention as if it were policy text, and do not close the playbook on a polished summary that hides missing enforcement detail or unresolved interpretation. Lack of a writable workspace is not blocking for this playbook.
 
-    Completion rules: finish only after the final review records scope, obligations, prohibitions, ambiguities or conflicts, process impact, and recommended follow-up. Stage-specific closure for this playbook: `scope-mapping` stays open until applicability and policy subject are explicit; `obligation-review` stays open until the material duties and ambiguities are extracted; `follow-up` stays open until process impacts and next actions are recorded. Guided closure rule: prefer a bounded review with explicit open questions over false legal certainty.
+    Completion rules: finish only after the final review records scope, obligations, prohibitions, source-policy support when available, ambiguities or conflicts, process impact, and recommended follow-up. Stage-specific closure for this playbook: `scope-mapping` stays open until applicability, source base, and policy subject are explicit; `obligation-review` stays open until the material duties and ambiguities are extracted with their source basis or uncertainty labeled; `follow-up` stays open until process impacts and next actions are recorded. Guided closure rule: prefer a bounded review with explicit open questions over false legal certainty.
   parameters:
     - slug: policy_subject
       title: Policy Subject

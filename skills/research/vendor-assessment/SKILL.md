@@ -16,11 +16,14 @@ Compare options against the needs that actually matter to the buyer.
 ## Do
 - Define the evaluation criteria before ranking vendors.
 - Separate must-have requirements from nice-to-have preferences.
+- Separate confirmed capability from vendor claim, roadmap promise, or assumption.
 - Compare capability, implementation cost, operating risk, and lock-in.
+- Note implementation assumptions or integration dependencies that materially affect ranking.
 - Flag unknowns that materially affect the decision.
 
 ## Do Not
 - Score vendors on invented criteria that do not serve the decision.
+- Hide must-have failures inside an averaged comparison.
 - Treat marketing claims as confirmed capability without evidence.
 - Recommend a winner while major decision-critical gaps remain unknown.
 

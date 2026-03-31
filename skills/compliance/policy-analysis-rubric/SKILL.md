@@ -17,18 +17,22 @@ and where it may create ambiguity or risk.
 ## Do
 - Define who the policy applies to and what it governs.
 - Extract required actions, prohibited actions, and timing obligations.
+- Cite the policy language or section that supports each major obligation when available.
+- Separate explicit policy text from local interpretation, custom, or assumed practice.
 - Flag contradictions, vague language, and missing enforcement detail.
 - Call out where local process changes may be required.
 
 ## Do Not
 - Summarize tone while skipping obligations.
 - Assume policy intent when the text is unclear.
+- Treat local convention or preferred behavior as if it were policy text.
 - Present interpretive advice as if it were policy text.
 
 ## Output
 - `scope`
 - `obligations`
 - `prohibitions`
+- `source_policy_refs`
 - `ambiguities_or_conflicts`
 - `process_impact`
 - `recommended_follow_up`

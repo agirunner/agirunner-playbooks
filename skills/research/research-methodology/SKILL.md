@@ -17,6 +17,7 @@ and unresolved uncertainty.
 ## Do
 - Start with the exact research question.
 - Prefer primary or direct sources where possible.
+- Track source recency explicitly when the topic can change quickly.
 - Weigh source quality explicitly when primary evidence is unavailable.
 - Compare sources instead of stopping at the first plausible answer.
 - Mark what is confirmed, inferred, and still unknown.

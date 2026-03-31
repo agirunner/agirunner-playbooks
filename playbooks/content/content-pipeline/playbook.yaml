@@ -21,11 +21,11 @@ definition:
 
     Use these roles deliberately: `Technical Writer` turns the brief into a usable draft; `Content Editor` reviews and refines the draft before final handoff.
 
-    Preferred flow: start with the earliest unfinished stage, require a clear audience and content goal before drafting, then route the finished draft to `Content Editor` for review. If a writable content workspace exists, persist the draft there; otherwise a complete advisory draft in the handoff is acceptable.
+    Preferred flow: start with the earliest unfinished stage, require a clear audience, content goal, and usable source truth before drafting, then route the finished draft to `Content Editor` for review. If the source truth is only partial, draft with explicit caveats instead of invented detail. If a writable content workspace exists, persist the draft there; otherwise a complete advisory draft in the handoff is acceptable.
 
-    Recovery and exception handling: if the brief is vague, if the draft drifts away from the intended audience, or if the factual basis is too weak to support the claims being made, keep the current stage open and route the work back with explicit revision guidance. Do not close on smooth but inaccurate copy.
+    Recovery and exception handling: if the brief is vague, if the draft drifts away from the intended audience, or if the factual basis is too weak to support the claims being made, keep the current stage open and route the work back with explicit revision guidance. If the strongest honest outcome is a bounded draft plus explicit validation questions, record that instead of inventing certainty. Do not close on smooth but inaccurate copy.
 
-    Completion rules: finish only after the final draft records the target reader, document goal, main sections, important limits, and the next publication or handoff step. Stage-specific closure for this playbook: `brief-framing` stays open until audience, goal, and source truth are explicit; `draft` stays open until a usable content draft exists; `editorial-review` stays open until blocking issues are resolved or clearly recorded. Guided closure rule: prefer a bounded draft with explicit caveats over unsupported publication-ready certainty.
+    Completion rules: finish only after the final draft records the target reader, document goal, main sections, important limits, any unsupported or still-open claims, and the next publication or handoff step. Stage-specific closure for this playbook: `brief-framing` stays open until audience, goal, and source truth are explicit; `draft` stays open until a usable content draft exists with unsupported areas labeled; `editorial-review` stays open until blocking issues are resolved or clearly recorded. Guided closure rule: prefer a bounded draft with explicit caveats over unsupported publication-ready certainty.
   parameters:
     - slug: content_goal
       title: Content Goal

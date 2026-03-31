@@ -16,11 +16,13 @@ Turn scattered account information into an actionable qualification view.
 ## Do
 - Establish the target’s business context and likely need.
 - Look for trigger events, urgency signals, and obvious blockers.
+- Note whether the strongest signals are recent, stale, explicit, or inferred.
 - Separate strong evidence from soft inference.
 - Recommend a next step that matches the qualification level.
 
 ## Do Not
 - Confuse profile data with buying intent.
+- Treat company size, brand, or generic firmographics as enough evidence of fit.
 - Hide missing evidence behind confident prose.
 - Force a positive recommendation when disqualifying evidence is strong.
 
