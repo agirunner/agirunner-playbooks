@@ -1,0 +1,90 @@
+id: bug-fix
+version: 1.0.0
+name: Bug Fix
+slug: bug-fix
+category: engineering
+stability: experimental
+description: Diagnose and fix a bounded defect with review, security review, QA verification, and human release approval.
+outcome: A bounded defect is fixed or converted into an advisory fix package with review, verification, and release decision context.
+lifecycle: planned
+tags:
+  - engineering
+  - sdlc
+  - bug-fix
+specialist_ids:
+  - developer
+  - reviewer
+  - security-reviewer
+  - qa-reviewer
+definition:
+  outcome: A bounded defect is fixed or converted into an advisory fix package with review, verification, and release decision context.
+  process_instructions: |
+    Run the workflow through the authored stages `reproduce`, `implement`, `review`, `verify`, `release-approval`, and `close`. Treat each stage as a distinct checkpoint of delivery safety: `reproduce` exists to confirm or tightly bound the defect; `implement` exists to produce the smallest safe fix; `review` exists to complete code and security review; `verify` exists to prove the changed behavior and regression coverage; `release-approval` exists to gather an explicit human release decision; `close` exists to record the final outcome and remaining callouts.
+
+    Use these roles deliberately: `Software Developer` reproduces or bounds the defect and implements the fix; `Code Reviewer` assesses correctness and maintainability; `Security Reviewer` assesses security risk; `QA Reviewer` verifies the observed behavior and regression proof.
+
+    Preferred flow: start with the earliest unfinished stage, require `Software Developer` to prove the defect or bound it honestly before changing code, then route the implemented change through `Code Reviewer`, `Security Reviewer`, and `QA Reviewer` before asking for release approval. In writable `git` or `host_directory` workspaces, make the smallest safe change in place and verify it there. In artifact-only or read-only workspaces, convert the run into advisory mode and produce a fix package instead of claiming implementation.
+
+    Recovery and exception handling: if reproduction is weak, if review finds blocking issues, if security review requires changes, or if QA cannot verify the claimed fix, keep the current subject open and send the work back to `Software Developer` with the cited findings. Do not claim release readiness on confidence alone. The `release-approval` stage is an explicit human decision point: do not invent it. If technical work is complete but human approval is still missing, close only as ready-for-human-release-approval with that outstanding decision called out directly.
+
+    Completion rules: finish only after the final output records the defect scope, implemented or proposed fix, review findings, verification evidence, release recommendation, and any remaining risks. Stage-specific closure for this playbook: `reproduce` stays open until the defect is reproduced or bounded honestly; `implement` stays open until the smallest safe fix or advisory patch plan exists; `review` stays open until code and security review are resolved or called out; `verify` stays open until verification evidence and coverage limits are explicit; `release-approval` stays open until a human decision is recorded or the workflow is explicitly closed as pending that decision; `close` stays open until the final outcome is internally consistent. Guided closure rule: prefer a truthful advisory fix package or a ready-for-human-release-approval closeout over pretending the issue is fully shipped when platform capabilities or human approval are missing.
+  parameters:
+    - slug: issue_summary
+      title: Issue Summary
+      required: true
+    - slug: reproduction_context
+      title: Reproduction Context
+      required: false
+    - slug: acceptance_scope
+      title: Acceptance Scope
+      required: true
+  roles:
+    - Software Developer
+    - Code Reviewer
+    - Security Reviewer
+    - QA Reviewer
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: reproduce
+      goal: The defect is reproduced or bounded honestly.
+      involves:
+        - Software Developer
+    - name: implement
+      goal: The smallest safe fix or advisory patch plan exists.
+      involves:
+        - Software Developer
+    - name: review
+      goal: Code review and security review are complete.
+      involves:
+        - Code Reviewer
+        - Security Reviewer
+    - name: verify
+      goal: Verification evidence and regression proof are explicit.
+      involves:
+        - QA Reviewer
+    - name: release-approval
+      goal: A human release decision or pending-approval closeout is recorded.
+    - name: close
+      goal: The final outcome and remaining callouts are recorded.
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 5
+    max_active_tasks: 3
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

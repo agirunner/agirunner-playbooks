@@ -1,0 +1,91 @@
+id: hotfix
+version: 1.0.0
+name: Hotfix
+slug: hotfix
+category: engineering
+stability: experimental
+description: Execute an urgent defect fix with explicit risk tradeoffs and human release approval.
+outcome: An urgent defect is fixed or converted into an advisory hotfix package with explicit risk and approval context.
+lifecycle: planned
+tags:
+  - engineering
+  - sdlc
+  - hotfix
+specialist_ids:
+  - developer
+  - reviewer
+  - security-reviewer
+  - qa-reviewer
+definition:
+  outcome: An urgent defect is fixed or converted into an advisory hotfix package with explicit risk and approval context.
+  process_instructions: |
+    Run the workflow through the authored stages `triage`, `containment-plan`, `implement`, `verify`, `release-approval`, and `close`. Treat each stage as a distinct checkpoint of urgency and safety: `triage` exists to bound urgency and impact; `containment-plan` exists to define the smallest credible hotfix path; `implement` exists to execute that path; `verify` exists to gather review, security, and QA evidence quickly but honestly; `release-approval` exists to gather an explicit human release decision; `close` exists to record the final state and residual risk.
+
+    Use these roles deliberately: `Software Developer` drives the containment plan and implementation; `Code Reviewer`, `Security Reviewer`, and `QA Reviewer` provide focused scrutiny proportional to the risk and available time.
+
+    Preferred flow: start with the earliest unfinished stage, keep the scope narrow, and prioritize the smallest change that reduces the urgent impact without turning the hotfix into a hidden feature project. In writable `git` or `host_directory` workspaces, implement and verify in place. In artifact-only or read-only workspaces, produce an advisory hotfix package that includes the proposed patch, risk summary, and verification plan.
+
+    Recovery and exception handling: if urgency is real but the safest answer is rollback, containment, or temporary mitigation instead of a code change, record that explicitly and route accordingly. If review, security, or QA surfaces a blocker that outweighs the hotfix benefit, keep the work open and record the tradeoff instead of pretending the fix is safe. The `release-approval` stage is an explicit human decision point; do not invent it. If approval is missing, close only as pending human hotfix approval with the residual risk stated plainly.
+
+    Completion rules: finish only after the final output records the incident or defect impact, chosen hotfix scope, review and verification evidence, residual risk, and release decision context. Stage-specific closure for this playbook: `triage` stays open until urgency and impact are explicit; `containment-plan` stays open until the hotfix path is clear; `implement` stays open until the hotfix or advisory patch package exists; `verify` stays open until review, security, and QA evidence are explicit; `release-approval` stays open until a human decision is recorded or the work is explicitly closed pending that decision; `close` stays open until the final record is internally consistent. Guided closure rule: prefer an explicit mitigation or pending-approval hotfix package over shipping under pressure with hidden uncertainty.
+  parameters:
+    - slug: incident_summary
+      title: Incident Summary
+      required: true
+    - slug: urgency_context
+      title: Urgency Context
+      required: true
+    - slug: acceptable_risk_bounds
+      title: Acceptable Risk Bounds
+      required: true
+  roles:
+    - Software Developer
+    - Code Reviewer
+    - Security Reviewer
+    - QA Reviewer
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: triage
+      goal: Urgency, impact, and hotfix scope are explicit.
+      involves:
+        - Software Developer
+    - name: containment-plan
+      goal: The smallest credible mitigation or hotfix path is clear.
+      involves:
+        - Software Developer
+    - name: implement
+      goal: The hotfix or advisory patch package exists.
+      involves:
+        - Software Developer
+    - name: verify
+      goal: Review, security, and QA evidence are explicit.
+      involves:
+        - Code Reviewer
+        - Security Reviewer
+        - QA Reviewer
+    - name: release-approval
+      goal: A human hotfix approval decision or pending-approval status is recorded.
+    - name: close
+      goal: The final state and residual risk are recorded.
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 4
+    max_active_tasks: 3
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

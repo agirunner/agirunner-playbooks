@@ -1,4 +1,60 @@
 playbooks:
+  - id: bug-fix
+    name: Bug Fix
+    category: engineering
+    stability: experimental
+    version: 1.0.0
+    summary: Diagnose and fix a bounded defect with review, security review, QA verification, and human release approval.
+    specialist_ids:
+      - developer
+      - reviewer
+      - security-reviewer
+      - qa-reviewer
+    path: playbooks/engineering/bug-fix/playbook.yaml
+  - id: hotfix
+    name: Hotfix
+    category: engineering
+    stability: experimental
+    version: 1.0.0
+    summary: Execute an urgent defect fix with explicit risk tradeoffs and human release approval.
+    specialist_ids:
+      - developer
+      - reviewer
+      - security-reviewer
+      - qa-reviewer
+    path: playbooks/engineering/hotfix/playbook.yaml
+  - id: code-review
+    name: Code Review
+    category: engineering
+    stability: experimental
+    version: 1.0.0
+    summary: Review a proposed change for correctness, security, and verification quality before disposition.
+    specialist_ids:
+      - reviewer
+      - security-reviewer
+      - qa-reviewer
+    path: playbooks/engineering/code-review/playbook.yaml
+  - id: pr-guardian
+    name: PR Guardian
+    category: engineering
+    stability: experimental
+    version: 1.0.0
+    summary: Guard a proposed change against merge risk with review, security, and regression scrutiny.
+    specialist_ids:
+      - reviewer
+      - security-reviewer
+      - qa-reviewer
+    path: playbooks/engineering/pr-guardian/playbook.yaml
+  - id: regression-monitor
+    name: Regression Monitor
+    category: engineering
+    stability: experimental
+    version: 1.0.0
+    summary: Evaluate changed behavior for regression risk, verification gaps, and follow-up actions.
+    specialist_ids:
+      - qa-reviewer
+      - reviewer
+    path: playbooks/engineering/regression-monitor/playbook.yaml
   - id: customer-support-triage
     name: Customer Support Triage
     category: operations

@@ -1,0 +1,82 @@
+id: regression-monitor
+version: 1.0.0
+name: Regression Monitor
+slug: regression-monitor
+category: engineering
+stability: experimental
+description: Evaluate changed behavior for regression risk, verification gaps, and follow-up actions.
+outcome: A regression risk report exists with evidence quality, gaps, and recommended follow-up actions.
+lifecycle: planned
+tags:
+  - engineering
+  - qa
+  - regression
+specialist_ids:
+  - qa-reviewer
+  - reviewer
+definition:
+  outcome: A regression risk report exists with evidence quality, gaps, and recommended follow-up actions.
+  process_instructions: |
+    Run the workflow through the authored stages `scope-framing`, `evidence-review`, `risk-evaluation`, and `follow-up`. Treat each stage as a distinct checkpoint of regression confidence: `scope-framing` exists to define what changed and what behavior is at risk; `evidence-review` exists to inspect the available tests and verification evidence; `risk-evaluation` exists to judge the remaining regression exposure; `follow-up` exists to record the next actions.
+
+    Use these roles deliberately: `QA Reviewer` leads the evidence and regression assessment; `Code Reviewer` helps interpret code-path and implementation risk where needed.
+
+    Preferred flow: start with the earliest unfinished stage, require the change scope and at-risk behavior to be explicit, then route the evidence review through `QA Reviewer` before using `Code Reviewer` to clarify implementation-side concerns. This playbook is storage-agnostic and can complete from artifacts or repository evidence alone.
+
+    Recovery and exception handling: if the changed behavior is unclear, if the verification evidence is too weak, or if the test surface is obviously incomplete, keep the current subject open until the missing coverage and resulting risk are explicit. Do not treat the absence of failures as proof of adequate regression coverage.
+
+    Completion rules: finish only after the final report records the scoped behavior, evidence reviewed, coverage gaps, regression risk, and recommended follow-up actions. Stage-specific closure for this playbook: `scope-framing` stays open until the at-risk behavior is explicit; `evidence-review` stays open until the available proof is inspected; `risk-evaluation` stays open until regression risk is judged honestly; `follow-up` stays open until next actions are recorded. Guided closure rule: prefer a conservative risk report with explicit gaps over a reassuring verdict that the evidence does not support.
+  parameters:
+    - slug: change_scope
+      title: Change Scope
+      required: true
+    - slug: at_risk_behavior
+      title: At Risk Behavior
+      required: true
+    - slug: available_evidence
+      title: Available Evidence
+      required: false
+  roles:
+    - QA Reviewer
+    - Code Reviewer
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: scope-framing
+      goal: Changed behavior and regression scope are explicit.
+      involves:
+        - QA Reviewer
+    - name: evidence-review
+      goal: Available proof and coverage limits are inspected.
+      involves:
+        - QA Reviewer
+    - name: risk-evaluation
+      goal: Remaining regression risk is judged honestly.
+      involves:
+        - Code Reviewer
+        - QA Reviewer
+    - name: follow-up
+      goal: Recommended next actions are recorded.
+      involves:
+        - QA Reviewer
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

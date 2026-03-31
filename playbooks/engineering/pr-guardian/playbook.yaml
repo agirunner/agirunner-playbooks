@@ -1,0 +1,84 @@
+id: pr-guardian
+version: 1.0.0
+name: PR Guardian
+slug: pr-guardian
+category: engineering
+stability: experimental
+description: Guard a proposed change against merge risk with review, security, and regression scrutiny.
+outcome: A proposed change has a clear merge-readiness recommendation with explicit blockers and follow-up notes.
+lifecycle: planned
+tags:
+  - engineering
+  - review
+  - merge-readiness
+specialist_ids:
+  - reviewer
+  - security-reviewer
+  - qa-reviewer
+definition:
+  outcome: A proposed change has a clear merge-readiness recommendation with explicit blockers and follow-up notes.
+  process_instructions: |
+    Run the workflow through the authored stages `change-scan`, `review`, `risk-check`, and `recommendation`. Treat each stage as a distinct checkpoint of merge readiness: `change-scan` exists to define what is changing and why; `review` exists to assess correctness and maintainability; `risk-check` exists to examine security and regression risk; `recommendation` exists to combine the findings into a merge-ready, request-changes, or block recommendation.
+
+    Use these roles deliberately: `Code Reviewer` handles the primary review; `Security Reviewer` handles security risk; `QA Reviewer` handles regression and evidence scrutiny.
+
+    Preferred flow: start with the earliest unfinished stage, require a crisp scan of the change scope, then run the review, security, and QA passes before recommendation. This playbook may be used with `git`, `host_directory`, or artifact-backed change evidence; lack of a writable workspace is not blocking because the goal is a disposition, not a code change.
+
+    Recovery and exception handling: if the change scope is unclear, if the verification evidence is missing, or if the reviewers disagree materially, keep the current subject open until the conflict and the most conservative still-supported recommendation are explicit. Do not collapse “safe to merge” and “probably fine” into the same outcome.
+
+    Completion rules: finish only after the final output records the change scan, blocking findings, non-blocking callouts, security or regression concerns, and the final merge-readiness recommendation. Stage-specific closure for this playbook: `change-scan` stays open until the change scope is explicit; `review` stays open until primary review findings are clear; `risk-check` stays open until security and regression concerns are recorded; `recommendation` stays open until the final recommendation is internally consistent. Guided closure rule: prefer a conservative request-changes outcome over an optimistic merge recommendation with hidden gaps.
+  parameters:
+    - slug: change_summary
+      title: Change Summary
+      required: true
+    - slug: merge_goal
+      title: Merge Goal
+      required: true
+    - slug: available_evidence
+      title: Available Evidence
+      required: false
+  roles:
+    - Code Reviewer
+    - Security Reviewer
+    - QA Reviewer
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: change-scan
+      goal: The change scope and intent are explicit.
+      involves:
+        - Code Reviewer
+    - name: review
+      goal: Primary review findings are documented.
+      involves:
+        - Code Reviewer
+    - name: risk-check
+      goal: Security and regression concerns are documented.
+      involves:
+        - Security Reviewer
+        - QA Reviewer
+    - name: recommendation
+      goal: The merge-readiness recommendation is recorded.
+      involves:
+        - Code Reviewer
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 3
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false
