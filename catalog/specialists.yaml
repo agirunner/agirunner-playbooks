@@ -1,1 +1,133 @@
-specialists: []
+specialists:
+  - id: developer
+    name: Software Developer
+    category: engineering
+    stability: experimental
+    summary: Implements scoped code or configuration changes and records verification evidence.
+    skill_ids:
+      - bug-reproduction-discipline
+      - regression-proof-required
+    path: specialists/engineering/developer/specialist.yaml
+  - id: reviewer
+    name: Code Reviewer
+    category: engineering
+    stability: experimental
+    summary: Reviews implementation work for correctness, maintainability, and release safety.
+    skill_ids:
+      - code-review-rubric
+      - regression-proof-required
+    path: specialists/engineering/reviewer/specialist.yaml
+  - id: security-reviewer
+    name: Security Reviewer
+    category: engineering
+    stability: experimental
+    summary: Reviews code and workflow outputs for security issues before approval or release.
+    skill_ids:
+      - security-review-rubric
+      - regression-proof-required
+    path: specialists/engineering/security-reviewer/specialist.yaml
+  - id: qa-reviewer
+    name: QA Reviewer
+    category: engineering
+    stability: experimental
+    summary: Verifies observed behavior, regression evidence, and release confidence.
+    skill_ids:
+      - bug-reproduction-discipline
+      - regression-proof-required
+    path: specialists/engineering/qa-reviewer/specialist.yaml
+  - id: support-triage-analyst
+    name: Support Triage Analyst
+    category: operations
+    stability: stable
+    summary: Classifies inbound issues, sets priority, and recommends the next owner and action.
+    skill_ids:
+      - customer-support-triage-rubric
+    path: specialists/operations/support-triage-analyst/specialist.yaml
+  - id: process-designer
+    name: Process Designer
+    category: operations
+    stability: stable
+    summary: Designs SOPs and runbooks that are safe, clear, and maintainable.
+    skill_ids:
+      - sop-design-discipline
+      - runbook-safety-check
+      - technical-writing
+    path: specialists/operations/process-designer/specialist.yaml
+  - id: research-analyst
+    name: Research Analyst
+    category: research
+    stability: stable
+    summary: Produces grounded research syntheses with explicit evidence, uncertainty, and recommendations.
+    skill_ids:
+      - research-methodology
+    path: specialists/research/research-analyst/specialist.yaml
+  - id: lead-research-analyst
+    name: Lead Research Analyst
+    category: research
+    stability: stable
+    summary: Qualifies accounts or prospects based on fit, urgency, and next-step readiness.
+    skill_ids:
+      - lead-qualification-research
+      - research-methodology
+    path: specialists/research/lead-research-analyst/specialist.yaml
+  - id: vendor-analyst
+    name: Vendor Analyst
+    category: research
+    stability: stable
+    summary: Compares vendors against explicit requirements, costs, and operational risks.
+    skill_ids:
+      - vendor-assessment
+      - research-methodology
+    path: specialists/research/vendor-analyst/specialist.yaml
+  - id: business-case-analyst
+    name: Business Case Analyst
+    category: research
+    stability: stable
+    summary: Structures options, tradeoffs, and recommendation logic for a decision-ready business case.
+    skill_ids:
+      - business-case-structuring
+      - research-methodology
+    path: specialists/research/business-case-analyst/specialist.yaml
+  - id: policy-analyst
+    name: Policy Analyst
+    category: compliance
+    stability: stable
+    summary: Reviews policy text for obligations, conflicts, ambiguity, and process impact.
+    skill_ids:
+      - policy-analysis-rubric
+    path: specialists/compliance/policy-analyst/specialist.yaml
+  - id: contract-analyst
+    name: Contract Analyst
+    category: compliance
+    stability: stable
+    summary: Reviews contracts for obligations, risk concentration, deadlines, and follow-up points.
+    skill_ids:
+      - contract-risk-review
+    path: specialists/compliance/contract-analyst/specialist.yaml
+  - id: technical-writer
+    name: Technical Writer
+    category: content
+    stability: stable
+    summary: Produces task-oriented technical documentation for operators or end users.
+    skill_ids:
+      - technical-writing
+      - content-quality-review
+    path: specialists/content/technical-writer/specialist.yaml
+  - id: api-docs-writer
+    name: API Docs Writer
+    category: content
+    stability: stable
+    summary: Produces or revises API reference material with clear contract details and examples.
+    skill_ids:
+      - api-reference-writing
+      - technical-writing
+    path: specialists/content/api-docs-writer/specialist.yaml
+  - id: content-editor
+    name: Content Editor
+    category: content
+    stability: stable
+    summary: Reviews and improves drafted content for accuracy, clarity, and consistency.
+    skill_ids:
+      - content-quality-review
+      - technical-writing
+    path: specialists/content/content-editor/specialist.yaml
