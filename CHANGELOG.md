@@ -2,9 +2,11 @@
 
 All notable changes to this repository will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+This public catalog evolves continuously. Section naming follows
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/), but this file
+is maintained as an ongoing catalog history rather than a release log.
 
-## [Unreleased]
+## Catalog Changes
 
 ### Added
 
