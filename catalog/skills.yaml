@@ -27,7 +27,7 @@ skills:
     name: Security Review Rubric
     category: engineering
     stability: experimental
-    summary: Review changes for security issues before approval or release packaging.
+    summary: Review changes for trust, privilege, injection, isolation, and governance risk before approval or release packaging.
     path: skills/engineering/security-review-rubric/SKILL.md
   - id: customer-support-triage-rubric
     name: Customer Support Triage Rubric
