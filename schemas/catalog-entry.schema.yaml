@@ -1,0 +1,36 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Catalog Entry Reference
+type: object
+required:
+  - id
+  - name
+  - category
+  - path
+properties:
+  id:
+    type: string
+    pattern: '^[a-z0-9][a-z0-9-]*$'
+  name:
+    type: string
+    minLength: 1
+    maxLength: 120
+  category:
+    type: string
+    pattern: '^[a-z0-9][a-z0-9-]*$'
+  path:
+    type: string
+    minLength: 1
+  summary:
+    type: string
+    minLength: 1
+    maxLength: 500
+  stability:
+    type: string
+    enum:
+      - stable
+      - experimental
+  tags:
+    type: array
+    items:
+      type: string
+additionalProperties: true

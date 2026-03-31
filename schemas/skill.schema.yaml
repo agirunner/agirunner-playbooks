@@ -1,0 +1,19 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Skill File Contract
+type: object
+description: >
+  Skills are authored as SKILL.md files with YAML frontmatter. The only
+  supported frontmatter keys are `name` and `description`.
+required:
+  - name
+  - description
+properties:
+  name:
+    type: string
+    minLength: 1
+    maxLength: 120
+  description:
+    type: string
+    minLength: 1
+    maxLength: 500
+additionalProperties: false

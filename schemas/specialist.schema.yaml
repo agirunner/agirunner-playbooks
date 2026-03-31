@@ -1,0 +1,64 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Specialist Definition
+type: object
+required:
+  - id
+  - name
+  - category
+  - stability
+  - description
+  - allowed_tools
+  - skill_ids
+  - verification_strategy
+  - escalation_target
+  - max_escalation_depth
+  - is_active
+  - system_prompt
+properties:
+  id:
+    type: string
+    pattern: '^[a-z0-9][a-z0-9-]*$'
+  name:
+    type: string
+    minLength: 1
+    maxLength: 120
+  category:
+    type: string
+    pattern: '^[a-z0-9][a-z0-9-]*$'
+  stability:
+    type: string
+    enum:
+      - stable
+      - experimental
+  description:
+    type: string
+    minLength: 1
+    maxLength: 1000
+  allowed_tools:
+    type: array
+    items:
+      type: string
+    minItems: 1
+  skill_ids:
+    type: array
+    items:
+      type: string
+      pattern: '^[a-z0-9][a-z0-9-]*$'
+  verification_strategy:
+    type: string
+    minLength: 1
+    maxLength: 120
+  escalation_target:
+    type: string
+    minLength: 1
+    maxLength: 120
+  max_escalation_depth:
+    type: integer
+    minimum: 1
+    maximum: 10
+  is_active:
+    type: boolean
+  system_prompt:
+    type: string
+    minLength: 1
+additionalProperties: false

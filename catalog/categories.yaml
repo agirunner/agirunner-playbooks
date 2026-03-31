@@ -1,0 +1,21 @@
+categories:
+  - id: engineering
+    name: Engineering
+    description: Software delivery and technical assurance workflows.
+    default_stability: experimental
+  - id: operations
+    name: Operations
+    description: Internal operating procedures, support routing, and runbooks.
+    default_stability: stable
+  - id: research
+    name: Research
+    description: Research, qualification, evaluation, and analytical workflows.
+    default_stability: stable
+  - id: compliance
+    name: Compliance
+    description: Policy, contract, and governance-oriented review workflows.
+    default_stability: stable
+  - id: content
+    name: Content
+    description: Documentation and editorial production workflows.
+    default_stability: stable

@@ -1,0 +1,96 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Playbook Definition
+type: object
+required:
+  - id
+  - version
+  - name
+  - slug
+  - category
+  - stability
+  - description
+  - outcome
+  - lifecycle
+  - specialist_ids
+  - definition
+properties:
+  id:
+    type: string
+    pattern: '^[a-z0-9][a-z0-9-]*$'
+  version:
+    type: string
+    minLength: 1
+    maxLength: 40
+  name:
+    type: string
+    minLength: 1
+    maxLength: 120
+  slug:
+    type: string
+    pattern: '^[a-z0-9][a-z0-9-]*$'
+  category:
+    type: string
+    pattern: '^[a-z0-9][a-z0-9-]*$'
+  stability:
+    type: string
+    enum:
+      - stable
+      - experimental
+  description:
+    type: string
+    minLength: 1
+    maxLength: 1000
+  outcome:
+    type: string
+    minLength: 1
+    maxLength: 4000
+  lifecycle:
+    type: string
+    enum:
+      - planned
+      - ongoing
+  tags:
+    type: array
+    items:
+      type: string
+  specialist_ids:
+    type: array
+    items:
+      type: string
+      pattern: '^[a-z0-9][a-z0-9-]*$'
+    minItems: 1
+  definition:
+    type: object
+    required:
+      - process_instructions
+      - roles
+      - board
+      - stages
+      - lifecycle
+    properties:
+      process_instructions:
+        type: string
+        minLength: 1
+      roles:
+        type: array
+        items:
+          type: string
+      board:
+        type: object
+      stages:
+        type: array
+        items:
+          type: object
+      lifecycle:
+        type: string
+        enum:
+          - planned
+          - ongoing
+      orchestrator:
+        type: object
+      parameters:
+        type: array
+        items:
+          type: object
+    additionalProperties: true
+additionalProperties: false
