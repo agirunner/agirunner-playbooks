@@ -1,1 +1,103 @@
-skills: []
+skills:
+  - id: bug-reproduction-discipline
+    name: Bug Reproduction Discipline
+    category: engineering
+    stability: experimental
+    summary: Bound a defect before changing code and keep the claimed fix tied to observed evidence.
+    path: skills/engineering/bug-reproduction-discipline/SKILL.md
+  - id: code-review-rubric
+    name: Code Review Rubric
+    category: engineering
+    stability: experimental
+    summary: Review proposed changes for correctness, test coverage, maintainability, and release risk.
+    path: skills/engineering/code-review-rubric/SKILL.md
+  - id: regression-proof-required
+    name: Regression Proof Required
+    category: engineering
+    stability: experimental
+    summary: Require explicit verification evidence for any claimed fix or safety-critical change.
+    path: skills/engineering/regression-proof-required/SKILL.md
+  - id: release-readiness-check
+    name: Release Readiness Check
+    category: engineering
+    stability: experimental
+    summary: Confirm that a change is ready for human release approval with clear evidence and callouts.
+    path: skills/engineering/release-readiness-check/SKILL.md
+  - id: security-review-rubric
+    name: Security Review Rubric
+    category: engineering
+    stability: experimental
+    summary: Review changes for security issues before approval or release packaging.
+    path: skills/engineering/security-review-rubric/SKILL.md
+  - id: customer-support-triage-rubric
+    name: Customer Support Triage Rubric
+    category: operations
+    stability: stable
+    summary: Classify incoming support requests by issue type, urgency, ownership, and next action.
+    path: skills/operations/customer-support-triage-rubric/SKILL.md
+  - id: runbook-safety-check
+    name: Runbook Safety Check
+    category: operations
+    stability: stable
+    summary: Review procedural runbooks for prerequisites, rollback safety, and operator clarity.
+    path: skills/operations/runbook-safety-check/SKILL.md
+  - id: sop-design-discipline
+    name: SOP Design Discipline
+    category: operations
+    stability: stable
+    summary: Structure operating procedures with scope, steps, exceptions, and ownership.
+    path: skills/operations/sop-design-discipline/SKILL.md
+  - id: business-case-structuring
+    name: Business Case Structuring
+    category: research
+    stability: stable
+    summary: Turn a business question into options, tradeoffs, quantified impact, and a recommendation.
+    path: skills/research/business-case-structuring/SKILL.md
+  - id: lead-qualification-research
+    name: Lead Qualification Research
+    category: research
+    stability: stable
+    summary: Assess a prospect or account for fit, urgency, risk, and next-step readiness.
+    path: skills/research/lead-qualification-research/SKILL.md
+  - id: research-methodology
+    name: Research Methodology
+    category: research
+    stability: stable
+    summary: Frame research questions, gather evidence, resolve contradictions, and report confidence honestly.
+    path: skills/research/research-methodology/SKILL.md
+  - id: vendor-assessment
+    name: Vendor Assessment
+    category: research
+    stability: stable
+    summary: Compare vendors against explicit requirements, risks, costs, and implementation constraints.
+    path: skills/research/vendor-assessment/SKILL.md
+  - id: contract-risk-review
+    name: Contract Risk Review
+    category: compliance
+    stability: stable
+    summary: Review contracts for obligations, dates, liability, data handling, and escalation points.
+    path: skills/compliance/contract-risk-review/SKILL.md
+  - id: policy-analysis-rubric
+    name: Policy Analysis Rubric
+    category: compliance
+    stability: stable
+    summary: Review policies for scope, obligations, contradictions, enforcement concerns, and open questions.
+    path: skills/compliance/policy-analysis-rubric/SKILL.md
+  - id: api-reference-writing
+    name: API Reference Writing
+    category: content
+    stability: stable
+    summary: Produce concise API reference material with request, response, auth, and error details.
+    path: skills/content/api-reference-writing/SKILL.md
+  - id: content-quality-review
+    name: Content Quality Review
+    category: content
+    stability: stable
+    summary: Review drafted content for audience fit, clarity, factual support, and editorial consistency.
+    path: skills/content/content-quality-review/SKILL.md
+  - id: technical-writing
+    name: Technical Writing
+    category: content
+    stability: stable
+    summary: Turn technical material into clear task-oriented documentation for a defined audience.
+    path: skills/content/technical-writing/SKILL.md
