@@ -35,10 +35,13 @@ properties:
     minLength: 1
     maxLength: 1000
   allowed_tools:
-    type: array
-    items:
-      type: string
-    minItems: 1
+    oneOf:
+      - type: string
+        const: all-specialist-tools
+      - type: array
+        items:
+          type: string
+        minItems: 1
   skill_ids:
     type: array
     items:

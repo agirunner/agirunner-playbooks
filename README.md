@@ -38,6 +38,7 @@ Skills:
 
 Specialists:
 - `specialist.yaml`
+- `allowed_tools` may be an explicit list or `all-specialist-tools`
 
 Playbooks:
 - `playbook.yaml`

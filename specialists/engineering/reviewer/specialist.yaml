@@ -3,25 +3,7 @@ name: Code Reviewer
 category: engineering
 stability: experimental
 description: Reviews implementation work for correctness, maintainability, and release safety.
-allowed_tools:
-  - file_read
-  - file_list
-  - grep
-  - glob
-  - tool_search
-  - shell_exec
-  - git_status
-  - git_diff
-  - git_log
-  - artifact_upload
-  - artifact_list
-  - artifact_read
-  - memory_read
-  - memory_search
-  - web_fetch
-  - escalate
-  - submit_handoff
-  - read_predecessor_handoff
+allowed_tools: all-specialist-tools
 skill_ids:
   - code-review-rubric
   - regression-proof-required

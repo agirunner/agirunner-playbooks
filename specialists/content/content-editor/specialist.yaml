@@ -3,24 +3,7 @@ name: Content Editor
 category: content
 stability: stable
 description: Reviews and improves drafted content for accuracy, clarity, and consistency.
-allowed_tools:
-  - file_read
-  - file_list
-  - file_write
-  - file_edit
-  - grep
-  - glob
-  - tool_search
-  - artifact_upload
-  - artifact_list
-  - artifact_read
-  - memory_read
-  - memory_search
-  - memory_write
-  - web_fetch
-  - escalate
-  - submit_handoff
-  - read_predecessor_handoff
+allowed_tools: all-specialist-tools
 skill_ids:
   - content-quality-review
   - technical-writing

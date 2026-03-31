@@ -1,0 +1,27 @@
+tool_profiles:
+  - id: all-specialist-tools
+    description: Enables the default specialist tool set and excludes orchestrator-only tools.
+    tools:
+      - file_read
+      - file_list
+      - file_write
+      - file_edit
+      - grep
+      - glob
+      - tool_search
+      - shell_exec
+      - git_status
+      - git_diff
+      - git_log
+      - git_commit
+      - git_push
+      - artifact_upload
+      - artifact_list
+      - artifact_read
+      - memory_read
+      - memory_search
+      - memory_write
+      - web_fetch
+      - escalate
+      - submit_handoff
+      - read_predecessor_handoff

@@ -1,0 +1,77 @@
+id: business-case
+version: 1.0.0
+name: Business Case
+slug: business-case
+category: research
+stability: stable
+description: Structure a decision-ready business case with options, tradeoffs, and recommendation logic.
+outcome: A business case exists with decision framing, options, evidence, assumptions, and a recommendation.
+lifecycle: planned
+tags:
+  - research
+  - strategy
+  - decision-support
+specialist_ids:
+  - research-analyst
+  - business-case-analyst
+definition:
+  outcome: A business case exists with decision framing, options, evidence, assumptions, and a recommendation.
+  process_instructions: |
+    Run the workflow through the authored stages `decision-framing`, `evidence-collection`, and `recommendation`. Treat each stage as a distinct checkpoint of decision readiness: `decision-framing` exists to define the actual decision and options in scope; `evidence-collection` exists to gather the facts and constraints that matter; `recommendation` exists to structure the tradeoffs into a decision-ready business case.
+
+    Use these roles deliberately: `Business Case Analyst` frames the decision and produces the final business case; `Research Analyst` gathers or synthesizes the supporting evidence needed for the comparison.
+
+    Happy path: start with the earliest unfinished stage, require a clear decision framing before collecting evidence, then use `Research Analyst` to gather the supporting facts and route the result back to `Business Case Analyst` for the final recommendation. Lack of a writable workspace is not blocking for this playbook because the final product is the business case itself.
+
+    Unhappy path: if the options are undefined, if evidence is too weak to support a recommendation, or if assumptions are being presented as facts, keep the current stage open and require the handoff to label those issues explicitly. Do not manufacture certainty or precision where the evidence is only directional.
+
+    Completion rules: finish only after the final business case records the decision, options, criteria, evidence and assumptions, recommendation, and confidence. Stage-specific closure for this playbook: `decision-framing` stays open until the decision and options are explicit; `evidence-collection` stays open until the supporting evidence is assembled and bounded; `recommendation` stays open until the final recommendation follows from the recorded evidence. Guided closure rule: prefer a cautious recommendation with explicit assumptions over a polished but unsupported answer.
+  parameters:
+    - slug: decision_question
+      title: Decision Question
+      required: true
+    - slug: options_in_scope
+      title: Options In Scope
+      required: true
+    - slug: success_criteria
+      title: Success Criteria
+      required: true
+  roles:
+    - Research Analyst
+    - Business Case Analyst
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: decision-framing
+      goal: The decision, options, and criteria are explicit.
+      involves:
+        - Business Case Analyst
+    - name: evidence-collection
+      goal: Supporting evidence and constraints are assembled.
+      involves:
+        - Research Analyst
+    - name: recommendation
+      goal: A decision-ready business case is documented.
+      involves:
+        - Business Case Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 4
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

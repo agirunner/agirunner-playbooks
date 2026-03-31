@@ -3,30 +3,7 @@ name: Software Developer
 category: engineering
 stability: experimental
 description: Implements scoped code or configuration changes and records verification evidence.
-allowed_tools:
-  - file_read
-  - file_list
-  - file_write
-  - file_edit
-  - grep
-  - glob
-  - tool_search
-  - shell_exec
-  - git_status
-  - git_diff
-  - git_log
-  - git_commit
-  - git_push
-  - artifact_upload
-  - artifact_list
-  - artifact_read
-  - memory_read
-  - memory_search
-  - memory_write
-  - web_fetch
-  - escalate
-  - submit_handoff
-  - read_predecessor_handoff
+allowed_tools: all-specialist-tools
 skill_ids:
   - bug-reproduction-discipline
   - regression-proof-required

@@ -1,0 +1,77 @@
+id: sop-creation
+version: 1.0.0
+name: SOP Creation
+slug: sop-creation
+category: operations
+stability: stable
+description: Draft a standard operating procedure with scope, owners, steps, and exception handling.
+outcome: A decision-ready SOP draft exists with clear ownership, steps, and exception handling.
+lifecycle: planned
+tags:
+  - operations
+  - sop
+  - process
+specialist_ids:
+  - process-designer
+  - content-editor
+definition:
+  outcome: A decision-ready SOP draft exists with clear ownership, steps, and exception handling.
+  process_instructions: |
+    Run the workflow through the authored stages `discovery`, `procedure-draft`, and `editorial-review`. Treat each stage as a distinct checkpoint of operational clarity: `discovery` exists to define the procedure boundary, owner, and success condition; `procedure-draft` exists to turn that scope into an operator-usable SOP; `editorial-review` exists to remove ambiguity and ensure the draft is understandable by the intended audience.
+
+    Use these roles deliberately: `Process Designer` defines and drafts the SOP; `Content Editor` reviews the draft for clarity, consistency, and missing assumptions.
+
+    Happy path: start at the earliest unfinished stage, require `Process Designer` to define the scope and draft the procedure, then route the completed draft to `Content Editor` for review before closure. The produced SOP should separate trigger, owner, inputs, steps, exception handling, and completion expectations. If a writable documentation workspace exists, persist the draft there; otherwise a complete advisory draft in the handoff is acceptable.
+
+    Unhappy path: if the draft leaves ownership vague, mixes multiple abstraction levels, assumes tribal knowledge, or omits exception handling that materially affects execution, keep the current stage open and send the work back to `Process Designer` with the cited gaps. If `Content Editor` finds clarity problems without changing the meaning of the procedure, route the work back for revision instead of closing on an ambiguous document.
+
+    Completion rules: finish only after the SOP draft is coherent, internally consistent, and suitable for operator review or adoption. Stage-specific closure for this playbook: `discovery` stays open until scope, owner, inputs, and expected output are explicit; `procedure-draft` stays open until a full SOP draft exists; `editorial-review` stays open until the draft either passes review or receives concrete revision feedback. Guided closure rule: the orchestrator may accept a draft with clearly labeled open questions when the main procedure is usable, but it must not hide missing control points or unsafe ambiguity.
+  parameters:
+    - slug: procedure_goal
+      title: Procedure Goal
+      required: true
+    - slug: current_process_context
+      title: Current Process Context
+      required: true
+    - slug: target_audience
+      title: Target Audience
+      required: true
+  roles:
+    - Process Designer
+    - Content Editor
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: discovery
+      goal: The procedure scope, owner, and success condition are clear.
+      involves:
+        - Process Designer
+    - name: procedure-draft
+      goal: A complete SOP draft exists.
+      involves:
+        - Process Designer
+    - name: editorial-review
+      goal: The SOP is clear enough for operator review or adoption.
+      involves:
+        - Content Editor
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 4
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

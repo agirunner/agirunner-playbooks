@@ -1,0 +1,77 @@
+id: vendor-evaluation
+version: 1.0.0
+name: Vendor Evaluation
+slug: vendor-evaluation
+category: research
+stability: stable
+description: Compare vendors against explicit requirements, risks, and decision criteria.
+outcome: A vendor comparison exists with criteria, risks, unknowns, and a recommendation or shortlist.
+lifecycle: planned
+tags:
+  - research
+  - procurement
+  - evaluation
+specialist_ids:
+  - vendor-analyst
+  - business-case-analyst
+definition:
+  outcome: A vendor comparison exists with criteria, risks, unknowns, and a recommendation or shortlist.
+  process_instructions: |
+    Run the workflow through the authored stages `requirements-framing`, `vendor-comparison`, and `recommendation`. Treat each stage as a distinct checkpoint of decision quality: `requirements-framing` exists to define what matters in the buying decision; `vendor-comparison` exists to compare the available options against those criteria; `recommendation` exists to turn the comparison into a shortlist or recommended option with clear tradeoffs.
+
+    Use these roles deliberately: `Vendor Analyst` compares the candidate vendors against the stated criteria; `Business Case Analyst` converts that comparison into a decision-ready recommendation.
+
+    Happy path: start with the earliest unfinished stage, require the requirements and constraints to be explicit before ranking vendors, use an explicit comparison framework when the criteria set is large, and route the comparison to `Business Case Analyst` only after the tradeoff picture is clear enough to support a recommendation.
+
+    Unhappy path: if must-have requirements are missing, if marketing claims are treated as proof, or if decision-critical unknowns remain unresolved, keep the current stage open and require the handoff to name those gaps directly. Do not fabricate ranking precision that the evidence cannot support. If the strongest honest answer is “shortlist only,” record that instead of overstating certainty.
+
+    Completion rules: finish only after the final output records the decision scope, evaluation criteria, vendor comparison, material risks, unknowns, and recommendation or shortlist. Stage-specific closure for this playbook: `requirements-framing` stays open until criteria and constraints are explicit; `vendor-comparison` stays open until the options are compared against those criteria; `recommendation` stays open until the decision guidance is backed by the recorded evidence. Guided closure rule: prefer a well-bounded shortlist with explicit unknowns over a forced single-winner conclusion.
+  parameters:
+    - slug: decision_scope
+      title: Decision Scope
+      required: true
+    - slug: evaluation_criteria
+      title: Evaluation Criteria
+      required: true
+    - slug: candidate_vendors
+      title: Candidate Vendors
+      required: true
+  roles:
+    - Vendor Analyst
+    - Business Case Analyst
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: requirements-framing
+      goal: The decision scope, criteria, and constraints are explicit.
+      involves:
+        - Business Case Analyst
+    - name: vendor-comparison
+      goal: Candidate vendors are compared against the stated criteria.
+      involves:
+        - Vendor Analyst
+    - name: recommendation
+      goal: A recommendation or shortlist is documented with tradeoffs.
+      involves:
+        - Business Case Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 4
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

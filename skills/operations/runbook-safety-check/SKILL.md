@@ -15,6 +15,7 @@ Make sure an operator can follow the runbook safely under pressure.
 
 ## Do
 - Check prerequisites, permissions, and environmental assumptions.
+- Check validation steps, communication checkpoints, and blast-radius notes.
 - Check whether rollback or recovery steps are explicit.
 - Check whether irreversible actions are clearly marked.
 - Check whether the sequence is safe if an operator joins halfway through.

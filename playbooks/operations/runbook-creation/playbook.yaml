@@ -1,0 +1,77 @@
+id: runbook-creation
+version: 1.0.0
+name: Runbook Creation
+slug: runbook-creation
+category: operations
+stability: stable
+description: Draft a safe operational runbook with prerequisites, rollback, and validation steps.
+outcome: A runbook draft exists with safe sequencing, prerequisites, rollback guidance, and validation steps.
+lifecycle: planned
+tags:
+  - operations
+  - runbook
+  - incident-response
+specialist_ids:
+  - process-designer
+  - content-editor
+definition:
+  outcome: A runbook draft exists with safe sequencing, prerequisites, rollback guidance, and validation steps.
+  process_instructions: |
+    Run the workflow through the authored stages `scope-and-risks`, `runbook-draft`, and `editorial-review`. Treat each stage as a distinct checkpoint of operational safety: `scope-and-risks` exists to define the operating goal, prerequisites, and risk profile; `runbook-draft` exists to produce the actual sequence of operator actions; `editorial-review` exists to confirm clarity, rollback coverage, and safe operator handoff.
+
+    Use these roles deliberately: `Process Designer` defines the runbook and its safety assumptions; `Content Editor` checks whether the drafted runbook is clear enough for operator use under pressure.
+
+    Happy path: start with the earliest unfinished stage, require `Process Designer` to identify prerequisites, irreversible steps, rollback expectations, validation checks, and communication checkpoints before or during drafting, then route the draft to `Content Editor` for clarity review. If a writable documentation workspace exists, persist the draft there; otherwise a complete advisory draft in the handoff is acceptable.
+
+    Unhappy path: if prerequisites are missing, rollback is undefined, validation is weak, or the sequence assumes too much unstated operator context, keep the current stage open and return the work to `Process Designer`. If the safest honest answer is that rollback is impossible, the runbook must say so explicitly and call out the approval burden rather than hiding the risk.
+
+    Completion rules: finish only after the runbook clearly identifies prerequisites, sequence, validation, rollback or recovery notes, and operator caution points. Stage-specific closure for this playbook: `scope-and-risks` stays open until the operating goal and safety constraints are explicit; `runbook-draft` stays open until the runbook can be followed step by step; `editorial-review` stays open until the draft is understandable and the major safety gaps have been resolved or clearly called out. Guided closure rule: a runbook may close with labeled open questions if the main flow is safe and actionable, but not if missing information changes the safety profile materially.
+  parameters:
+    - slug: operating_goal
+      title: Operating Goal
+      required: true
+    - slug: system_or_process
+      title: System Or Process
+      required: true
+    - slug: risk_context
+      title: Risk Context
+      required: true
+  roles:
+    - Process Designer
+    - Content Editor
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: scope-and-risks
+      goal: The goal, prerequisites, and safety constraints are clear.
+      involves:
+        - Process Designer
+    - name: runbook-draft
+      goal: A usable runbook draft exists with validation and rollback guidance.
+      involves:
+        - Process Designer
+    - name: editorial-review
+      goal: The runbook is clear enough for operator use.
+      involves:
+        - Content Editor
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 4
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

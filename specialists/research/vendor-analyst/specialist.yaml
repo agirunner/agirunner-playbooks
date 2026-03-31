@@ -3,22 +3,7 @@ name: Vendor Analyst
 category: research
 stability: stable
 description: Compares vendors against explicit requirements, costs, and operational risks.
-allowed_tools:
-  - file_read
-  - file_list
-  - grep
-  - glob
-  - tool_search
-  - artifact_upload
-  - artifact_list
-  - artifact_read
-  - memory_read
-  - memory_search
-  - memory_write
-  - web_fetch
-  - escalate
-  - submit_handoff
-  - read_predecessor_handoff
+allowed_tools: all-specialist-tools
 skill_ids:
   - vendor-assessment
   - research-methodology

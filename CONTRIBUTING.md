@@ -36,8 +36,10 @@ Do not add scripts, generators, or build-only infrastructure here.
 
 1. Create `specialists/<category>/<slug>/specialist.yaml`.
 2. Author the full `system_prompt` in YAML.
-3. Link only reviewed shared skills.
-4. Register the specialist in `catalog/specialists.yaml`.
+3. Default to `allowed_tools: all-specialist-tools` unless the
+   specialist truly needs a tighter restriction.
+4. Link only reviewed shared skills.
+5. Register the specialist in `catalog/specialists.yaml`.
 
 ## Adding A Playbook
 

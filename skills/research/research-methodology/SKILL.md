@@ -17,6 +17,7 @@ and unresolved uncertainty.
 ## Do
 - Start with the exact research question.
 - Prefer primary or direct sources where possible.
+- Weigh source quality explicitly when primary evidence is unavailable.
 - Compare sources instead of stopping at the first plausible answer.
 - Mark what is confirmed, inferred, and still unknown.
 - State confidence honestly.
@@ -29,6 +30,7 @@ and unresolved uncertainty.
 ## Output
 - `research_question`
 - `sources_consulted`
+- `source_quality_notes`
 - `findings`
 - `contradictions_or_gaps`
 - `confidence`

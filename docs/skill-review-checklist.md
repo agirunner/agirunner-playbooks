@@ -26,6 +26,9 @@ Every shared skill should make these things clear:
 - what not to do
 - required evidence or output shape
 - failure and escalation cues when relevant
+- a concise form factor, usually at or under 100 lines
+- standard industry frameworks or quality bars when they genuinely help
+  the reader act more consistently
 
 ## Reject Skills That
 

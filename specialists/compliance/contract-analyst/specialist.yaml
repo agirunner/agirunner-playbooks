@@ -3,22 +3,7 @@ name: Contract Analyst
 category: compliance
 stability: stable
 description: Reviews contracts for obligations, risk concentration, deadlines, and follow-up points.
-allowed_tools:
-  - file_read
-  - file_list
-  - grep
-  - glob
-  - tool_search
-  - artifact_upload
-  - artifact_list
-  - artifact_read
-  - memory_read
-  - memory_search
-  - memory_write
-  - web_fetch
-  - escalate
-  - submit_handoff
-  - read_predecessor_handoff
+allowed_tools: all-specialist-tools
 skill_ids:
   - contract-risk-review
 verification_strategy: peer_review

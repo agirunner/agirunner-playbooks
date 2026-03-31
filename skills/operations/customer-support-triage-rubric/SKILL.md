@@ -18,6 +18,8 @@ priority and ownership.
 - Separate bug report, usage question, access issue, billing issue, and
   feature request.
 - Identify urgency, impact, and whether the issue blocks business use.
+- Use impact, urgency, and any stated service commitments or SLA context
+  instead of customer tone alone.
 - Ask for missing facts only when they materially change priority or routing.
 - Recommend the next owner and the next visible action.
 

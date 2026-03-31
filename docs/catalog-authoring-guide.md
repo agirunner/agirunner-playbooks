@@ -26,6 +26,7 @@ Specialists:
 - include metadata, tool contract, shared skill references, and the full
   `system_prompt`
 - should be reusable across multiple playbooks
+- should normally use `allowed_tools: all-specialist-tools`
 
 Playbooks:
 - live at `playbooks/<category>/<slug>/playbook.yaml`
@@ -70,3 +71,15 @@ Use these companion docs during review:
 - `docs/playbook-quality-bar.md`
 - `docs/skill-review-checklist.md`
 - `docs/specialist-authoring-guide.md`
+
+## Tool Profiles
+
+Most specialists should declare:
+
+```yaml
+allowed_tools: all-specialist-tools
+```
+
+That alias resolves through `catalog/tool-profiles.yaml`. Use an
+explicit tool list only when the specialist genuinely needs a narrower
+tool contract than the shared default.

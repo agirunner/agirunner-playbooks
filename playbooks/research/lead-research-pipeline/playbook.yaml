@@ -1,0 +1,75 @@
+id: lead-research-pipeline
+version: 1.0.0
+name: Lead Research Pipeline
+slug: lead-research-pipeline
+category: research
+stability: stable
+description: Qualify an account or prospect with fit, urgency, risk, and next-step guidance.
+outcome: A lead research packet exists with qualification level, supporting evidence, and next-step guidance.
+lifecycle: planned
+tags:
+  - research
+  - lead-qualification
+  - go-to-market
+specialist_ids:
+  - lead-research-analyst
+definition:
+  outcome: A lead research packet exists with qualification level, supporting evidence, and next-step guidance.
+  process_instructions: |
+    Run the workflow through the authored stages `account-framing`, `evidence-gathering`, and `qualification`. Treat each stage as a distinct checkpoint of commercial usefulness: `account-framing` exists to define the target and qualification goal; `evidence-gathering` exists to assemble facts and signals about fit, urgency, and blockers; `qualification` exists to turn those signals into a qualification level and a recommended next step.
+
+    Use these roles deliberately: `Lead Research Analyst` researches the account, weighs the available signals, and prepares the qualification recommendation.
+
+    Happy path: start with the earliest unfinished stage, dispatch `Lead Research Analyst`, and require the handoff to distinguish hard facts from softer inferences. Advance only when the account context and qualification goal are clear enough that the final recommendation will be actionable.
+
+    Unhappy path: if the evidence is too weak to justify a strong qualification decision, keep the current stage open and require the output to name the missing information explicitly. Do not treat profile facts alone as proof of urgency or buying intent. If the stronger recommendation is disqualify, defer, or gather more evidence, record that directly.
+
+    Completion rules: finish only after the final packet records the account summary, fit signals, urgency signals, risks or gaps, qualification level, and recommended next step. Stage-specific closure for this playbook: `account-framing` stays open until the target and goal are explicit; `evidence-gathering` stays open until the relevant signals have been assembled; `qualification` stays open until the recommendation is supported by the evidence. Guided closure rule: preserve uncertainty honestly and prefer a cautious route over inflated qualification confidence.
+  parameters:
+    - slug: target_account
+      title: Target Account
+      required: true
+    - slug: qualification_goal
+      title: Qualification Goal
+      required: true
+    - slug: available_context
+      title: Available Context
+      required: false
+  roles:
+    - Lead Research Analyst
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: account-framing
+      goal: The target account and qualification goal are explicit.
+      involves:
+        - Lead Research Analyst
+    - name: evidence-gathering
+      goal: Relevant fit, urgency, and risk signals are assembled.
+      involves:
+        - Lead Research Analyst
+    - name: qualification
+      goal: The qualification level and next-step guidance are documented.
+      involves:
+        - Lead Research Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

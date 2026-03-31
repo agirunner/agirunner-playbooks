@@ -1,0 +1,75 @@
+id: research-analysis
+version: 1.0.0
+name: Research Analysis
+slug: research-analysis
+category: research
+stability: stable
+description: Produce a grounded research synthesis with explicit evidence, contradictions, and confidence.
+outcome: A research synthesis exists with evidence, contradictions, confidence, and a recommendation or next step.
+lifecycle: planned
+tags:
+  - research
+  - analysis
+  - synthesis
+specialist_ids:
+  - research-analyst
+definition:
+  outcome: A research synthesis exists with evidence, contradictions, confidence, and a recommendation or next step.
+  process_instructions: |
+    Run the workflow through the authored stages `question-framing`, `source-review`, and `synthesis`. Treat each stage as a distinct checkpoint of research quality: `question-framing` exists to define the exact question and decision context; `source-review` exists to gather and compare evidence; `synthesis` exists to turn the evidence into findings, contradictions, confidence, and a recommendation or next step.
+
+    Use these roles deliberately: `Research Analyst` defines the research question, examines the available sources, and produces the final synthesis.
+
+    Happy path: start with the earliest unfinished stage, dispatch `Research Analyst`, and move forward only when the research question is explicit and the source base is strong enough to support a synthesis. Prefer primary or direct sources when possible, weigh source quality explicitly when they are unavailable, and record what remains uncertain.
+
+    Unhappy path: if the source base is weak, contradictory, or incomplete, keep the current stage open until the handoff makes those limits explicit. Do not close the playbook on vague confidence language or selective sourcing. If the strongest honest answer is “more research needed,” record that as the next step instead of manufacturing a definitive conclusion. Lack of a writable workspace is not blocking for this playbook.
+
+    Completion rules: finish only after the synthesis clearly states the question, sources consulted, findings, contradictions or gaps, confidence, and recommendation or next step. Stage-specific closure for this playbook: `question-framing` stays open until the question and decision context are explicit; `source-review` stays open until the available evidence has been compared; `synthesis` stays open until the final output is internally consistent and honest about uncertainty. Guided closure rule: follow the preferred stage order when useful, but prioritize an honest bounded answer over false precision.
+  parameters:
+    - slug: research_question
+      title: Research Question
+      required: true
+    - slug: decision_context
+      title: Decision Context
+      required: false
+    - slug: source_scope
+      title: Source Scope
+      required: false
+  roles:
+    - Research Analyst
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: question-framing
+      goal: The exact research question and decision context are explicit.
+      involves:
+        - Research Analyst
+    - name: source-review
+      goal: Evidence has been gathered and compared.
+      involves:
+        - Research Analyst
+    - name: synthesis
+      goal: Findings, confidence, and recommendation are documented.
+      involves:
+        - Research Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

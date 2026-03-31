@@ -32,6 +32,19 @@ The `system_prompt` should:
   versus advisory-only
 - tell the specialist when to escalate rather than invent missing facts
 
+## Tool Contract Standard
+
+Most specialists should declare:
+
+```yaml
+allowed_tools: all-specialist-tools
+```
+
+That shared profile is defined in `catalog/tool-profiles.yaml` and
+should include every specialist-safe tool while excluding orchestrator-
+only tools. Use an explicit array only when the specialist truly needs a
+smaller tool surface than the default profile.
+
 ## Reuse Standard
 
 Prefer shared skills for reusable techniques such as:

@@ -3,22 +3,7 @@ name: Policy Analyst
 category: compliance
 stability: stable
 description: Reviews policy text for obligations, conflicts, ambiguity, and process impact.
-allowed_tools:
-  - file_read
-  - file_list
-  - grep
-  - glob
-  - tool_search
-  - artifact_upload
-  - artifact_list
-  - artifact_read
-  - memory_read
-  - memory_search
-  - memory_write
-  - web_fetch
-  - escalate
-  - submit_handoff
-  - read_predecessor_handoff
+allowed_tools: all-specialist-tools
 skill_ids:
   - policy-analysis-rubric
 verification_strategy: peer_review

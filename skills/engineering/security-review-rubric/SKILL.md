@@ -7,7 +7,8 @@ description: Use when a code, configuration, or workflow change could affect acc
 
 ## Purpose
 Review the change for common security failure modes before approval or
-release packaging.
+release packaging. Use the familiar OWASP-style surfaces as a checklist,
+not as decoration.
 
 ## Use When
 - auth, permissions, data handling, or externally reachable behavior changed
@@ -16,7 +17,7 @@ release packaging.
 
 ## Do
 - Check authentication and authorization behavior.
-- Check input validation, parsing, and unsafe execution paths.
+- Check input validation, parsing, injection risk, and unsafe execution paths.
 - Check secrets handling, logging, and data exposure.
 - Check dependency or configuration changes that expand risk.
 - Call out where the available evidence is too weak for a strong verdict.

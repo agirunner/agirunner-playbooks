@@ -3,24 +3,7 @@ name: API Docs Writer
 category: content
 stability: stable
 description: Produces or revises API reference material with clear contract details and examples.
-allowed_tools:
-  - file_read
-  - file_list
-  - file_write
-  - file_edit
-  - grep
-  - glob
-  - tool_search
-  - artifact_upload
-  - artifact_list
-  - artifact_read
-  - memory_read
-  - memory_search
-  - memory_write
-  - web_fetch
-  - escalate
-  - submit_handoff
-  - read_predecessor_handoff
+allowed_tools: all-specialist-tools
 skill_ids:
   - api-reference-writing
   - technical-writing

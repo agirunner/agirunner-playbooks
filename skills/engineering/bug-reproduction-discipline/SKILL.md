@@ -18,6 +18,7 @@ deliberate instead of guessed.
 
 ## Do
 - Restate the claimed defect in one sentence.
+- Name the trigger, environment, and smallest known path to the failure.
 - Identify the exact evidence available now: logs, tests, reports,
   screenshots, code paths, or operator notes.
 - Reproduce the issue directly when possible.
@@ -34,6 +35,7 @@ deliberate instead of guessed.
 ## Output
 - `observed_behavior`
 - `expected_behavior`
+- `reproduction_path`
 - `evidence_used`
 - `current_scope`
 - `confidence`

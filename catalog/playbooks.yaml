@@ -1,1 +1,68 @@
-playbooks: []
+playbooks:
+  - id: customer-support-triage
+    name: Customer Support Triage
+    category: operations
+    stability: stable
+    version: 1.0.0
+    summary: Classify, prioritize, and route an inbound support request with a clear next action.
+    specialist_ids:
+      - support-triage-analyst
+    path: playbooks/operations/customer-support-triage/playbook.yaml
+  - id: sop-creation
+    name: SOP Creation
+    category: operations
+    stability: stable
+    version: 1.0.0
+    summary: Draft a standard operating procedure with scope, owners, steps, and exception handling.
+    specialist_ids:
+      - process-designer
+      - content-editor
+    path: playbooks/operations/sop-creation/playbook.yaml
+  - id: runbook-creation
+    name: Runbook Creation
+    category: operations
+    stability: stable
+    version: 1.0.0
+    summary: Draft a safe operational runbook with prerequisites, rollback, and validation steps.
+    specialist_ids:
+      - process-designer
+      - content-editor
+    path: playbooks/operations/runbook-creation/playbook.yaml
+  - id: research-analysis
+    name: Research Analysis
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Produce a grounded research synthesis with explicit evidence, contradictions, and confidence.
+    specialist_ids:
+      - research-analyst
+    path: playbooks/research/research-analysis/playbook.yaml
+  - id: lead-research-pipeline
+    name: Lead Research Pipeline
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Qualify an account or prospect with fit, urgency, risk, and next-step guidance.
+    specialist_ids:
+      - lead-research-analyst
+    path: playbooks/research/lead-research-pipeline/playbook.yaml
+  - id: vendor-evaluation
+    name: Vendor Evaluation
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Compare vendors against explicit requirements, risks, and decision criteria.
+    specialist_ids:
+      - vendor-analyst
+      - business-case-analyst
+    path: playbooks/research/vendor-evaluation/playbook.yaml
+  - id: business-case
+    name: Business Case
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Structure a decision-ready business case with options, tradeoffs, and recommendation logic.
+    specialist_ids:
+      - research-analyst
+      - business-case-analyst
+    path: playbooks/research/business-case/playbook.yaml

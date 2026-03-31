@@ -16,6 +16,8 @@ clarity, tests, and release risk.
 
 ## Do
 - Check whether the change solves the stated problem.
+- Review across the standard dimensions that usually matter: correctness,
+  testability, maintainability, security, and operability.
 - Check whether tests or other verification actually cover the changed
   behavior.
 - Check whether names, boundaries, and side effects remain readable.
