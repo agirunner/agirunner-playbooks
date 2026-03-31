@@ -1,0 +1,75 @@
+id: policy-review
+version: 1.0.0
+name: Policy Review
+slug: policy-review
+category: compliance
+stability: stable
+description: Review policy text for obligations, ambiguity, conflicts, and process impact.
+outcome: A policy review exists with obligations, ambiguities, process impacts, and recommended follow-up.
+lifecycle: planned
+tags:
+  - compliance
+  - policy
+  - governance
+specialist_ids:
+  - policy-analyst
+definition:
+  outcome: A policy review exists with obligations, ambiguities, process impacts, and recommended follow-up.
+  process_instructions: |
+    Run the workflow through the authored stages `scope-mapping`, `obligation-review`, and `follow-up`. Treat each stage as a distinct checkpoint of policy understanding: `scope-mapping` exists to define what the policy governs and who it applies to; `obligation-review` exists to extract duties, prohibitions, ambiguities, and conflicts; `follow-up` exists to record process impact and any unresolved questions.
+
+    Use these roles deliberately: `Policy Analyst` reads the policy text, extracts what matters operationally, and prepares the final review packet.
+
+    Preferred flow: start with the earliest unfinished stage, dispatch `Policy Analyst`, and advance only when the policy scope is explicit enough that obligations and process impacts can be interpreted consistently. The final output should separate policy text from interpretation.
+
+    Recovery and exception handling: if the policy text is ambiguous, contradictory, or incomplete, keep the current stage open until the handoff records those issues directly. Do not close the playbook on a polished summary that hides missing enforcement detail or unresolved interpretation. Lack of a writable workspace is not blocking for this playbook.
+
+    Completion rules: finish only after the final review records scope, obligations, prohibitions, ambiguities or conflicts, process impact, and recommended follow-up. Stage-specific closure for this playbook: `scope-mapping` stays open until applicability and policy subject are explicit; `obligation-review` stays open until the material duties and ambiguities are extracted; `follow-up` stays open until process impacts and next actions are recorded. Guided closure rule: prefer a bounded review with explicit open questions over false legal certainty.
+  parameters:
+    - slug: policy_subject
+      title: Policy Subject
+      required: true
+    - slug: review_goal
+      title: Review Goal
+      required: true
+    - slug: source_material_context
+      title: Source Material Context
+      required: false
+  roles:
+    - Policy Analyst
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: scope-mapping
+      goal: The policy subject and applicability are explicit.
+      involves:
+        - Policy Analyst
+    - name: obligation-review
+      goal: Material obligations, prohibitions, and ambiguities are extracted.
+      involves:
+        - Policy Analyst
+    - name: follow-up
+      goal: Process impact and next actions are documented.
+      involves:
+        - Policy Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

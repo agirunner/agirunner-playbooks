@@ -1,0 +1,77 @@
+id: api-documentation
+version: 1.0.0
+name: API Documentation
+slug: api-documentation
+category: content
+stability: stable
+description: Draft or revise API reference material with editorial review and contract caveats.
+outcome: A reviewed API reference draft exists with contract details, examples, caveats, and follow-up notes.
+lifecycle: planned
+tags:
+  - content
+  - api
+  - reference
+specialist_ids:
+  - api-docs-writer
+  - content-editor
+definition:
+  outcome: A reviewed API reference draft exists with contract details, examples, caveats, and follow-up notes.
+  process_instructions: |
+    Run the workflow through the authored stages `contract-review`, `reference-draft`, and `editorial-review`. Treat each stage as a distinct checkpoint of API documentation quality: `contract-review` exists to establish the source truth for the API contract; `reference-draft` exists to produce the actual reference material; `editorial-review` exists to catch clarity issues, unsupported claims, and inconsistent language before closure.
+
+    Use these roles deliberately: `API Docs Writer` drafts the reference material; `Content Editor` reviews it for clarity, consistency, and factual support.
+
+    Preferred flow: start with the earliest unfinished stage, require `API Docs Writer` to anchor the draft to the actual contract before writing, then route the result to `Content Editor` for review. If a writable documentation workspace exists, persist the draft there; otherwise a complete advisory draft in the handoff is acceptable.
+
+    Recovery and exception handling: if required parameters, auth requirements, error behavior, or other contract-critical details are unclear, keep the current stage open and label the uncertainty directly. Do not close on documentation that treats examples as the only place where required behavior is described, and do not describe unstable implementation details as firm API guarantees.
+
+    Completion rules: finish only after the final draft records endpoint purpose, request contract, response contract, authentication notes, error notes, examples, and important caveats. Stage-specific closure for this playbook: `contract-review` stays open until the available source truth is explicit; `reference-draft` stays open until a usable reference draft exists; `editorial-review` stays open until blocking inaccuracies are resolved or clearly called out. Guided closure rule: prefer an honest draft with labeled contract unknowns over polished but false certainty.
+  parameters:
+    - slug: api_surface
+      title: API Surface
+      required: true
+    - slug: target_reader
+      title: Target Reader
+      required: true
+    - slug: source_material_context
+      title: Source Material Context
+      required: false
+  roles:
+    - API Docs Writer
+    - Content Editor
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: contract-review
+      goal: The available API source truth and limits are explicit.
+      involves:
+        - API Docs Writer
+    - name: reference-draft
+      goal: A usable API reference draft exists.
+      involves:
+        - API Docs Writer
+    - name: editorial-review
+      goal: The draft is consistent and factually supportable.
+      involves:
+        - Content Editor
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 4
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

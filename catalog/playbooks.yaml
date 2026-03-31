@@ -66,3 +66,51 @@ playbooks:
       - research-analyst
       - business-case-analyst
     path: playbooks/research/business-case/playbook.yaml
+  - id: policy-review
+    name: Policy Review
+    category: compliance
+    stability: stable
+    version: 1.0.0
+    summary: Review policy text for obligations, ambiguity, conflicts, and process impact.
+    specialist_ids:
+      - policy-analyst
+    path: playbooks/compliance/policy-review/playbook.yaml
+  - id: contract-review
+    name: Contract Review
+    category: compliance
+    stability: stable
+    version: 1.0.0
+    summary: Review a contract for obligations, deadlines, risk concentration, and follow-up items.
+    specialist_ids:
+      - contract-analyst
+    path: playbooks/compliance/contract-review/playbook.yaml
+  - id: technical-documentation
+    name: Technical Documentation
+    category: content
+    stability: stable
+    version: 1.0.0
+    summary: Draft or revise task-oriented technical documentation with editorial review.
+    specialist_ids:
+      - technical-writer
+      - content-editor
+    path: playbooks/content/technical-documentation/playbook.yaml
+  - id: api-documentation
+    name: API Documentation
+    category: content
+    stability: stable
+    version: 1.0.0
+    summary: Draft or revise API reference material with editorial review and contract caveats.
+    specialist_ids:
+      - api-docs-writer
+      - content-editor
+    path: playbooks/content/api-documentation/playbook.yaml
+  - id: content-pipeline
+    name: Content Pipeline
+    category: content
+    stability: stable
+    version: 1.0.0
+    summary: Turn a content brief into a reviewed draft ready for publication or handoff.
+    specialist_ids:
+      - technical-writer
+      - content-editor
+    path: playbooks/content/content-pipeline/playbook.yaml

@@ -1,0 +1,75 @@
+id: contract-review
+version: 1.0.0
+name: Contract Review
+slug: contract-review
+category: compliance
+stability: stable
+description: Review a contract for obligations, deadlines, risk concentration, and follow-up items.
+outcome: A contract review exists with key obligations, risk areas, dates, and recommended follow-up.
+lifecycle: planned
+tags:
+  - compliance
+  - contract
+  - risk
+specialist_ids:
+  - contract-analyst
+definition:
+  outcome: A contract review exists with key obligations, risk areas, dates, and recommended follow-up.
+  process_instructions: |
+    Run the workflow through the authored stages `term-extraction`, `risk-review`, and `follow-up`. Treat each stage as a distinct checkpoint of contract understanding: `term-extraction` exists to identify the contract terms that matter; `risk-review` exists to analyze obligations, deadlines, liability concentration, and operational exposure; `follow-up` exists to capture unresolved questions and recommended next steps.
+
+    Use these roles deliberately: `Contract Analyst` reads the agreement, extracts the material clauses, and prepares the final risk-focused review.
+
+    Preferred flow: start with the earliest unfinished stage, dispatch `Contract Analyst`, and move forward only when the contractual subject and review goal are explicit enough that the resulting risk analysis will be useful to the stakeholder.
+
+    Recovery and exception handling: if the agreement language is ambiguous, incomplete, or dependent on missing exhibits or schedules, keep the current stage open until the handoff records that limitation explicitly. Do not collapse legal text, negotiation advice, and operational follow-up into one unlabeled blob. Lack of a writable workspace is not blocking for this playbook.
+
+    Completion rules: finish only after the final review records key obligations, risk areas, dates and deadlines, open questions, and recommended follow-up. Stage-specific closure for this playbook: `term-extraction` stays open until the relevant clauses are identified; `risk-review` stays open until the material risks and exposures are analyzed; `follow-up` stays open until the unresolved questions and next actions are explicit. Guided closure rule: prefer an honest bounded review with clearly labeled uncertainty over overconfident contract interpretation.
+  parameters:
+    - slug: contract_subject
+      title: Contract Subject
+      required: true
+    - slug: review_goal
+      title: Review Goal
+      required: true
+    - slug: counterpart_context
+      title: Counterpart Context
+      required: false
+  roles:
+    - Contract Analyst
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: term-extraction
+      goal: Relevant clauses and obligations are identified.
+      involves:
+        - Contract Analyst
+    - name: risk-review
+      goal: Material risk concentration and exposure are analyzed.
+      involves:
+        - Contract Analyst
+    - name: follow-up
+      goal: Dates, open questions, and next actions are documented.
+      involves:
+        - Contract Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

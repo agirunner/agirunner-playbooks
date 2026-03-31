@@ -21,9 +21,9 @@ definition:
 
     Use these roles deliberately: `Business Case Analyst` frames the decision and produces the final business case; `Research Analyst` gathers or synthesizes the supporting evidence needed for the comparison.
 
-    Happy path: start with the earliest unfinished stage, require a clear decision framing before collecting evidence, then use `Research Analyst` to gather the supporting facts and route the result back to `Business Case Analyst` for the final recommendation. Lack of a writable workspace is not blocking for this playbook because the final product is the business case itself.
+    Preferred flow: start with the earliest unfinished stage, require a clear decision framing before collecting evidence, then use `Research Analyst` to gather the supporting facts and route the result back to `Business Case Analyst` for the final recommendation. Lack of a writable workspace is not blocking for this playbook because the final product is the business case itself.
 
-    Unhappy path: if the options are undefined, if evidence is too weak to support a recommendation, or if assumptions are being presented as facts, keep the current stage open and require the handoff to label those issues explicitly. Do not manufacture certainty or precision where the evidence is only directional.
+    Recovery and exception handling: if the options are undefined, if evidence is too weak to support a recommendation, or if assumptions are being presented as facts, keep the current stage open and require the handoff to label those issues explicitly. Do not manufacture certainty or precision where the evidence is only directional.
 
     Completion rules: finish only after the final business case records the decision, options, criteria, evidence and assumptions, recommendation, and confidence. Stage-specific closure for this playbook: `decision-framing` stays open until the decision and options are explicit; `evidence-collection` stays open until the supporting evidence is assembled and bounded; `recommendation` stays open until the final recommendation follows from the recorded evidence. Guided closure rule: prefer a cautious recommendation with explicit assumptions over a polished but unsupported answer.
   parameters:

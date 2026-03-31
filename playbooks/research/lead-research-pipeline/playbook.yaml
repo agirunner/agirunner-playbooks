@@ -20,9 +20,9 @@ definition:
 
     Use these roles deliberately: `Lead Research Analyst` researches the account, weighs the available signals, and prepares the qualification recommendation.
 
-    Happy path: start with the earliest unfinished stage, dispatch `Lead Research Analyst`, and require the handoff to distinguish hard facts from softer inferences. Advance only when the account context and qualification goal are clear enough that the final recommendation will be actionable.
+    Preferred flow: start with the earliest unfinished stage, dispatch `Lead Research Analyst`, and require the handoff to distinguish hard facts from softer inferences. Advance only when the account context and qualification goal are clear enough that the final recommendation will be actionable.
 
-    Unhappy path: if the evidence is too weak to justify a strong qualification decision, keep the current stage open and require the output to name the missing information explicitly. Do not treat profile facts alone as proof of urgency or buying intent. If the stronger recommendation is disqualify, defer, or gather more evidence, record that directly.
+    Recovery and exception handling: if the evidence is too weak to justify a strong qualification decision, keep the current stage open and require the output to name the missing information explicitly. Do not treat profile facts alone as proof of urgency or buying intent. If the stronger recommendation is disqualify, defer, or gather more evidence, record that directly.
 
     Completion rules: finish only after the final packet records the account summary, fit signals, urgency signals, risks or gaps, qualification level, and recommended next step. Stage-specific closure for this playbook: `account-framing` stays open until the target and goal are explicit; `evidence-gathering` stays open until the relevant signals have been assembled; `qualification` stays open until the recommendation is supported by the evidence. Guided closure rule: preserve uncertainty honestly and prefer a cautious route over inflated qualification confidence.
   parameters:

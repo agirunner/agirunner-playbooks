@@ -1,0 +1,77 @@
+id: content-pipeline
+version: 1.0.0
+name: Content Pipeline
+slug: content-pipeline
+category: content
+stability: stable
+description: Turn a content brief into a reviewed draft ready for publication or handoff.
+outcome: A reviewed content draft exists with a clear audience, core message, and next publication step.
+lifecycle: planned
+tags:
+  - content
+  - editorial
+  - publishing
+specialist_ids:
+  - technical-writer
+  - content-editor
+definition:
+  outcome: A reviewed content draft exists with a clear audience, core message, and next publication step.
+  process_instructions: |
+    Run the workflow through the authored stages `brief-framing`, `draft`, and `editorial-review`. Treat each stage as a distinct checkpoint of content quality: `brief-framing` exists to define audience, purpose, and source truth; `draft` exists to produce the actual content draft; `editorial-review` exists to resolve clarity, consistency, and factual issues before closure.
+
+    Use these roles deliberately: `Technical Writer` turns the brief into a usable draft; `Content Editor` reviews and refines the draft before final handoff.
+
+    Preferred flow: start with the earliest unfinished stage, require a clear audience and content goal before drafting, then route the finished draft to `Content Editor` for review. If a writable content workspace exists, persist the draft there; otherwise a complete advisory draft in the handoff is acceptable.
+
+    Recovery and exception handling: if the brief is vague, if the draft drifts away from the intended audience, or if the factual basis is too weak to support the claims being made, keep the current stage open and route the work back with explicit revision guidance. Do not close on smooth but inaccurate copy.
+
+    Completion rules: finish only after the final draft records the target reader, document goal, main sections, important limits, and the next publication or handoff step. Stage-specific closure for this playbook: `brief-framing` stays open until audience, goal, and source truth are explicit; `draft` stays open until a usable content draft exists; `editorial-review` stays open until blocking issues are resolved or clearly recorded. Guided closure rule: prefer a bounded draft with explicit caveats over unsupported publication-ready certainty.
+  parameters:
+    - slug: content_goal
+      title: Content Goal
+      required: true
+    - slug: target_audience
+      title: Target Audience
+      required: true
+    - slug: source_material_context
+      title: Source Material Context
+      required: false
+  roles:
+    - Technical Writer
+    - Content Editor
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: brief-framing
+      goal: The audience, goal, and source truth are explicit.
+      involves:
+        - Technical Writer
+    - name: draft
+      goal: A usable content draft exists.
+      involves:
+        - Technical Writer
+    - name: editorial-review
+      goal: The draft is clear and accurate enough to hand off.
+      involves:
+        - Content Editor
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 4
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

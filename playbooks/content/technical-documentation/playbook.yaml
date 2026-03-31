@@ -1,0 +1,77 @@
+id: technical-documentation
+version: 1.0.0
+name: Technical Documentation
+slug: technical-documentation
+category: content
+stability: stable
+description: Draft or revise task-oriented technical documentation with editorial review.
+outcome: A reviewed technical documentation draft exists with clear audience, steps, limits, and follow-up notes.
+lifecycle: planned
+tags:
+  - content
+  - documentation
+  - technical-writing
+specialist_ids:
+  - technical-writer
+  - content-editor
+definition:
+  outcome: A reviewed technical documentation draft exists with clear audience, steps, limits, and follow-up notes.
+  process_instructions: |
+    Run the workflow through the authored stages `source-review`, `draft`, and `editorial-review`. Treat each stage as a distinct checkpoint of documentation quality: `source-review` exists to define the audience, goal, and source truth; `draft` exists to produce the usable documentation; `editorial-review` exists to improve clarity, accuracy, and consistency before closure.
+
+    Use these roles deliberately: `Technical Writer` produces the draft; `Content Editor` reviews the draft for clarity, factual support, and consistency.
+
+    Preferred flow: start with the earliest unfinished stage, require `Technical Writer` to name the target reader and documentation goal before drafting, then route the completed draft to `Content Editor` for review. If a writable documentation workspace exists, persist the draft there; otherwise a complete advisory draft in the handoff is acceptable.
+
+    Recovery and exception handling: if the draft hides prerequisites, assumes internal knowledge, or mixes reference material, process guidance, and release notes without structure, keep the current stage open and route the work back for revision. Do not close on smooth prose that is materially inaccurate or missing the practical steps a reader needs.
+
+    Completion rules: finish only after the final draft records the target reader, document goal, main steps or sections, important limits, and follow-up documentation gaps. Stage-specific closure for this playbook: `source-review` stays open until source truth, audience, and goal are explicit; `draft` stays open until a usable documentation draft exists; `editorial-review` stays open until blocking inaccuracies are resolved or called out directly. Guided closure rule: prefer a clearly bounded draft with honest gaps over polished but misleading documentation.
+  parameters:
+    - slug: documentation_goal
+      title: Documentation Goal
+      required: true
+    - slug: target_reader
+      title: Target Reader
+      required: true
+    - slug: source_material_context
+      title: Source Material Context
+      required: false
+  roles:
+    - Technical Writer
+    - Content Editor
+  board:
+    entry_column_id: planned
+    columns:
+      - id: planned
+        label: Planned
+        description: Work is defined but not yet assigned.
+      - id: active
+        label: In Progress
+        description: A specialist is actively working.
+      - id: blocked
+        label: Blocked
+        description: Work is blocked and needs intervention.
+        is_blocked: true
+      - id: done
+        label: Done
+        description: The work item meets its acceptance criteria.
+        is_terminal: true
+  stages:
+    - name: source-review
+      goal: Audience, goal, and source truth are explicit.
+      involves:
+        - Technical Writer
+    - name: draft
+      goal: A usable documentation draft exists.
+      involves:
+        - Technical Writer
+    - name: editorial-review
+      goal: The draft is accurate and clear enough to hand off.
+      involves:
+        - Content Editor
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 4
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false
