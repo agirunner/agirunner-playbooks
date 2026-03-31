@@ -22,13 +22,15 @@ Every playbook MUST include:
 `definition.process_instructions` MUST:
 - name the authored stages literally
 - name the participating specialists literally
-- describe the expected happy path
-- describe at least one unhappy path
+- describe the preferred flow
+- describe recovery and exception handling
 - define completion rules
 - define stage-specific closure rules when the stage contract is not
   obvious
 - include guided-closure language that keeps the workflow moving when
   closure is still legally possible
+- avoid invented tenant-specific assignee language unless the named
+  target is one of the authored specialists
 
 ## Storage Standard
 

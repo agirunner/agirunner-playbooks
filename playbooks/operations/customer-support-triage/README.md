@@ -17,7 +17,8 @@ The imported workflow should produce:
 - issue classification
 - severity and impact rationale
 - missing information list when needed
-- recommended owner
+- recommended route
+- routing rationale
 - next visible action
 
 ## Workspace Notes

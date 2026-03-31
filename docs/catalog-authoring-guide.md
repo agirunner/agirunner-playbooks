@@ -47,9 +47,13 @@ Playbooks:
 - Prefer smaller reusable skills over huge specialist prompts.
 - Prefer smaller reusable specialists over playbook-local role variants.
 - Encode governance in prose, not declarative workflow policy fields.
-- Make unhappy-path behavior explicit.
+- Make recovery and exception handling explicit.
 - Make storage behavior explicit when it changes the expected output.
 - Write for importers who have not read the rest of this repository.
+- Do not author tenant-specific ownership or assignee semantics into
+  skills or playbooks. If the next responsible party is one of the
+  authored specialists, name that specialist literally; otherwise use
+  functional routing language.
 
 ## Cross-Artifact References
 

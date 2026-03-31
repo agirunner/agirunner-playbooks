@@ -30,6 +30,9 @@ is maintained as an ongoing catalog history rather than a release log.
 - Standardized playbook prose conventions around `Preferred flow`,
   `Recovery and exception handling`, `Completion rules`, and
   `Guided closure rule`
+- Replaced support-triage owner language with route-oriented outputs and
+  added authoring guidance to avoid invented tenant-specific assignees
+  unless the named target is an authored specialist
 - Strengthened content, SOP, and engineering verification skills around
   reader testing, structured drafting, reconnaissance, and evidence
   capture

@@ -15,6 +15,10 @@ text.
 - Does it avoid hidden workflow semantics that belong in a playbook?
 - Does it avoid technology assumptions unless the skill is intentionally
   technology-specific?
+- If it recommends a next responsible party, does it use authored
+  specialist names only when the playbook actually provides them, and
+  otherwise stick to route or function language instead of invented
+  assignees?
 - Does it avoid copying third-party skill text verbatim?
 
 ## Skill Content Standard

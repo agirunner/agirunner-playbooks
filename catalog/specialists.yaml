@@ -39,7 +39,7 @@ specialists:
     name: Support Triage Analyst
     category: operations
     stability: stable
-    summary: Classifies inbound issues, sets priority, and recommends the next owner and action.
+    summary: Classifies inbound issues, sets priority, and recommends the next route and action.
     skill_ids:
       - customer-support-triage-rubric
     path: specialists/operations/support-triage-analyst/specialist.yaml

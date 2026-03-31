@@ -33,7 +33,7 @@ skills:
     name: Customer Support Triage Rubric
     category: operations
     stability: stable
-    summary: Classify incoming support requests by issue type, urgency, ownership, and next action.
+    summary: Classify incoming support requests by issue type, urgency, route, and next action.
     path: skills/operations/customer-support-triage-rubric/SKILL.md
   - id: runbook-safety-check
     name: Runbook Safety Check

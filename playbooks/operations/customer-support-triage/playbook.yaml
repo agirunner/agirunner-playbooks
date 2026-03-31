@@ -5,7 +5,7 @@ slug: customer-support-triage
 category: operations
 stability: stable
 description: Classify, prioritize, and route an inbound support request with a clear next action.
-outcome: An inbound support item is classified, prioritized, and routed with a concrete next action.
+outcome: An inbound support item is classified, prioritized, and routed with a concrete next responsible route and action.
 lifecycle: planned
 tags:
   - support
@@ -14,17 +14,17 @@ tags:
 specialist_ids:
   - support-triage-analyst
 definition:
-  outcome: An inbound support item is classified, prioritized, and routed with a concrete next action.
+  outcome: An inbound support item is classified, prioritized, and routed with a concrete next responsible route and action.
   process_instructions: |
-    Run the workflow through the authored stages `intake`, `classification`, and `routing`. Treat each stage as a distinct checkpoint of clarity and actionability: `intake` exists to establish what the request actually is; `classification` exists to assign issue type, severity, and customer impact; `routing` exists to leave the work with a clear owner and next visible step.
+    Run the workflow through the authored stages `intake`, `classification`, and `routing`. Treat each stage as a distinct checkpoint of clarity and actionability: `intake` exists to establish what the request actually is; `classification` exists to assign issue type, severity, and customer impact; `routing` exists to leave the work with a clear next responsible route and next visible step.
 
     Use these roles deliberately: `Support Triage Analyst` reviews the request, determines what is known versus missing, and prepares the routing recommendation.
 
-    Preferred flow: start with the earliest unfinished stage, dispatch `Support Triage Analyst`, require a concrete handoff, and move forward only when the request has enough evidence to classify and route responsibly. Severity should reflect impact, urgency, and any stated service commitments, not customer tone alone.
+    Preferred flow: start with the earliest unfinished stage, dispatch `Support Triage Analyst`, require a concrete handoff, and move forward only when the request has enough evidence to classify and route responsibly. Severity should reflect impact, urgency, and any stated service commitments, not customer tone alone. If the next step remains inside the authored workflow, name the target specialist literally. If the work leaves the playbook, record a functional route or operating area instead of inventing a tenant-specific assignee.
 
     Recovery and exception handling: if the request lacks facts that materially change severity or routing, keep the current subject open, record the missing information explicitly, and request clarification instead of inventing certainty. If the request is contradictory, preserve the contradiction in history and route using the most conservative still-supported interpretation until better evidence exists. Do not promise engineering action when the stronger next step is support guidance, account help, or documentation. When a writable ticket or workspace artifact exists, update it; otherwise the structured handoff is sufficient.
 
-    Completion rules: finish only after the final routing package identifies issue type, severity, customer impact, recommended owner, missing information if any, and the next visible action. Stage-specific closure for this playbook: `intake` stays open until the current request is summarized clearly enough that another role could understand it; `classification` stays open until severity and issue type have a written rationale; `routing` stays open until a next owner and next action are explicitly recorded. Guided closure rule: follow the authored flow when it helps, but prefer a clear conservative route with recorded gaps over leaving the request directionless.
+    Completion rules: finish only after the final routing package identifies issue type, severity, customer impact, recommended route, routing rationale, missing information if any, and the next visible action. Stage-specific closure for this playbook: `intake` stays open until the current request is summarized clearly enough that another role could understand it; `classification` stays open until severity and issue type have a written rationale; `routing` stays open until a next route and next action are explicitly recorded. Guided closure rule: follow the authored flow when it helps, but prefer a clear conservative route with recorded gaps over leaving the request directionless.
   parameters:
     - slug: request_summary
       title: Request Summary
@@ -64,7 +64,7 @@ definition:
       involves:
         - Support Triage Analyst
     - name: routing
-      goal: The next owner and next visible action are recorded.
+      goal: The next responsible route and next visible action are recorded.
       involves:
         - Support Triage Analyst
   lifecycle: planned

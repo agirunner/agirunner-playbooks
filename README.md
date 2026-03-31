@@ -3,10 +3,9 @@
 Community playbooks, specialists, and skills for Agirunner.
 
 The Agirunner Playbooks repository is the public source of truth for
-importable catalog content. The platform imports one playbook at a time
-from this repository, resolves the referenced specialists and skills,
-and creates normal tenant-local copies inside the dashboard and
-platform.
+importable catalog content. The platform imports playbooks from this
+repository, resolves the referenced specialists and skills, and creates
+normal tenant-local copies inside the dashboard and platform.
 
 ## Documentation
 
@@ -37,7 +36,8 @@ itself.
 ## Catalog Principles
 
 - Content only: YAML and Markdown only.
-- One playbook at a time: operators choose a single playbook to import.
+- Catalog import: operators choose playbooks to import into their
+  tenant-local library.
 - Local ownership after import: imported artifacts become normal tenant-
   local copies.
 - Prose-driven workflows: `definition.process_instructions` is the
