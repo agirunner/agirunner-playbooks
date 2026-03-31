@@ -1,6 +1,7 @@
 id: regression-monitor
 version: 1.0.0
 name: Regression Monitor
+author: agirunner
 slug: regression-monitor
 category: engineering
 stability: experimental

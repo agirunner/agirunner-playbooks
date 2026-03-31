@@ -1,6 +1,7 @@
 id: policy-review
 version: 1.0.0
 name: Policy Review
+author: agirunner
 slug: policy-review
 category: compliance
 stability: stable

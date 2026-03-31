@@ -1,6 +1,7 @@
 id: content-pipeline
 version: 1.0.0
 name: Content Pipeline
+author: agirunner
 slug: content-pipeline
 category: content
 stability: stable

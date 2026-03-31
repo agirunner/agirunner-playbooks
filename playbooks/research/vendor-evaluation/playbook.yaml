@@ -1,6 +1,7 @@
 id: vendor-evaluation
 version: 1.0.0
 name: Vendor Evaluation
+author: agirunner
 slug: vendor-evaluation
 category: research
 stability: stable

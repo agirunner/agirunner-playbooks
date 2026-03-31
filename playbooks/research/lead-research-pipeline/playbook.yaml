@@ -1,6 +1,7 @@
 id: lead-research-pipeline
 version: 1.0.0
 name: Lead Research Pipeline
+author: agirunner
 slug: lead-research-pipeline
 category: research
 stability: stable

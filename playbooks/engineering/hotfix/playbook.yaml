@@ -1,6 +1,7 @@
 id: hotfix
 version: 1.0.0
 name: Hotfix
+author: agirunner
 slug: hotfix
 category: engineering
 stability: experimental

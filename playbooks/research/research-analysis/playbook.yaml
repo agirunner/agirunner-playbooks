@@ -1,6 +1,7 @@
 id: research-analysis
 version: 1.0.0
 name: Research Analysis
+author: agirunner
 slug: research-analysis
 category: research
 stability: stable

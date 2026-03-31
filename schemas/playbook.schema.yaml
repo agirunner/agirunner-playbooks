@@ -5,6 +5,7 @@ required:
   - id
   - version
   - name
+  - author
   - slug
   - category
   - stability
@@ -22,6 +23,10 @@ properties:
     minLength: 1
     maxLength: 40
   name:
+    type: string
+    minLength: 1
+    maxLength: 120
+  author:
     type: string
     minLength: 1
     maxLength: 120

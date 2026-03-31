@@ -1,6 +1,7 @@
 id: pr-guardian
 version: 1.0.0
 name: PR Guardian
+author: agirunner
 slug: pr-guardian
 category: engineering
 stability: experimental

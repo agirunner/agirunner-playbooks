@@ -42,6 +42,7 @@ This repository should stay content-only.
 - Keep the repository YAML-and-Markdown only.
 - Keep artifact IDs flat. Folder paths are for organization only.
 - Keep imported fields aligned with the live platform model.
+- Keep catalog-facing identity metadata explicit and consistent.
 - Do not add placeholder prompts, TODO sections, or half-authored
   playbooks.
 - Keep playbook launch inputs close to the current platform runtime
@@ -108,10 +109,12 @@ Before considering the specialist ready, confirm:
 
 1. Create or update `playbooks/<category>/<slug>/playbook.yaml`.
 2. Create or update `playbooks/<category>/<slug>/README.md`.
-3. Author the full workflow contract in
+3. Set an explicit `author` value in both the playbook file and
+   [`catalog/playbooks.yaml`](catalog/playbooks.yaml).
+4. Author the full workflow contract in
    `definition.process_instructions`.
-4. Reference shared specialists by flat catalog ID.
-5. Register or update the artifact in
+5. Reference shared specialists by flat catalog ID.
+6. Register or update the artifact in
    [`catalog/playbooks.yaml`](catalog/playbooks.yaml).
 
 Playbook prose should normally include:
@@ -122,6 +125,7 @@ Playbook prose should normally include:
 
 Before considering the playbook ready, confirm:
 - the scope is narrow and clear
+- the author field is correct for the catalog entry and playbook file
 - the named stages are explicit
 - the recovery path is explicit
 - storage behavior is honest for `git`, `host_directory`, and `artifact`
@@ -135,6 +139,15 @@ same logical change:
 - [`catalog/skills.yaml`](catalog/skills.yaml)
 - [`catalog/specialists.yaml`](catalog/specialists.yaml)
 - [`catalog/playbooks.yaml`](catalog/playbooks.yaml)
+
+For playbooks, treat these metadata fields as a sync set between the
+manifest and the underlying `playbook.yaml`:
+- `id`
+- `name`
+- `author`
+- `category`
+- `stability`
+- `version`
 
 If you change authoring expectations or contributor workflow, update the
 root docs in the same change:

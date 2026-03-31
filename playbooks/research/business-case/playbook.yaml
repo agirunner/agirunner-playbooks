@@ -1,6 +1,7 @@
 id: business-case
 version: 1.0.0
 name: Business Case
+author: agirunner
 slug: business-case
 category: research
 stability: stable

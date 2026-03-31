@@ -49,3 +49,5 @@ is maintained as an ongoing catalog history rather than a release log.
   privilege, injection, isolation, and governance checks
 - Improved root documentation to match the current repository structure
   and contribution model
+- Added explicit playbook author metadata across the catalog and aligned
+  the root contribution docs and schema references with that metadata

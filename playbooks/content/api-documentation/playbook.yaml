@@ -1,6 +1,7 @@
 id: api-documentation
 version: 1.0.0
 name: API Documentation
+author: agirunner
 slug: api-documentation
 category: content
 stability: stable

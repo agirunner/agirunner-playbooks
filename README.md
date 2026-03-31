@@ -52,7 +52,7 @@ itself.
 To browse the catalog:
 
 1. Start with [`catalog/playbooks.yaml`](catalog/playbooks.yaml).
-2. Pick a playbook by category, stability, and summary.
+2. Pick a playbook by category, author, stability, and summary.
 3. Read that playbook folder:
    - `playbook.yaml`
    - `README.md`
@@ -90,8 +90,18 @@ Specialists:
 Playbooks:
 - one `playbook.yaml` file per playbook
 - one `README.md` file per playbook
+- required metadata includes `id`, `name`, `author`, `version`,
+  `category`, and `stability`
 - workflow semantics authored in prose inside
   `definition.process_instructions`
+
+Catalog manifest entries:
+- `catalog/playbooks.yaml` is the import-facing index used by the
+  dashboard
+- each entry should carry the same human-facing identity fields as the
+  underlying playbook, including `author`
+- manifest metadata should stay aligned with the referenced
+  `playbook.yaml`
 
 ## Process Instruction Style
 
@@ -141,6 +151,7 @@ Curated artifacts in this repository must be ready to import and use.
 They are not placeholders waiting for an operator to finish them later.
 
 Each playbook must author:
+- a stable catalog identity and a visible author
 - explicit stages and stage goals
 - named specialists
 - a preferred flow
@@ -154,6 +165,14 @@ Use these docs when contributing:
 - [`docs/playbook-quality-bar.md`](docs/playbook-quality-bar.md)
 - [`docs/skill-review-checklist.md`](docs/skill-review-checklist.md)
 - [`docs/specialist-authoring-guide.md`](docs/specialist-authoring-guide.md)
+
+Before opening a playbook contribution, check that:
+- `catalog/playbooks.yaml` and the referenced `playbook.yaml` agree on
+  `name`, `author`, `version`, `category`, and `summary` intent
+- the README explains when the playbook should and should not be
+  imported
+- the authored process instructions are strong enough to stand on their
+  own after import
 
 ## Contributing
 

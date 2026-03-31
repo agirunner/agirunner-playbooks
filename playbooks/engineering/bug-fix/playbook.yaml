@@ -1,6 +1,7 @@
 id: bug-fix
 version: 1.0.0
 name: Bug Fix
+author: agirunner
 slug: bug-fix
 category: engineering
 stability: experimental

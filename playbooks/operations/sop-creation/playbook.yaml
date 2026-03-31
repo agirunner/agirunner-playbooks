@@ -1,6 +1,7 @@
 id: sop-creation
 version: 1.0.0
 name: SOP Creation
+author: agirunner
 slug: sop-creation
 category: operations
 stability: stable

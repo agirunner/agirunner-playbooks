@@ -1,6 +1,7 @@
 playbooks:
   - id: bug-fix
     name: Bug Fix
+    author: agirunner
     category: engineering
     stability: experimental
     version: 1.0.0
@@ -13,6 +14,7 @@ playbooks:
     path: playbooks/engineering/bug-fix/playbook.yaml
   - id: hotfix
     name: Hotfix
+    author: agirunner
     category: engineering
     stability: experimental
     version: 1.0.0
@@ -25,6 +27,7 @@ playbooks:
     path: playbooks/engineering/hotfix/playbook.yaml
   - id: code-review
     name: Code Review
+    author: agirunner
     category: engineering
     stability: experimental
     version: 1.0.0
@@ -36,6 +39,7 @@ playbooks:
     path: playbooks/engineering/code-review/playbook.yaml
   - id: pr-guardian
     name: PR Guardian
+    author: agirunner
     category: engineering
     stability: experimental
     version: 1.0.0
@@ -47,6 +51,7 @@ playbooks:
     path: playbooks/engineering/pr-guardian/playbook.yaml
   - id: regression-monitor
     name: Regression Monitor
+    author: agirunner
     category: engineering
     stability: experimental
     version: 1.0.0
@@ -57,6 +62,7 @@ playbooks:
     path: playbooks/engineering/regression-monitor/playbook.yaml
   - id: customer-support-triage
     name: Customer Support Triage
+    author: agirunner
     category: operations
     stability: stable
     version: 1.0.0
@@ -66,6 +72,7 @@ playbooks:
     path: playbooks/operations/customer-support-triage/playbook.yaml
   - id: sop-creation
     name: SOP Creation
+    author: agirunner
     category: operations
     stability: stable
     version: 1.0.0
@@ -76,6 +83,7 @@ playbooks:
     path: playbooks/operations/sop-creation/playbook.yaml
   - id: runbook-creation
     name: Runbook Creation
+    author: agirunner
     category: operations
     stability: stable
     version: 1.0.0
@@ -86,6 +94,7 @@ playbooks:
     path: playbooks/operations/runbook-creation/playbook.yaml
   - id: research-analysis
     name: Research Analysis
+    author: agirunner
     category: research
     stability: stable
     version: 1.0.0
@@ -95,6 +104,7 @@ playbooks:
     path: playbooks/research/research-analysis/playbook.yaml
   - id: lead-research-pipeline
     name: Lead Research Pipeline
+    author: agirunner
     category: research
     stability: stable
     version: 1.0.0
@@ -104,6 +114,7 @@ playbooks:
     path: playbooks/research/lead-research-pipeline/playbook.yaml
   - id: vendor-evaluation
     name: Vendor Evaluation
+    author: agirunner
     category: research
     stability: stable
     version: 1.0.0
@@ -114,6 +125,7 @@ playbooks:
     path: playbooks/research/vendor-evaluation/playbook.yaml
   - id: business-case
     name: Business Case
+    author: agirunner
     category: research
     stability: stable
     version: 1.0.0
@@ -124,6 +136,7 @@ playbooks:
     path: playbooks/research/business-case/playbook.yaml
   - id: policy-review
     name: Policy Review
+    author: agirunner
     category: compliance
     stability: stable
     version: 1.0.0
@@ -133,6 +146,7 @@ playbooks:
     path: playbooks/compliance/policy-review/playbook.yaml
   - id: contract-review
     name: Contract Review
+    author: agirunner
     category: compliance
     stability: stable
     version: 1.0.0
@@ -142,6 +156,7 @@ playbooks:
     path: playbooks/compliance/contract-review/playbook.yaml
   - id: technical-documentation
     name: Technical Documentation
+    author: agirunner
     category: content
     stability: stable
     version: 1.0.0
@@ -152,6 +167,7 @@ playbooks:
     path: playbooks/content/technical-documentation/playbook.yaml
   - id: api-documentation
     name: API Documentation
+    author: agirunner
     category: content
     stability: stable
     version: 1.0.0
@@ -162,6 +178,7 @@ playbooks:
     path: playbooks/content/api-documentation/playbook.yaml
   - id: content-pipeline
     name: Content Pipeline
+    author: agirunner
     category: content
     stability: stable
     version: 1.0.0

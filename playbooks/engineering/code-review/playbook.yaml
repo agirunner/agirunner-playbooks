@@ -1,6 +1,7 @@
 id: code-review
 version: 1.0.0
 name: Code Review
+author: agirunner
 slug: code-review
 category: engineering
 stability: experimental

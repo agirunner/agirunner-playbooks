@@ -1,6 +1,7 @@
 id: contract-review
 version: 1.0.0
 name: Contract Review
+author: agirunner
 slug: contract-review
 category: compliance
 stability: stable

@@ -1,6 +1,7 @@
 id: customer-support-triage
 version: 1.0.0
 name: Customer Support Triage
+author: agirunner
 slug: customer-support-triage
 category: operations
 stability: stable

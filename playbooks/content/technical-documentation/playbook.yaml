@@ -1,6 +1,7 @@
 id: technical-documentation
 version: 1.0.0
 name: Technical Documentation
+author: agirunner
 slug: technical-documentation
 category: content
 stability: stable
