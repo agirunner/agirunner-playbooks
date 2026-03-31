@@ -15,6 +15,7 @@ Product and operator documentation lives at
 Useful entry points:
 
 - [Getting Started](https://docs.agirunner.dev/getting-started/introduction/)
+- [Playbooks And Authoring](https://docs.agirunner.dev/dashboard/playbooks-and-authoring/)
 - [Platform Overview](https://docs.agirunner.dev/platform/overview/)
 - [Dashboard Overview](https://docs.agirunner.dev/dashboard/overview/)
 - [Architecture Overview](https://docs.agirunner.dev/architecture/overview/)
@@ -60,6 +61,15 @@ To browse the catalog:
    - [`catalog/specialists.yaml`](catalog/specialists.yaml)
    - [`catalog/skills.yaml`](catalog/skills.yaml)
 
+To use the catalog in the product:
+
+1. Start with [`agirunner`](https://github.com/agirunner/agirunner) for
+   the full-stack product entry point and local bring-up path.
+2. Open the dashboard and go to **Work Design -> Playbooks**.
+3. Use **Add Community Playbook** to browse this catalog, inspect the
+   playbook README, and import selected playbooks into your tenant.
+4. Treat imported artifacts as normal tenant-local copies after import.
+
 ## Repository Layout
 
 ```text
@@ -102,6 +112,20 @@ Catalog manifest entries:
   underlying playbook, including `author`
 - manifest metadata should stay aligned with the referenced
   `playbook.yaml`
+
+## Import Model
+
+The dashboard imports catalog content over GitHub and creates normal
+tenant-local artifacts in the platform:
+
+- operators can import one playbook, a selected subset, or the full
+  filtered set
+- referenced specialists and skills are imported alongside the selected
+  playbooks
+- imported artifacts can be created as new local copies or used to
+  override matching local artifacts at import time
+- after import, the resulting playbooks, specialists, and skills behave
+  like normal local platform content
 
 ## Process Instruction Style
 

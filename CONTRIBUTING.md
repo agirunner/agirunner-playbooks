@@ -25,6 +25,13 @@ If you are looking for the main product entry point, start with
 operator documentation lives at
 [`docs.agirunner.dev`](https://docs.agirunner.dev).
 
+Useful docs entry points:
+
+- [Getting Started](https://docs.agirunner.dev/getting-started/introduction/)
+- [Playbooks And Authoring](https://docs.agirunner.dev/dashboard/playbooks-and-authoring/)
+- [Dashboard Overview](https://docs.agirunner.dev/dashboard/overview/)
+- [Platform Overview](https://docs.agirunner.dev/platform/overview/)
+
 ## Scope
 
 Contributions are welcome for:
@@ -51,6 +58,8 @@ This repository should stay content-only.
 - Do not reintroduce declarative governance fields such as
   `review_rules`, `assessment_rules`, `approval_rules`,
   `handoff_rules`, `checkpoints`, or `branch_policies`.
+- Keep the dated catalog history in [`CHANGELOG.md`](CHANGELOG.md)
+  current when the visible catalog changes.
 
 ## Quality Expectations
 
@@ -154,6 +163,18 @@ root docs in the same change:
 - [`README.md`](README.md)
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
 - [`CHANGELOG.md`](CHANGELOG.md)
+
+## Validation Checklist
+
+Before considering a content change ready, confirm:
+
+- the touched artifact imports cleanly into the live platform model
+- the matching catalog manifest entry is present and aligned
+- the visible author, category, stability, and version fields are
+  consistent where required
+- playbook README guidance is still accurate for operators deciding
+  whether to import it
+- the dated changelog entry reflects the catalog change
 
 ## Review References
 
