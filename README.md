@@ -2,7 +2,6 @@
 
 [![Docs](https://img.shields.io/badge/docs-docs.agirunner.dev-0f766e)](https://docs.agirunner.dev)
 [![Agirunner](https://img.shields.io/badge/product-agirunner-111827)](https://github.com/agirunner/agirunner)
-[![Catalog](https://img.shields.io/badge/catalog-community%20playbooks-0f766e)](https://github.com/agirunner/agirunner-playbooks)
 [![License](https://img.shields.io/github/license/agirunner/agirunner-playbooks)](./LICENSE)
 
 Community playbooks, specialists, and skills for Agirunner.
