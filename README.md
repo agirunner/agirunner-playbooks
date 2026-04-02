@@ -1,5 +1,10 @@
 # Agirunner Playbooks
 
+[![Latest Tag](https://img.shields.io/github/v/tag/agirunner/agirunner-playbooks?sort=semver&label=latest%20tag)](https://github.com/agirunner/agirunner-playbooks/tags)
+[![Docs](https://img.shields.io/badge/docs-docs.agirunner.dev-0f766e)](https://docs.agirunner.dev)
+[![Catalog](https://img.shields.io/badge/catalog-community%20playbooks-0f766e)](https://github.com/agirunner/agirunner-playbooks)
+[![License](https://img.shields.io/github/license/agirunner/agirunner-playbooks)](./LICENSE)
+
 Community playbooks, specialists, and skills for Agirunner.
 
 The Agirunner Playbooks repository is the public source of truth for
