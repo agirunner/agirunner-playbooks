@@ -1,5 +1,5 @@
 id: release-readiness
-version: 1.0.1
+version: 1.0.2
 name: Release Readiness
 author: agirunner
 slug: release-readiness
@@ -59,7 +59,7 @@ definition:
         - QA Reviewer
   lifecycle: planned
   orchestrator:
-    max_rework_iterations: 3
+    max_rework_iterations: 5
     max_active_tasks: 3
     max_active_tasks_per_work_item: 1
     allow_parallel_work_items: false

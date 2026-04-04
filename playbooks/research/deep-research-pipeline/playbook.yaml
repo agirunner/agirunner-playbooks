@@ -1,5 +1,5 @@
 id: deep-research-pipeline
-version: 1.0.1
+version: 1.0.2
 name: Deep Research Pipeline
 author: agirunner
 slug: deep-research-pipeline
@@ -59,7 +59,7 @@ definition:
         - Research Reviewer
   lifecycle: planned
   orchestrator:
-    max_rework_iterations: 4
+    max_rework_iterations: 5
     max_active_tasks: 2
     max_active_tasks_per_work_item: 1
     allow_parallel_work_items: false

@@ -1,5 +1,5 @@
 id: technical-documentation
-version: 1.0.2
+version: 1.0.3
 name: Technical Documentation
 author: agirunner
 slug: technical-documentation
@@ -55,7 +55,7 @@ definition:
         - Content Editor
   lifecycle: planned
   orchestrator:
-    max_rework_iterations: 4
+    max_rework_iterations: 5
     max_active_tasks: 2
     max_active_tasks_per_work_item: 1
     allow_parallel_work_items: false

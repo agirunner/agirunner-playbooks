@@ -37,6 +37,8 @@ is maintained as an ongoing catalog history rather than a release log.
 - Made the catalog's human-readable playbook schema and authoring docs
   match the product's canonical default-board support, so standard-board
   playbooks can omit `definition.board`
+- Raised `definition.orchestrator.max_rework_iterations` to `5` across
+  the published playbook catalog
 - Removed repeated default-board definitions from the retained catalog
   playbooks
 - Tightened specialist tool posture so review, support, compliance, and
