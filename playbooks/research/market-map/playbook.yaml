@@ -1,5 +1,5 @@
 id: market-map
-version: 1.0.3
+version: 1.0.4
 name: Market Map
 author: agirunner
 slug: market-map
@@ -21,7 +21,7 @@ definition:
 
     Use these roles deliberately: `Discovery Analyst` frames the market question, finds the relevant entities, and produces the final market map.
 
-    Preferred flow: start with the earliest unfinished stage, require the market topic and comparison axes to be explicit before grouping entities, and prefer direct evidence that an entity belongs in the market slice over superficial mentions. When the quoted `native web search` tool is available to the current task, use it for open-web market discovery before relying only on narrower source paths. Keep entity inclusion logic consistent throughout the map.
+    Preferred flow: start with the earliest unfinished stage, require the market topic and comparison axes to be explicit before grouping entities, and prefer direct evidence that an entity belongs in the market slice over superficial mentions. When the current task and selected model expose the quoted `native web search` tool, use it for open-web market discovery before relying only on narrower source paths. Keep entity inclusion logic consistent throughout the map.
 
     Recovery and exception handling: if the market definition is too broad, if entities are being grouped without evidence, if comparison axes change after discovery begins, or if the available search tooling does not surface a trustworthy market picture, keep the current stage open until the limitation is explicit. Do not turn a weak list into a fake market taxonomy. If the strongest honest answer is an initial map with major gaps, record those gaps directly.
 

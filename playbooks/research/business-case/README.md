@@ -29,7 +29,7 @@ research access alone.
 ## Import Notes
 
 This playbook benefits from external research access for the
-`Research Analyst`, especially when the quoted `native web search` tool
-is available to the task, but it should still close honestly with
-bounded assumptions when research access is limited or that tool is not
-enabled.
+`Research Analyst`, especially when the current task and selected model
+expose the quoted `native web search` tool, but it should still close
+honestly with bounded assumptions when research access is limited or
+that tool is not enabled.

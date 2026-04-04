@@ -30,7 +30,7 @@ access. It does not require a writable code workspace.
 ## Import Notes
 
 Best results come when the imported Account Discovery Analyst can use
-the quoted `native web search` tool for the task or an equivalent
+the quoted `native web search` tool when the current task and selected model expose it, or an equivalent
 external research integration. The authored workflow should still
 produce a bounded qualification packet when those tools are unavailable,
 but it must label evidence limits plainly.

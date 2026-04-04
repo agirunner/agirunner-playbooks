@@ -200,7 +200,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.5
+    version: 1.0.6
     summary: Produce a grounded research synthesis with explicit evidence, contradictions, and confidence.
     specialist_ids:
       - research-analyst
@@ -210,7 +210,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.3
+    version: 1.0.4
     summary: Discover and rank relevant external sources, entities, or signals for a scoped brief.
     specialist_ids:
       - discovery-analyst
@@ -220,7 +220,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.3
+    version: 1.0.4
     summary: Build an account qualification packet with fit, urgency, risk, and next-step guidance.
     specialist_ids:
       - lead-research-analyst
@@ -230,7 +230,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.3
+    version: 1.0.4
     summary: Map a market slice into relevant entities, segments, and evidence-backed comparisons.
     specialist_ids:
       - discovery-analyst
@@ -240,7 +240,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.3
+    version: 1.0.4
     summary: Find and rank likely prospect targets against an ideal profile with evidence and confidence notes.
     specialist_ids:
       - lead-research-analyst
@@ -250,7 +250,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.3
+    version: 1.0.4
     summary: Run multi-pass research from brief to reviewed synthesis with explicit evidence and contradiction handling.
     specialist_ids:
       - research-analyst
@@ -261,7 +261,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.3
+    version: 1.0.4
     summary: Turn a research brief into a reviewed report with sources, caveats, and decision-ready framing.
     specialist_ids:
       - research-analyst
@@ -272,7 +272,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.5
+    version: 1.0.6
     summary: Compare vendors against explicit requirements, risks, and decision criteria.
     specialist_ids:
       - vendor-analyst
@@ -283,7 +283,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.5
+    version: 1.0.6
     summary: Structure a decision-ready business case with options, tradeoffs, and recommendation logic.
     specialist_ids:
       - research-analyst
@@ -314,8 +314,8 @@ playbooks:
     author: agirunner
     category: content
     stability: experimental
-    version: 1.0.4
-    summary: Draft or revise task-oriented technical documentation with editorial review.
+    version: 1.0.5
+    summary: Draft or revise task-oriented technical documentation with editorial review and explicit source limits.
     specialist_ids:
       - technical-writer
       - content-editor
@@ -325,8 +325,8 @@ playbooks:
     author: agirunner
     category: content
     stability: experimental
-    version: 1.0.4
-    summary: Draft or revise API reference material with editorial review and contract caveats.
+    version: 1.0.5
+    summary: Draft or revise API reference material with editorial review, contract grounding, and caveats.
     specialist_ids:
       - api-docs-writer
       - content-editor

@@ -1,5 +1,5 @@
 id: prospect-search
-version: 1.0.3
+version: 1.0.4
 name: Prospect Search
 author: agirunner
 slug: prospect-search
@@ -21,7 +21,7 @@ definition:
 
     Use these roles deliberately: `Account Discovery Analyst` frames the profile, searches for candidates, and produces the final packet.
 
-    Preferred flow: start with the earliest unfinished stage, require the ideal profile and ranking logic to be explicit before comparing prospects, and use one consistent qualification frame across the candidate set. When the quoted `native web search` tool is available to the current task, use it for open-web prospect discovery before relying only on narrower source paths. Remove weak candidates instead of forcing a longer list, and keep profile fit separate from urgency signals.
+    Preferred flow: start with the earliest unfinished stage, require the ideal profile and ranking logic to be explicit before comparing prospects, and use one consistent qualification frame across the candidate set. When the current task and selected model expose the quoted `native web search` tool, use it for open-web prospect discovery before relying only on narrower source paths. Remove weak candidates instead of forcing a longer list, and keep profile fit separate from urgency signals.
 
     Recovery and exception handling: if the ideal profile is vague, if ranking rules change after search begins, if the available evidence is too weak to support a ranked packet, or if external search tooling does not surface enough credible candidates, keep the current stage open until the limitation is explicit. Do not convert partial search coverage into fake ranking confidence. If the strongest honest answer is a short list or a request for sharper targeting, record that directly.
 

@@ -1,12 +1,12 @@
 id: api-documentation
-version: 1.0.4
+version: 1.0.5
 name: API Documentation
 author: agirunner
 slug: api-documentation
 category: content
 stability: experimental
-description: Draft or revise API reference material with editorial review and contract caveats.
-outcome: A reviewed API reference draft exists with contract details, examples, caveats, and follow-up notes.
+description: Draft or revise API reference material with editorial review, contract grounding, and caveats.
+outcome: A reviewed API reference draft exists with contract details, source basis, examples, caveats, and follow-up notes.
 lifecycle: planned
 tags:
   - content
@@ -16,17 +16,17 @@ specialist_ids:
   - api-docs-writer
   - content-editor
 definition:
-  outcome: A reviewed API reference draft exists with contract details, examples, caveats, and follow-up notes.
+  outcome: A reviewed API reference draft exists with contract details, source basis, examples, caveats, and follow-up notes.
   process_instructions: |
     Run the workflow through the authored stages `contract-review`, `reference-draft`, and `editorial-review`. Treat each stage as a distinct checkpoint of API documentation quality: `contract-review` exists to establish the source truth for the API contract; `reference-draft` exists to produce the actual reference material; `editorial-review` exists to catch clarity issues, unsupported claims, and inconsistent language before closure.
 
     Use these roles deliberately: `API Docs Writer` drafts the reference material; `Content Editor` reviews it for clarity, consistency, and factual support.
 
-    Preferred flow: start with the earliest unfinished stage, require `API Docs Writer` to anchor the draft to the actual contract before writing, and do not begin reference drafting until the source truth, target reader, and version or environment context are explicit enough to support the document honestly. Then route the result to `Content Editor` for review. If a writable documentation workspace exists, persist the draft there; otherwise a complete advisory draft in the handoff is acceptable.
+    Preferred flow: start with the earliest unfinished stage, require `API Docs Writer` to anchor the draft to the actual contract before writing, and do not begin reference drafting until the source truth, target reader, and version or environment context are explicit enough to support the document honestly. Prefer explicit contract sources first, then implementation and tests, then examples; if lower-trust sources are doing most of the work, label that plainly. In strong-source situations, produce the full reference draft with request, response, auth, error, and example coverage. In degraded-source situations, limit the draft to the supported contract facts, mark inferred behavior directly, and list unresolved contract questions instead of inventing stable guarantees. Then route the result to `Content Editor` for review. If a writable documentation workspace exists, persist the draft there; otherwise a complete advisory draft in the handoff is acceptable.
 
-    Recovery and exception handling: if required parameters, auth requirements, error behavior, version context, or other contract-critical details are unclear, keep the current stage open and label the uncertainty directly. If the draft depends on inferred behavior from code, tests, or examples rather than explicit contract truth, say so plainly. Do not close on documentation that treats examples as the only place where required behavior is described, and do not describe unstable implementation details as firm API guarantees.
+    Recovery and exception handling: if required parameters, auth requirements, error behavior, version context, or other contract-critical details are unclear, keep the current stage open and label the uncertainty directly. If the draft depends on inferred behavior from code, tests, or examples rather than explicit contract truth, say so plainly. If the request is really a task guide or product setup document rather than API reference material, call that mismatch out directly instead of forcing a reference format. Do not close on documentation that treats examples as the only place where required behavior is described, and do not describe unstable implementation details as firm API guarantees.
 
-    Completion rules: finish only after the final draft records endpoint purpose, request contract, response contract, authentication notes, error notes, examples, important caveats, and explicit open questions or inferred areas if any remain. Stage-specific closure for this playbook: `contract-review` stays open until the available source truth and context limits are explicit; `reference-draft` stays open until a usable reference draft exists without hiding major contract gaps; `editorial-review` stays open until blocking inaccuracies are resolved or clearly called out. Guided closure rule: prefer an honest draft with labeled contract unknowns over polished but false certainty.
+    Completion rules: finish only after the final draft records endpoint purpose, source-truth basis, request contract, response contract, authentication notes, error notes, examples, important caveats, and explicit open questions or inferred areas if any remain. Stage-specific closure for this playbook: `contract-review` stays open until the available source truth and context limits are explicit; `reference-draft` stays open until a usable reference draft exists without hiding major contract gaps; `editorial-review` stays open until blocking inaccuracies are resolved or clearly called out. Guided closure rule: prefer an honest draft with labeled contract unknowns over polished but false certainty.
   parameters:
     - slug: api_surface
       title: API Surface

@@ -98,7 +98,7 @@ tool_profiles:
       - submit_handoff
       - read_predecessor_handoff
   - id: docs-author-tools
-    description: Enables draft authoring in writable workspaces without repository publication authority.
+    description: Enables draft authoring plus bounded source research in writable workspaces without repository publication authority.
     tools:
       - file_read
       - file_list
@@ -117,6 +117,7 @@ tool_profiles:
       - memory_read
       - memory_search
       - memory_write
+      - native_search
       - web_fetch
       - escalate
       - submit_handoff

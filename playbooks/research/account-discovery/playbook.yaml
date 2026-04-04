@@ -1,5 +1,5 @@
 id: account-discovery
-version: 1.0.3
+version: 1.0.4
 name: Account Discovery
 author: agirunner
 slug: account-discovery
@@ -21,7 +21,7 @@ definition:
 
     Use these roles deliberately: `Account Discovery Analyst` owns the account framing, evidence gathering, qualification logic, and final packet.
 
-    Preferred flow: start with the earliest unfinished stage, require the named account and the qualification goal to be explicit before interpreting signals, and prefer direct company, product, funding, hiring, or customer evidence over generic firmographics. When the quoted `native web search` tool is available to the current task, use it for open-web account discovery before relying only on narrower source paths. Keep fit, urgency, and risk as separate lenses in the final packet.
+    Preferred flow: start with the earliest unfinished stage, require the named account and the qualification goal to be explicit before interpreting signals, and prefer direct company, product, funding, hiring, or customer evidence over generic firmographics. When the current task and selected model expose the quoted `native web search` tool, use it for open-web account discovery before relying only on narrower source paths. Keep fit, urgency, and risk as separate lenses in the final packet.
 
     Recovery and exception handling: if the account identity is ambiguous, if the qualification goal is unclear, if the evidence is too weak to support a strong recommendation, or if external search tooling does not surface the needed evidence, keep the current stage open until the limitation is explicit. Do not force a positive qualification when the stronger answer is defer, disqualify, or gather more data. If the best honest output is a bounded profile with open questions, record that directly.
 

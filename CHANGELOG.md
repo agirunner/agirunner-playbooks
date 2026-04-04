@@ -47,6 +47,13 @@ is maintained as an ongoing catalog history rather than a release log.
   research specialists no longer default to repo-mutating authority
 - Strengthened the playbook quality bar so authored prose must describe
   both strong-input and degraded-input execution paths
+- Tightened the content playbooks, specialists, and skills around
+  document-type boundaries, source-truth grounding, and honest weak-
+  source closure
+- Clarified search guidance for research, content, and process roles so
+  they enumerate available MCP and source-access tools first and treat
+  quoted `native web search` as conditional on current task and model
+  availability
 - Repositioned the published `lead-research-analyst` specialist toward
   account and prospect discovery without changing its id
 - Expanded `QA Reviewer` so it can synthesize a release-readiness packet

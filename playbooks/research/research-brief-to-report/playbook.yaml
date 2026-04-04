@@ -1,5 +1,5 @@
 id: research-brief-to-report
-version: 1.0.3
+version: 1.0.4
 name: Research Brief To Report
 author: agirunner
 slug: research-brief-to-report
@@ -22,7 +22,7 @@ definition:
 
     Use these roles deliberately: `Research Analyst` frames the brief, gathers the evidence, and drafts the report; `Research Reviewer` checks the draft for evidence support, contradiction handling, and overclaim risk.
 
-    Preferred flow: start with the earliest unfinished stage, require the brief, target audience, and report objective to be explicit before drafting prose, and gather the evidence before locking the report narrative. When the quoted `native web search` tool is available to the current task, use it for open-web discovery before relying only on narrower source-access paths. Route the draft to `Research Reviewer` only after the report names its source base, caveats, and recommendation framing directly.
+    Preferred flow: start with the earliest unfinished stage, require the brief, target audience, and report objective to be explicit before drafting prose, and gather the evidence before locking the report narrative. When the current task and selected model expose the quoted `native web search` tool, use it for open-web discovery before relying only on narrower source-access paths. Route the draft to `Research Reviewer` only after the report names its source base, caveats, and recommendation framing directly.
 
     Recovery and exception handling: if the brief is vague, if evidence is missing for key claims, if the draft presents assumptions as fact, if contradictions are collapsed into one narrative, or if the available research tooling cannot surface the needed sources, keep the current stage open until the limitation is explicit. Do not let readable prose hide evidence weakness. If the strongest honest answer is a report draft with labeled open questions or unresolved caveats, record that instead of forcing a clean final report.
 

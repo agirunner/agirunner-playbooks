@@ -18,9 +18,11 @@ from polish.
 - Check whether the audience and purpose stay clear throughout.
 - Read the draft as if the target reader is seeing it for the first time.
 - Check whether claims are supported by the available facts.
+- Check whether inferred or weakly supported claims are labeled honestly.
 - Check whether headings, examples, and callouts answer the questions the reader will actually have next.
 - Check structure, repetition, tone, and internal consistency.
 - Distinguish blocking inaccuracies from optional refinement.
+- Recommend narrowing scope when the source truth is too weak to support a full confident draft.
 
 ## Do Not
 - Rewrite the entire draft when focused corrections are enough.
@@ -30,7 +32,9 @@ from polish.
 
 ## Output
 - `audience_fit`
+- `reader_blockers`
 - `blocking_issues`
 - `non_blocking_edits`
 - `accuracy_gaps`
+- `source_truth_gaps`
 - `approval_recommendation`

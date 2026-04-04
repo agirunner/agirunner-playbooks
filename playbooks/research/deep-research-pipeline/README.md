@@ -29,7 +29,7 @@ access. It does not require a writable code workspace.
 ## Import Notes
 
 Best results come when the imported Research Analyst and Research
-Reviewer can use the quoted `native web search` tool for the task or an
+Reviewer can use the quoted `native web search` tool when the current task and selected model expose it, or an
 equivalent external research integration. The authored workflow should
 still function without those tools, but it must narrow the conclusion
 and label evidence limits plainly.
