@@ -34,7 +34,17 @@ specialists:
     skill_ids:
       - bug-reproduction-discipline
       - regression-proof-required
+      - release-readiness-check
     path: specialists/engineering/qa-reviewer/specialist.yaml
+  - id: evaluation-reviewer
+    name: Evaluation Reviewer
+    category: engineering
+    stability: experimental
+    summary: Reviews evaluation packets for quality deltas, benchmark coverage, and adoption risk.
+    skill_ids:
+      - evaluation-review-rubric
+      - regression-proof-required
+    path: specialists/engineering/evaluation-reviewer/specialist.yaml
   - id: support-triage-analyst
     name: Support Triage Analyst
     category: operations

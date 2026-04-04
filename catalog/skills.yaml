@@ -23,6 +23,12 @@ skills:
     stability: experimental
     summary: Confirm that a change is ready for human release approval with clear evidence and callouts.
     path: skills/engineering/release-readiness-check/SKILL.md
+  - id: evaluation-review-rubric
+    name: Evaluation Review Rubric
+    category: engineering
+    stability: experimental
+    summary: Review evaluation or benchmark results for quality deltas, coverage gaps, and adoption risk.
+    path: skills/engineering/evaluation-review-rubric/SKILL.md
   - id: security-review-rubric
     name: Security Review Rubric
     category: engineering

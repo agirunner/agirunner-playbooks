@@ -31,9 +31,9 @@ itself.
 
 ## What This Repository Contains
 
-- 19 shared skills under [`skills/`](skills)
-- 17 shared specialists under [`specialists/`](specialists)
-- 19 playbooks under [`playbooks/`](playbooks)
+- 20 shared skills under [`skills/`](skills)
+- 18 shared specialists under [`specialists/`](specialists)
+- 21 playbooks under [`playbooks/`](playbooks)
 - catalog manifests under [`catalog/`](catalog)
 - authoring guidance under [`docs/`](docs)
 - human-readable schema references under [`schemas/`](schemas)
@@ -174,6 +174,8 @@ Experimental engineering playbooks:
 - bug fix
 - hotfix
 - PR guardian
+- release readiness
+- eval review
 
 The current engineering set is intentionally narrow. These workflows are
 meant for bounded SDLC tasks with explicit review and human judgment,

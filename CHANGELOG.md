@@ -19,6 +19,9 @@ is maintained as an ongoing catalog history rather than a release log.
 - Research specialists for discovery and research evidence review
 - Shared research skills for discovery packet shaping and research
   review
+- Phase 2 engineering playbooks: `release-readiness` and
+  `eval-review`
+- Evaluation-review specialist and supporting rubric
 
 ### Changed
 
@@ -33,6 +36,8 @@ is maintained as an ongoing catalog history rather than a release log.
   both strong-input and degraded-input execution paths
 - Repositioned the published `lead-research-analyst` specialist toward
   account and prospect discovery without changing its id
+- Expanded `QA Reviewer` so it can synthesize a release-readiness packet
+  when a workflow asks for one
 
 ### Removed
 

@@ -1,0 +1,62 @@
+id: eval-review
+version: 1.0.0
+name: Eval Review
+author: agirunner
+slug: eval-review
+category: engineering
+stability: experimental
+description: Review benchmark or evaluation results for quality deltas, evidence gaps, and adoption risk.
+outcome: An evaluation review packet exists with quality deltas, coverage gaps, and a recommendation on whether the revision is ready to adopt.
+lifecycle: planned
+tags:
+  - engineering
+  - evaluation
+  - benchmarks
+specialist_ids:
+  - evaluation-reviewer
+  - qa-reviewer
+definition:
+  outcome: An evaluation review packet exists with quality deltas, coverage gaps, and a recommendation on whether the revision is ready to adopt.
+  process_instructions: |
+    Run the workflow through the authored stages `scope-framing`, `result-review`, and `recommendation`. Treat each stage as a distinct checkpoint of evaluation trustworthiness: `scope-framing` exists to define what was evaluated, against what baseline, and why it matters; `result-review` exists to inspect the benchmark or replay results for gains, regressions, and coverage gaps; `recommendation` exists to turn that review into an adopt, request-changes, or hold recommendation.
+
+    Use these roles deliberately: `Evaluation Reviewer` examines the evaluation packet itself and interprets quality deltas, coverage gaps, and adoption risk; `QA Reviewer` checks whether the evidence path is strong enough to support the recommendation and whether important regressions remain unresolved.
+
+    Preferred flow: start with the earliest unfinished stage, require the evaluated subject, baseline, and success criteria to be explicit before judging the results, and compare claimed improvements against the actual benchmark scope. The final recommendation should say what improved, what regressed, what remains unproven, and whether the evaluation packet is strong enough for the decision it is being used to justify.
+
+    Recovery and exception handling: if the evaluation subject is ambiguous, if the baseline is missing, if the benchmark scope is too narrow for the claimed conclusion, if regressions are buried in averages, or if the evidence packet is too weak to support adoption, keep the current stage open until the limitation is explicit. Do not treat a small benchmark win as broad proof. If the strongest honest answer is “inconclusive” or “needs broader coverage,” record that directly.
+
+    Completion rules: finish only after the final packet records the evaluation scope, baseline or comparison, quality deltas, coverage gaps, adoption risk, and recommended disposition. Stage-specific closure for this playbook: `scope-framing` stays open until the evaluation subject and comparison frame are explicit; `result-review` stays open until the packet's gains, regressions, and evidence limits are recorded; `recommendation` stays open until the final disposition follows from the evaluation evidence instead of optimistic summary language. Guided closure rule: prefer an inconclusive or request-changes outcome over an adopt recommendation built on thin or misleading evaluation coverage.
+  parameters:
+    - slug: evaluation_subject
+      title: Evaluation Subject
+      required: true
+    - slug: benchmark_packet
+      title: Benchmark Packet
+      required: false
+    - slug: comparison_goal
+      title: Comparison Goal
+      required: false
+  roles:
+    - Evaluation Reviewer
+    - QA Reviewer
+  stages:
+    - name: scope-framing
+      goal: The evaluation subject and comparison frame are explicit.
+      involves:
+        - Evaluation Reviewer
+    - name: result-review
+      goal: Quality deltas, regressions, and gaps are recorded.
+      involves:
+        - Evaluation Reviewer
+        - QA Reviewer
+    - name: recommendation
+      goal: A recommendation is documented from the reviewed evaluation packet.
+      involves:
+        - QA Reviewer
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

@@ -1,0 +1,65 @@
+id: release-readiness
+version: 1.0.0
+name: Release Readiness
+author: agirunner
+slug: release-readiness
+category: engineering
+stability: experimental
+description: Combine review, security, and verification evidence into a release recommendation for human approval.
+outcome: A release-readiness packet exists with blocking findings, evidence summary, rollback notes, and a human-facing approval recommendation.
+lifecycle: planned
+tags:
+  - engineering
+  - release
+  - readiness
+specialist_ids:
+  - reviewer
+  - security-reviewer
+  - qa-reviewer
+definition:
+  outcome: A release-readiness packet exists with blocking findings, evidence summary, rollback notes, and a human-facing approval recommendation.
+  process_instructions: |
+    Run the workflow through the authored stages `scope-scan`, `evidence-review`, and `recommendation`. Treat each stage as a distinct checkpoint of release safety: `scope-scan` exists to define the release subject and evidence packet; `evidence-review` exists to complete code, security, and QA scrutiny against that packet; `recommendation` exists to combine the recorded evidence into a release recommendation for human approval.
+
+    Use these roles deliberately: `Code Reviewer` defines the reviewed change scope and code-level findings; `Security Reviewer` records security-specific risk or not-applicable rationale; `QA Reviewer` verifies the evidence path and produces the final release-readiness recommendation from the accumulated review record.
+
+    Preferred flow: start with the earliest unfinished stage, require the release subject, evidence packet, and rollout context to be explicit before asking for a recommendation, then run review, security, and QA passes against the same subject. The final recommendation should summarize what changed, what was actually verified, what remains risky, and what rollback or recovery path exists. This playbook is advisory: it prepares for a human release decision and does not replace it.
+
+    Recovery and exception handling: if the release scope is ambiguous, if the evidence packet is missing, if blocking findings remain unresolved, if rollback or recovery notes are absent for a high-risk change, or if the strongest honest answer is “not ready,” keep the current stage open until that limitation is explicit. Do not convert partial evidence into a clean release recommendation. If human approval is still missing after the readiness packet is complete, say so directly instead of implying the release already happened.
+
+    Completion rules: finish only after the final packet records the release scope, blocking findings, non-blocking callouts, verification summary, known risks, rollback or recovery notes, and the explicit approval recommendation. Stage-specific closure for this playbook: `scope-scan` stays open until the release subject and evidence packet are explicit; `evidence-review` stays open until review, security, and QA evidence are all recorded; `recommendation` stays open until the final recommendation follows from the evidence and clearly preserves the human approval boundary. Guided closure rule: prefer a conservative not-ready or needs-approval outcome over a release-ready recommendation with hidden gaps.
+  parameters:
+    - slug: release_scope
+      title: Release Scope
+      required: true
+    - slug: candidate_evidence
+      title: Candidate Evidence
+      required: false
+    - slug: rollout_context
+      title: Rollout Context
+      required: false
+  roles:
+    - Code Reviewer
+    - Security Reviewer
+    - QA Reviewer
+  stages:
+    - name: scope-scan
+      goal: The release subject and evidence packet are explicit.
+      involves:
+        - Code Reviewer
+    - name: evidence-review
+      goal: Review, security, and QA evidence are recorded.
+      involves:
+        - Code Reviewer
+        - Security Reviewer
+        - QA Reviewer
+    - name: recommendation
+      goal: A release-readiness recommendation is documented for human approval.
+      involves:
+        - QA Reviewer
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 3
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

@@ -37,6 +37,29 @@ playbooks:
       - security-reviewer
       - qa-reviewer
     path: playbooks/engineering/pr-guardian/playbook.yaml
+  - id: release-readiness
+    name: Release Readiness
+    author: agirunner
+    category: engineering
+    stability: experimental
+    version: 1.0.0
+    summary: Combine review, security, and verification evidence into a release recommendation for human approval.
+    specialist_ids:
+      - reviewer
+      - security-reviewer
+      - qa-reviewer
+    path: playbooks/engineering/release-readiness/playbook.yaml
+  - id: eval-review
+    name: Eval Review
+    author: agirunner
+    category: engineering
+    stability: experimental
+    version: 1.0.0
+    summary: Review benchmark or evaluation results for quality deltas, evidence gaps, and adoption risk.
+    specialist_ids:
+      - evaluation-reviewer
+      - qa-reviewer
+    path: playbooks/engineering/eval-review/playbook.yaml
   - id: customer-support-triage
     name: Customer Support Triage
     author: agirunner
