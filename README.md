@@ -98,8 +98,8 @@ Skills:
 Specialists:
 - one `specialist.yaml` file per specialist
 - full `system_prompt` stored inline in YAML
-- `allowed_tools` may be an explicit list or
-  `all-specialist-tools`
+- `allowed_tools` may be an explicit list or a named shared profile from
+  `catalog/tool-profiles.yaml`
 
 Playbooks:
 - one `playbook.yaml` file per playbook
@@ -149,8 +149,9 @@ Most specialists use the shared tool profile in
 [`catalog/tool-profiles.yaml`](catalog/tool-profiles.yaml):
 
 - `all-specialist-tools`
+- `research-specialist-tools`
 
-That alias exists so the catalog can stay readable while the platform
+Those aliases exist so the catalog can stay readable while the platform
 still expands to the explicit allowed tool list during import.
 
 ## Current Catalog

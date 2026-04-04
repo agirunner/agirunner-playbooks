@@ -25,3 +25,30 @@ tool_profiles:
       - escalate
       - submit_handoff
       - read_predecessor_handoff
+  - id: research-specialist-tools
+    description: Enables the default research specialist tool set, including provider-native search when the task and model support it.
+    tools:
+      - file_read
+      - file_list
+      - file_write
+      - file_edit
+      - grep
+      - glob
+      - tool_search
+      - shell_exec
+      - git_status
+      - git_diff
+      - git_log
+      - git_commit
+      - git_push
+      - artifact_upload
+      - artifact_list
+      - artifact_read
+      - memory_read
+      - memory_search
+      - memory_write
+      - native_search
+      - web_fetch
+      - escalate
+      - submit_handoff
+      - read_predecessor_handoff

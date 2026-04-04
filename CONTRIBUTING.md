@@ -81,8 +81,10 @@ allowed_tools: all-specialist-tools
 ```
 
 That profile is defined in [`catalog/tool-profiles.yaml`](catalog/tool-profiles.yaml).
-Use an explicit tool list only when the specialist truly needs a smaller
-tool surface than the default profile.
+Use another named shared profile from that file when a category needs a
+different default tool surface. Use an explicit tool list only when the
+specialist truly needs a smaller tool surface than the available shared
+profiles.
 
 ## Adding Or Updating A Skill
 
@@ -103,8 +105,8 @@ Before considering the skill ready, confirm:
 
 1. Create or update `specialists/<category>/<slug>/specialist.yaml`.
 2. Store the full `system_prompt` inline in YAML.
-3. Default to `allowed_tools: all-specialist-tools` unless a tighter
-   restriction is truly needed.
+3. Default to a named shared tool profile from `catalog/tool-profiles.yaml`
+   unless a tighter explicit restriction is truly needed.
 4. Reference only reviewed shared skills.
 5. Register or update the artifact in
    [`catalog/specialists.yaml`](catalog/specialists.yaml).

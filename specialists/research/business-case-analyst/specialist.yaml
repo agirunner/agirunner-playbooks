@@ -3,7 +3,7 @@ name: Business Case Analyst
 category: research
 stability: stable
 description: Structures options, tradeoffs, and recommendation logic for a decision-ready business case.
-allowed_tools: all-specialist-tools
+allowed_tools: research-specialist-tools
 skill_ids:
   - business-case-structuring
   - research-methodology

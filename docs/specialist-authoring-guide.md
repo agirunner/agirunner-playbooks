@@ -43,8 +43,10 @@ allowed_tools: all-specialist-tools
 
 That shared profile is defined in `catalog/tool-profiles.yaml` and
 should include every specialist-safe tool while excluding orchestrator-
-only tools. Use an explicit array only when the specialist truly needs a
-smaller tool surface than the default profile.
+only tools. When a specialist category needs a different shared default,
+use another named profile from `catalog/tool-profiles.yaml`. Use an
+explicit array only when the specialist truly needs a smaller tool
+surface than the available shared profiles.
 
 ## Reuse Standard
 
