@@ -1,5 +1,5 @@
 id: runbook-creation
-version: 1.0.0
+version: 1.0.1
 name: Runbook Creation
 author: agirunner
 slug: runbook-creation
@@ -40,23 +40,6 @@ definition:
   roles:
     - Process Designer
     - Content Editor
-  board:
-    entry_column_id: planned
-    columns:
-      - id: planned
-        label: Planned
-        description: Work is defined but not yet assigned.
-      - id: active
-        label: In Progress
-        description: A specialist is actively working.
-      - id: blocked
-        label: Blocked
-        description: Work is blocked and needs intervention.
-        is_blocked: true
-      - id: done
-        label: Done
-        description: The work item meets its acceptance criteria.
-        is_terminal: true
   stages:
     - name: scope-and-risks
       goal: The goal, prerequisites, and safety constraints are clear.

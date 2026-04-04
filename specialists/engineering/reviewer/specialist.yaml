@@ -3,7 +3,7 @@ name: Code Reviewer
 category: engineering
 stability: experimental
 description: Reviews implementation work for correctness, maintainability, and release safety.
-allowed_tools: all-specialist-tools
+allowed_tools: read-only-review-tools
 skill_ids:
   - code-review-rubric
   - regression-proof-required

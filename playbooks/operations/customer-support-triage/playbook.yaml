@@ -1,5 +1,5 @@
 id: customer-support-triage
-version: 1.0.0
+version: 1.0.1
 name: Customer Support Triage
 author: agirunner
 slug: customer-support-triage
@@ -38,23 +38,6 @@ definition:
       required: false
   roles:
     - Support Triage Analyst
-  board:
-    entry_column_id: planned
-    columns:
-      - id: planned
-        label: Planned
-        description: Work is defined but not yet assigned.
-      - id: active
-        label: In Progress
-        description: A specialist is actively working.
-      - id: blocked
-        label: Blocked
-        description: Work is blocked and needs intervention.
-        is_blocked: true
-      - id: done
-        label: Done
-        description: The work item meets its acceptance criteria.
-        is_terminal: true
   stages:
     - name: intake
       goal: The request is summarized clearly enough to evaluate.

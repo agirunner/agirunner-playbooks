@@ -74,17 +74,18 @@ This repository should stay content-only.
 
 ## Shared Tool Contract
 
-Most specialists should declare:
+Most specialists should declare a named shared profile from
+`catalog/tool-profiles.yaml`:
 
 ```yaml
-allowed_tools: all-specialist-tools
+allowed_tools: read-only-review-tools
 ```
 
-That profile is defined in [`catalog/tool-profiles.yaml`](catalog/tool-profiles.yaml).
-Use another named shared profile from that file when a category needs a
-different default tool surface. Use an explicit tool list only when the
-specialist truly needs a smaller tool surface than the available shared
-profiles.
+Choose the narrowest shared profile that still fits the specialist's
+job. Use another named shared profile from that file when a category
+needs a different default tool surface. Use an explicit tool list only
+when the specialist truly needs a smaller tool surface than the
+available shared profiles.
 
 ## Adding Or Updating A Skill
 

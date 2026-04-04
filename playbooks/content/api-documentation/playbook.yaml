@@ -1,5 +1,5 @@
 id: api-documentation
-version: 1.0.0
+version: 1.0.1
 name: API Documentation
 author: agirunner
 slug: api-documentation
@@ -40,23 +40,6 @@ definition:
   roles:
     - API Docs Writer
     - Content Editor
-  board:
-    entry_column_id: planned
-    columns:
-      - id: planned
-        label: Planned
-        description: Work is defined but not yet assigned.
-      - id: active
-        label: In Progress
-        description: A specialist is actively working.
-      - id: blocked
-        label: Blocked
-        description: Work is blocked and needs intervention.
-        is_blocked: true
-      - id: done
-        label: Done
-        description: The work item meets its acceptance criteria.
-        is_terminal: true
   stages:
     - name: contract-review
       goal: The available API source truth and limits are explicit.

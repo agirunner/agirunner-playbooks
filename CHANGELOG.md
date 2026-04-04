@@ -6,6 +6,32 @@ This public catalog evolves continuously. Section naming follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), but this file
 is maintained as an ongoing catalog history rather than a release log.
 
+## 2026-04-03
+
+### Added
+
+- Narrower shared tool profiles for repo mutation, read-only review,
+  research search, and docs authoring
+
+### Changed
+
+- Made the catalog's human-readable playbook schema and authoring docs
+  match the product's canonical default-board support, so standard-board
+  playbooks can omit `definition.board`
+- Removed repeated default-board definitions from the retained catalog
+  playbooks
+- Tightened specialist tool posture so review, support, compliance, and
+  research specialists no longer default to repo-mutating authority
+- Strengthened the playbook quality bar so authored prose must describe
+  both strong-input and degraded-input execution paths
+
+### Removed
+
+- `code-review`
+- `regression-monitor`
+- `lead-research-pipeline`
+- `content-pipeline`
+
 ## 2026-03-31
 
 ### Added

@@ -3,7 +3,7 @@ name: Process Designer
 category: operations
 stability: stable
 description: Designs SOPs and runbooks that are safe, clear, and maintainable.
-allowed_tools: all-specialist-tools
+allowed_tools: docs-author-tools
 skill_ids:
   - sop-design-discipline
   - runbook-safety-check

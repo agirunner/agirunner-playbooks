@@ -1,6 +1,6 @@
 tool_profiles:
   - id: all-specialist-tools
-    description: Enables the default specialist tool set and excludes orchestrator-only tools.
+    description: Legacy broad tool profile retained for compatibility. Prefer the narrower shared profiles below for new or updated specialists.
     tools:
       - file_read
       - file_list
@@ -25,8 +25,8 @@ tool_profiles:
       - escalate
       - submit_handoff
       - read_predecessor_handoff
-  - id: research-specialist-tools
-    description: Enables the default research specialist tool set, including provider-native search when the task and model support it.
+  - id: repo-mutating-engineer-tools
+    description: Enables writable implementation work in repository-backed or host-directory workspaces.
     tools:
       - file_read
       - file_list
@@ -48,6 +48,75 @@ tool_profiles:
       - memory_search
       - memory_write
       - native_search
+      - web_fetch
+      - escalate
+      - submit_handoff
+      - read_predecessor_handoff
+  - id: read-only-review-tools
+    description: Enables read-only inspection, evidence gathering, and artifact delivery for review and analysis specialists.
+    tools:
+      - file_read
+      - file_list
+      - grep
+      - glob
+      - tool_search
+      - shell_exec
+      - git_status
+      - git_diff
+      - git_log
+      - artifact_upload
+      - artifact_list
+      - artifact_read
+      - memory_read
+      - memory_search
+      - memory_write
+      - web_fetch
+      - escalate
+      - submit_handoff
+      - read_predecessor_handoff
+  - id: research-search-tools
+    description: Enables read-only research, provider-native search, and artifact delivery for discovery and research specialists.
+    tools:
+      - file_read
+      - file_list
+      - grep
+      - glob
+      - tool_search
+      - shell_exec
+      - git_status
+      - git_diff
+      - git_log
+      - artifact_upload
+      - artifact_list
+      - artifact_read
+      - memory_read
+      - memory_search
+      - memory_write
+      - native_search
+      - web_fetch
+      - escalate
+      - submit_handoff
+      - read_predecessor_handoff
+  - id: docs-author-tools
+    description: Enables draft authoring in writable workspaces without repository publication authority.
+    tools:
+      - file_read
+      - file_list
+      - file_write
+      - file_edit
+      - grep
+      - glob
+      - tool_search
+      - shell_exec
+      - git_status
+      - git_diff
+      - git_log
+      - artifact_upload
+      - artifact_list
+      - artifact_read
+      - memory_read
+      - memory_search
+      - memory_write
       - web_fetch
       - escalate
       - submit_handoff

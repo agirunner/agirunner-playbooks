@@ -1,5 +1,5 @@
 id: contract-review
-version: 1.0.0
+version: 1.0.1
 name: Contract Review
 author: agirunner
 slug: contract-review
@@ -38,23 +38,6 @@ definition:
       required: false
   roles:
     - Contract Analyst
-  board:
-    entry_column_id: planned
-    columns:
-      - id: planned
-        label: Planned
-        description: Work is defined but not yet assigned.
-      - id: active
-        label: In Progress
-        description: A specialist is actively working.
-      - id: blocked
-        label: Blocked
-        description: Work is blocked and needs intervention.
-        is_blocked: true
-      - id: done
-        label: Done
-        description: The work item meets its acceptance criteria.
-        is_terminal: true
   stages:
     - name: term-extraction
       goal: Relevant clauses and obligations are identified.

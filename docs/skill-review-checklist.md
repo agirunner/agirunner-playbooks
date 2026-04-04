@@ -27,8 +27,11 @@ Every shared skill should make these things clear:
 - purpose
 - when to use it
 - what to do
+- what good execution looks like when the ideal inputs, tools, or source
+  quality are available
 - what not to do
 - required evidence or output shape
+- what to do when the ideal path is unavailable or the evidence is weak
 - failure and escalation cues when relevant
 - a concise form factor, usually at or under 100 lines
 - standard industry frameworks or quality bars when they genuinely help

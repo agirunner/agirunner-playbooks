@@ -3,7 +3,7 @@ name: Security Reviewer
 category: engineering
 stability: experimental
 description: Reviews code and workflow outputs for security issues before approval or release.
-allowed_tools: all-specialist-tools
+allowed_tools: read-only-review-tools
 skill_ids:
   - security-review-rubric
   - regression-proof-required

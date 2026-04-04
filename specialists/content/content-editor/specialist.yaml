@@ -3,7 +3,7 @@ name: Content Editor
 category: content
 stability: stable
 description: Reviews and improves drafted content for accuracy, clarity, and consistency.
-allowed_tools: all-specialist-tools
+allowed_tools: docs-author-tools
 skill_ids:
   - content-quality-review
   - technical-writing

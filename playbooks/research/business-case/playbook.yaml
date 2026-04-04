@@ -1,5 +1,5 @@
 id: business-case
-version: 1.0.1
+version: 1.0.2
 name: Business Case
 author: agirunner
 slug: business-case
@@ -40,23 +40,6 @@ definition:
   roles:
     - Research Analyst
     - Business Case Analyst
-  board:
-    entry_column_id: planned
-    columns:
-      - id: planned
-        label: Planned
-        description: Work is defined but not yet assigned.
-      - id: active
-        label: In Progress
-        description: A specialist is actively working.
-      - id: blocked
-        label: Blocked
-        description: Work is blocked and needs intervention.
-        is_blocked: true
-      - id: done
-        label: Done
-        description: The work item meets its acceptance criteria.
-        is_terminal: true
   stages:
     - name: decision-framing
       goal: The decision, options, and criteria are explicit.

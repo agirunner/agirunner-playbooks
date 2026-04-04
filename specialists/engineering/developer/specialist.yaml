@@ -3,7 +3,7 @@ name: Software Developer
 category: engineering
 stability: experimental
 description: Implements scoped code or configuration changes and records verification evidence.
-allowed_tools: all-specialist-tools
+allowed_tools: repo-mutating-engineer-tools
 skill_ids:
   - bug-reproduction-discipline
   - regression-proof-required

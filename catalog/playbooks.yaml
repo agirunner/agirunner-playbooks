@@ -4,7 +4,7 @@ playbooks:
     author: agirunner
     category: engineering
     stability: experimental
-    version: 1.0.0
+    version: 1.0.1
     summary: Diagnose and fix a bounded defect with review, security review, QA verification, and human release approval.
     specialist_ids:
       - developer
@@ -17,7 +17,7 @@ playbooks:
     author: agirunner
     category: engineering
     stability: experimental
-    version: 1.0.0
+    version: 1.0.1
     summary: Execute an urgent defect fix with explicit risk tradeoffs and human release approval.
     specialist_ids:
       - developer
@@ -25,47 +25,24 @@ playbooks:
       - security-reviewer
       - qa-reviewer
     path: playbooks/engineering/hotfix/playbook.yaml
-  - id: code-review
-    name: Code Review
-    author: agirunner
-    category: engineering
-    stability: experimental
-    version: 1.0.0
-    summary: Review a proposed change for correctness, security, and verification quality before disposition.
-    specialist_ids:
-      - reviewer
-      - security-reviewer
-      - qa-reviewer
-    path: playbooks/engineering/code-review/playbook.yaml
   - id: pr-guardian
     name: PR Guardian
     author: agirunner
     category: engineering
     stability: experimental
-    version: 1.0.0
+    version: 1.0.1
     summary: Guard a proposed change against merge risk with review, security, and regression scrutiny.
     specialist_ids:
       - reviewer
       - security-reviewer
       - qa-reviewer
     path: playbooks/engineering/pr-guardian/playbook.yaml
-  - id: regression-monitor
-    name: Regression Monitor
-    author: agirunner
-    category: engineering
-    stability: experimental
-    version: 1.0.0
-    summary: Evaluate changed behavior for regression risk, verification gaps, and follow-up actions.
-    specialist_ids:
-      - qa-reviewer
-      - reviewer
-    path: playbooks/engineering/regression-monitor/playbook.yaml
   - id: customer-support-triage
     name: Customer Support Triage
     author: agirunner
     category: operations
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Classify, prioritize, and route an inbound support request with a clear next action.
     specialist_ids:
       - support-triage-analyst
@@ -75,7 +52,7 @@ playbooks:
     author: agirunner
     category: operations
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Draft a standard operating procedure with scope, owners, steps, and exception handling.
     specialist_ids:
       - process-designer
@@ -86,7 +63,7 @@ playbooks:
     author: agirunner
     category: operations
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Draft a safe operational runbook with prerequisites, rollback, and validation steps.
     specialist_ids:
       - process-designer
@@ -97,27 +74,17 @@ playbooks:
     author: agirunner
     category: research
     stability: stable
-    version: 1.0.1
+    version: 1.0.2
     summary: Produce a grounded research synthesis with explicit evidence, contradictions, and confidence.
     specialist_ids:
       - research-analyst
     path: playbooks/research/research-analysis/playbook.yaml
-  - id: lead-research-pipeline
-    name: Lead Research Pipeline
-    author: agirunner
-    category: research
-    stability: stable
-    version: 1.0.1
-    summary: Qualify an account or prospect with fit, urgency, risk, and next-step guidance.
-    specialist_ids:
-      - lead-research-analyst
-    path: playbooks/research/lead-research-pipeline/playbook.yaml
   - id: vendor-evaluation
     name: Vendor Evaluation
     author: agirunner
     category: research
     stability: stable
-    version: 1.0.1
+    version: 1.0.2
     summary: Compare vendors against explicit requirements, risks, and decision criteria.
     specialist_ids:
       - vendor-analyst
@@ -128,7 +95,7 @@ playbooks:
     author: agirunner
     category: research
     stability: stable
-    version: 1.0.1
+    version: 1.0.2
     summary: Structure a decision-ready business case with options, tradeoffs, and recommendation logic.
     specialist_ids:
       - research-analyst
@@ -139,7 +106,7 @@ playbooks:
     author: agirunner
     category: compliance
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Review policy text for obligations, ambiguity, conflicts, and process impact.
     specialist_ids:
       - policy-analyst
@@ -149,7 +116,7 @@ playbooks:
     author: agirunner
     category: compliance
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Review a contract for obligations, deadlines, risk concentration, and follow-up items.
     specialist_ids:
       - contract-analyst
@@ -159,7 +126,7 @@ playbooks:
     author: agirunner
     category: content
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Draft or revise task-oriented technical documentation with editorial review.
     specialist_ids:
       - technical-writer
@@ -170,20 +137,9 @@ playbooks:
     author: agirunner
     category: content
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Draft or revise API reference material with editorial review and contract caveats.
     specialist_ids:
       - api-docs-writer
       - content-editor
     path: playbooks/content/api-documentation/playbook.yaml
-  - id: content-pipeline
-    name: Content Pipeline
-    author: agirunner
-    category: content
-    stability: stable
-    version: 1.0.0
-    summary: Turn a content brief into a reviewed draft ready for publication or handoff.
-    specialist_ids:
-      - technical-writer
-      - content-editor
-    path: playbooks/content/content-pipeline/playbook.yaml

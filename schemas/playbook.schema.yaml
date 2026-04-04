@@ -69,7 +69,6 @@ properties:
     required:
       - process_instructions
       - roles
-      - board
       - stages
       - lifecycle
     properties:

@@ -3,7 +3,7 @@ name: QA Reviewer
 category: engineering
 stability: experimental
 description: Verifies observed behavior, regression evidence, and release confidence.
-allowed_tools: all-specialist-tools
+allowed_tools: read-only-review-tools
 skill_ids:
   - bug-reproduction-discipline
   - regression-proof-required

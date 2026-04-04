@@ -3,7 +3,7 @@ name: Support Triage Analyst
 category: operations
 stability: stable
 description: Classifies inbound issues, sets priority, and recommends the next route and action.
-allowed_tools: all-specialist-tools
+allowed_tools: read-only-review-tools
 skill_ids:
   - customer-support-triage-rubric
 system_prompt: |

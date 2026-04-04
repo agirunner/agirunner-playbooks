@@ -22,10 +22,15 @@ The `system_prompt` should:
 - state the specialist role clearly
 - tell the specialist to read the workflow goal, parameters, and current
   workspace before acting
+- describe what good execution looks like when the needed evidence,
+  tools, and workspace access are available
 - define what evidence or artifacts must be produced
 - define what the specialist must not do
 - tell the specialist how to behave when the workspace is writable
   versus advisory-only
+- tell the specialist what to do when the strongest path is blocked by
+  weak inputs, missing context, unavailable tools, or contradictory
+  evidence
 - tell the specialist when to pause, route back, or escalate rather than
   invent missing facts
 
@@ -35,18 +40,19 @@ the platform does not actually own today.
 
 ## Tool Contract Standard
 
-Most specialists should declare:
+Most specialists should declare a named shared profile from
+`catalog/tool-profiles.yaml`:
 
 ```yaml
-allowed_tools: all-specialist-tools
+allowed_tools: read-only-review-tools
 ```
 
-That shared profile is defined in `catalog/tool-profiles.yaml` and
-should include every specialist-safe tool while excluding orchestrator-
-only tools. When a specialist category needs a different shared default,
-use another named profile from `catalog/tool-profiles.yaml`. Use an
-explicit array only when the specialist truly needs a smaller tool
-surface than the available shared profiles.
+Those shared profiles are defined in `catalog/tool-profiles.yaml`.
+Choose the narrowest profile that still lets the specialist do its job.
+When a specialist category needs a different shared default, use another
+named profile from `catalog/tool-profiles.yaml`. Use an explicit array
+only when the specialist truly needs a smaller tool surface than the
+available shared profiles.
 
 ## Reuse Standard
 

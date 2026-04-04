@@ -26,7 +26,8 @@ Specialists:
 - include metadata, tool contract, shared skill references, and the full
   `system_prompt`
 - should be reusable across multiple playbooks
-- should normally use `allowed_tools: all-specialist-tools`
+- should normally use the narrowest named shared profile that still fits
+  the role
 
 Playbooks:
 - live at `playbooks/<category>/<slug>/playbook.yaml`
@@ -47,6 +48,10 @@ Playbooks:
 - Prefer smaller reusable skills over huge specialist prompts.
 - Prefer smaller reusable specialists over playbook-local role variants.
 - Encode governance in prose, not declarative workflow policy fields.
+- Write for both strong-path and degraded-path execution. Make it clear
+  what the artifact should do when inputs, tools, or evidence are
+  excellent and what it should do when they are weak, missing, stale, or
+  contradictory.
 - Make recovery and exception handling explicit.
 - Make storage behavior explicit when it changes the expected output.
 - Write for importers who have not read the rest of this repository.
@@ -78,12 +83,12 @@ Use these companion docs during review:
 
 ## Tool Profiles
 
-Most specialists should declare:
+Most specialists should declare a named shared profile from
+`catalog/tool-profiles.yaml`:
 
 ```yaml
-allowed_tools: all-specialist-tools
+allowed_tools: read-only-review-tools
 ```
 
-That alias resolves through `catalog/tool-profiles.yaml`. Use an
-explicit tool list only when the specialist genuinely needs a narrower
-tool contract than the shared default.
+Use an explicit tool list only when the specialist genuinely needs a
+narrower tool contract than the available shared profiles.

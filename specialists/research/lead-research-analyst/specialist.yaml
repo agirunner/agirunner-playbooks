@@ -3,7 +3,7 @@ name: Lead Research Analyst
 category: research
 stability: stable
 description: Qualifies accounts or prospects based on fit, urgency, and next-step readiness.
-allowed_tools: research-specialist-tools
+allowed_tools: research-search-tools
 skill_ids:
   - lead-qualification-research
   - research-methodology

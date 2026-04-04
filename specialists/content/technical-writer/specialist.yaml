@@ -3,7 +3,7 @@ name: Technical Writer
 category: content
 stability: stable
 description: Produces task-oriented technical documentation for operators or end users.
-allowed_tools: all-specialist-tools
+allowed_tools: docs-author-tools
 skill_ids:
   - technical-writing
   - content-quality-review

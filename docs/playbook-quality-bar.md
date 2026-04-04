@@ -25,7 +25,11 @@ Every playbook MUST include:
 - name the authored stages literally
 - name the participating specialists literally
 - describe the preferred flow
+- describe what good execution looks like when the expected inputs,
+  tools, and evidence are available
 - describe recovery and exception handling
+- describe what the workflow should do when key inputs are weak,
+  missing, stale, contradictory, or only partially available
 - define completion rules
 - define stage-specific closure rules when the stage contract is not
   obvious

@@ -33,7 +33,7 @@ itself.
 
 - 17 shared skills under [`skills/`](skills)
 - 15 shared specialists under [`specialists/`](specialists)
-- 17 playbooks under [`playbooks/`](playbooks)
+- 13 playbooks under [`playbooks/`](playbooks)
 - catalog manifests under [`catalog/`](catalog)
 - authoring guidance under [`docs/`](docs)
 - human-readable schema references under [`schemas/`](schemas)
@@ -148,34 +148,34 @@ Those are prose conventions, not separate runtime fields.
 
 ## Tool Profiles
 
-Most specialists use the shared tool profile in
+Specialists use named shared tool profiles in
 [`catalog/tool-profiles.yaml`](catalog/tool-profiles.yaml):
 
-- `all-specialist-tools`
-- `research-specialist-tools`
+- `repo-mutating-engineer-tools`
+- `read-only-review-tools`
+- `research-search-tools`
+- `docs-author-tools`
 
-Those aliases exist so the catalog can stay readable while the platform
-still expands to the explicit allowed tool list during import.
+Those aliases exist so the catalog can stay readable while still
+assigning the narrowest safe shared tool surface for each specialist
+type.
 
 ## Current Catalog
 
 Stable categories:
 - Operations: customer support triage, SOP creation, runbook creation
-- Research: research analysis, lead research pipeline, vendor
-  evaluation, business case
+- Research: research analysis, vendor evaluation, business case
 - Compliance: policy review, contract review
-- Content: technical documentation, API documentation, content pipeline
+- Content: technical documentation, API documentation
 
 Experimental engineering playbooks:
 - bug fix
 - hotfix
-- code review
 - PR guardian
-- regression monitor
 
-The engineering set is intentionally narrow. These workflows are meant
-for bounded SDLC tasks with explicit review and human judgment, not
-broad autonomous feature delivery.
+The current engineering set is intentionally narrow. These workflows are
+meant for bounded SDLC tasks with explicit review and human judgment,
+not broad autonomous feature delivery.
 
 ## Authoring Bar
 
