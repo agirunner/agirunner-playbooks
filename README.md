@@ -106,6 +106,9 @@ Playbooks:
 - one `README.md` file per playbook
 - required metadata includes `id`, `name`, `author`, `version`,
   `category`, and `stability`
+- `definition.board` may be omitted when the playbook uses the canonical
+  first-party board seeded by authoring: `Inbox`, `Active`, `Blocked`,
+  `Done`
 - workflow semantics authored in prose inside
   `definition.process_instructions`
 
@@ -183,6 +186,7 @@ Each playbook must author:
 - a stable catalog identity and a visible author
 - explicit stages and stage goals
 - named specialists
+- either the canonical default board or a deliberate board override
 - a preferred flow
 - recovery and exception handling
 - completion rules

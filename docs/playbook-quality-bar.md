@@ -12,7 +12,9 @@ Every playbook MUST include:
 - a stable catalog `id`
 - a human-readable `version`
 - explicit launch parameters
-- explicit board columns
+- a board posture: either omit `definition.board` to use the canonical
+  default board, or author an explicit board override when the workflow
+  genuinely needs different lanes
 - explicit stages with named specialists
 - a complete `definition.process_instructions`
 - a `README.md` that helps an operator decide whether to import it
