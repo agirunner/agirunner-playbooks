@@ -1,0 +1,61 @@
+id: support-escalation-investigation
+version: 1.0.0
+name: Support Escalation Investigation
+author: agirunner
+slug: support-escalation-investigation
+category: operations
+stability: experimental
+description: Investigate a support escalation into an evidence packet for the next responsible team or operator.
+outcome: A support escalation packet exists with the case summary, reviewed evidence, open questions, and a justified next route.
+lifecycle: planned
+tags:
+  - support
+  - escalation
+  - investigation
+specialist_ids:
+  - support-triage-analyst
+  - support-resolution-analyst
+definition:
+  outcome: A support escalation packet exists with the case summary, reviewed evidence, open questions, and a justified next route.
+  process_instructions: |
+    Run the workflow through the authored stages `escalation-framing`, `evidence-gathering`, and `escalation-packet`. Treat each stage as a distinct checkpoint of escalation quality: `escalation-framing` exists to confirm why the case is being escalated and what decision the next team must make; `evidence-gathering` exists to collect the strongest available case evidence; `escalation-packet` exists to hand the next team a justified, evidence-backed packet instead of a vague transfer.
+
+    Use these roles deliberately: `Support Triage Analyst` frames the escalation and preserves severity, impact, and missing-information context; `Support Resolution Analyst` reviews the available case evidence and packages the escalation for the next responsible team or operator.
+
+    Preferred flow: start with the earliest unfinished stage, require the escalation reason and target outcome to be explicit before gathering more evidence, and keep internal notes separate from customer-safe summary language. The final packet should tell the next team what is happening, what evidence exists, what remains unknown, and why the route is justified.
+
+    Recovery and exception handling: if the escalation target is vague, if the evidence is too weak to justify escalation, if the case is really still a triage problem, or if critical logs, screenshots, or account details are missing, keep the current stage open until the gap is explicit. Do not route based on customer pressure alone. If the strongest honest answer is “needs more information before escalation,” record that directly instead of inventing a clean packet.
+
+    Completion rules: finish only after the final packet records the case summary, escalation rationale, evidence reviewed, open questions, recommended route, and the next action for the receiving team or operator. Stage-specific closure for this playbook: `escalation-framing` stays open until the reason and target outcome are explicit; `evidence-gathering` stays open until the reviewed evidence and limitations are recorded; `escalation-packet` stays open until the final packet justifies the route with the recorded evidence. Guided closure rule: prefer a slower but evidence-backed escalation packet over a quick transfer with missing diagnostic context.
+  parameters:
+    - slug: request_summary
+      title: Request Summary
+      required: true
+    - slug: customer_context
+      title: Customer Context
+      required: false
+    - slug: known_artifacts
+      title: Known Artifacts
+      required: false
+  roles:
+    - Support Triage Analyst
+    - Support Resolution Analyst
+  stages:
+    - name: escalation-framing
+      goal: The escalation reason and target outcome are explicit.
+      involves:
+        - Support Triage Analyst
+    - name: evidence-gathering
+      goal: The case evidence and limitations are recorded.
+      involves:
+        - Support Resolution Analyst
+    - name: escalation-packet
+      goal: An escalation packet is documented for the next team or operator.
+      involves:
+        - Support Resolution Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

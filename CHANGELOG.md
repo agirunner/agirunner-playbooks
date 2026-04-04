@@ -22,6 +22,9 @@ is maintained as an ongoing catalog history rather than a release log.
 - Phase 2 engineering playbooks: `release-readiness` and
   `eval-review`
 - Evaluation-review specialist and supporting rubric
+- Phase 3 support playbooks: `support-case-resolution` and
+  `support-escalation-investigation`
+- Support-resolution specialist and supporting rubric
 
 ### Changed
 

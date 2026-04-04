@@ -53,6 +53,14 @@ specialists:
     skill_ids:
       - customer-support-triage-rubric
     path: specialists/operations/support-triage-analyst/specialist.yaml
+  - id: support-resolution-analyst
+    name: Support Resolution Analyst
+    category: operations
+    stability: experimental
+    summary: Builds customer-safe resolution or escalation packets from support evidence and internal context.
+    skill_ids:
+      - support-resolution-discipline
+    path: specialists/operations/support-resolution-analyst/specialist.yaml
   - id: process-designer
     name: Process Designer
     category: operations

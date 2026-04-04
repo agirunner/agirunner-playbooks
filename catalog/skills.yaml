@@ -41,6 +41,12 @@ skills:
     stability: stable
     summary: Classify incoming support requests by issue type, urgency, route, and next action.
     path: skills/operations/customer-support-triage-rubric/SKILL.md
+  - id: support-resolution-discipline
+    name: Support Resolution Discipline
+    category: operations
+    stability: experimental
+    summary: Turn a support case into a customer-safe resolution or escalation packet with explicit evidence and gaps.
+    path: skills/operations/support-resolution-discipline/SKILL.md
   - id: runbook-safety-check
     name: Runbook Safety Check
     category: operations

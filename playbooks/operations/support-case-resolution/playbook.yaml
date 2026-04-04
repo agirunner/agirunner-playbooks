@@ -1,0 +1,61 @@
+id: support-case-resolution
+version: 1.0.0
+name: Support Case Resolution
+author: agirunner
+slug: support-case-resolution
+category: operations
+stability: experimental
+description: Resolve a support case into a customer-safe answer, internal notes, and next-step package.
+outcome: A support case resolution packet exists with a customer-safe response, internal notes, open questions, and a recommended next step.
+lifecycle: planned
+tags:
+  - support
+  - resolution
+  - operations
+specialist_ids:
+  - support-triage-analyst
+  - support-resolution-analyst
+definition:
+  outcome: A support case resolution packet exists with a customer-safe response, internal notes, open questions, and a recommended next step.
+  process_instructions: |
+    Run the workflow through the authored stages `case-framing`, `evidence-gathering`, and `resolution-packet`. Treat each stage as a distinct checkpoint of support quality: `case-framing` exists to confirm what the customer asked and what the current evidence says; `evidence-gathering` exists to review the available support context and likely resolution path; `resolution-packet` exists to produce a customer-safe answer plus the internal notes needed for follow-through.
+
+    Use these roles deliberately: `Support Triage Analyst` frames the case, confirms issue type and severity, and preserves missing information; `Support Resolution Analyst` reviews the evidence, drafts the customer-safe answer, and records the internal next-step packet.
+
+    Preferred flow: start with the earliest unfinished stage, require a clear case summary and current triage picture before drafting a resolution, and keep customer-safe output separate from internal diagnosis. If the available evidence supports a resolution, say what the customer should hear next and what internal follow-through is needed. If another team is still required, make that route explicit without pretending the case is already resolved.
+
+    Recovery and exception handling: if the case is still too ambiguous, if screenshots or logs are missing, if the available evidence is too weak to support a confident answer, or if the strongest honest outcome is escalation instead of resolution, keep the current stage open until that limitation is explicit. Do not promise account changes, product fixes, or credits that the workflow cannot perform. If the best honest output is a bounded answer plus open questions, record that directly.
+
+    Completion rules: finish only after the final packet records the case summary, evidence reviewed, customer-safe response, internal notes, open questions, and recommended next step. Stage-specific closure for this playbook: `case-framing` stays open until the case and current triage picture are explicit; `evidence-gathering` stays open until the reviewed evidence and limits are recorded; `resolution-packet` stays open until the final answer and internal notes are internally consistent and honest about uncertainty. Guided closure rule: prefer an honest bounded response with explicit next steps over a polished answer that hides missing evidence.
+  parameters:
+    - slug: request_summary
+      title: Request Summary
+      required: true
+    - slug: customer_context
+      title: Customer Context
+      required: false
+    - slug: known_artifacts
+      title: Known Artifacts
+      required: false
+  roles:
+    - Support Triage Analyst
+    - Support Resolution Analyst
+  stages:
+    - name: case-framing
+      goal: The support case and current triage picture are explicit.
+      involves:
+        - Support Triage Analyst
+    - name: evidence-gathering
+      goal: The available evidence and likely resolution path are bounded.
+      involves:
+        - Support Resolution Analyst
+    - name: resolution-packet
+      goal: A customer-safe resolution packet is documented.
+      involves:
+        - Support Resolution Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

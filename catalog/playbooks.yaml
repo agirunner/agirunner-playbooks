@@ -70,6 +70,28 @@ playbooks:
     specialist_ids:
       - support-triage-analyst
     path: playbooks/operations/customer-support-triage/playbook.yaml
+  - id: support-case-resolution
+    name: Support Case Resolution
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Resolve a support case into a customer-safe answer, internal notes, and next-step package.
+    specialist_ids:
+      - support-triage-analyst
+      - support-resolution-analyst
+    path: playbooks/operations/support-case-resolution/playbook.yaml
+  - id: support-escalation-investigation
+    name: Support Escalation Investigation
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Investigate a support escalation into an evidence packet for the next responsible team or operator.
+    specialist_ids:
+      - support-triage-analyst
+      - support-resolution-analyst
+    path: playbooks/operations/support-escalation-investigation/playbook.yaml
   - id: sop-creation
     name: SOP Creation
     author: agirunner
