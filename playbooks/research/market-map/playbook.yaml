@@ -1,0 +1,59 @@
+id: market-map
+version: 1.0.0
+name: Market Map
+author: agirunner
+slug: market-map
+category: research
+stability: stable
+description: Map a market slice into relevant entities, segments, and evidence-backed comparisons.
+outcome: A market map exists with grouped entities, comparison notes, gaps, and recommended next research steps.
+lifecycle: planned
+tags:
+  - research
+  - discovery
+  - market
+specialist_ids:
+  - discovery-analyst
+definition:
+  outcome: A market map exists with grouped entities, comparison notes, gaps, and recommended next research steps.
+  process_instructions: |
+    Run the workflow through the authored stages `market-framing`, `entity-discovery`, and `mapping-synthesis`. Treat each stage as a distinct checkpoint of market understanding: `market-framing` exists to define the market slice and comparison frame; `entity-discovery` exists to find the relevant entities and supporting evidence; `mapping-synthesis` exists to group the entities into a usable market view with gaps and next steps.
+
+    Use these roles deliberately: `Discovery Analyst` frames the market question, finds the relevant entities, and produces the final market map.
+
+    Preferred flow: start with the earliest unfinished stage, require the market topic and comparison axes to be explicit before grouping entities, and prefer direct evidence that an entity belongs in the market slice over superficial mentions. When the quoted `native web search` tool is available to the current task, use it for open-web market discovery before relying only on narrower source paths. Keep entity inclusion logic consistent throughout the map.
+
+    Recovery and exception handling: if the market definition is too broad, if entities are being grouped without evidence, if comparison axes change after discovery begins, or if the available search tooling does not surface a trustworthy market picture, keep the current stage open until the limitation is explicit. Do not turn a weak list into a fake market taxonomy. If the strongest honest answer is an initial map with major gaps, record those gaps directly.
+
+    Completion rules: finish only after the final market map records the market topic, grouping frame, included entities, comparison notes, material gaps, and recommended next research steps. Stage-specific closure for this playbook: `market-framing` stays open until the market slice and comparison frame are explicit; `entity-discovery` stays open until candidate entities are gathered and bounded; `mapping-synthesis` stays open until the grouped market view is internally consistent and honest about uncertainty. Guided closure rule: prefer a smaller but defensible market map over a sprawling map built from weak inclusion evidence.
+  parameters:
+    - slug: market_topic
+      title: Market Topic
+      required: true
+    - slug: comparison_axes
+      title: Comparison Axes
+      required: false
+    - slug: search_constraints
+      title: Search Constraints
+      required: false
+  roles:
+    - Discovery Analyst
+  stages:
+    - name: market-framing
+      goal: The market slice and comparison frame are explicit.
+      involves:
+        - Discovery Analyst
+    - name: entity-discovery
+      goal: Relevant entities are discovered and bounded.
+      involves:
+        - Discovery Analyst
+    - name: mapping-synthesis
+      goal: A market map with groups, gaps, and next steps is documented.
+      involves:
+        - Discovery Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

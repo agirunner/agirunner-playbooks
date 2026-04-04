@@ -1,0 +1,59 @@
+id: prospect-search
+version: 1.0.0
+name: Prospect Search
+author: agirunner
+slug: prospect-search
+category: research
+stability: stable
+description: Find and rank likely prospect targets against an ideal profile with evidence and confidence notes.
+outcome: A prospect packet exists with ranked candidates, fit notes, risks, and recommended next actions.
+lifecycle: planned
+tags:
+  - research
+  - discovery
+  - prospecting
+specialist_ids:
+  - lead-research-analyst
+definition:
+  outcome: A prospect packet exists with ranked candidates, fit notes, risks, and recommended next actions.
+  process_instructions: |
+    Run the workflow through the authored stages `profile-framing`, `candidate-search`, and `prospect-packet`. Treat each stage as a distinct checkpoint of prospect quality: `profile-framing` exists to define the ideal profile and ranking rules; `candidate-search` exists to gather and compare candidates against that profile; `prospect-packet` exists to turn the result into a ranked prospect packet with fit, urgency, and risk notes.
+
+    Use these roles deliberately: `Account Discovery Analyst` frames the profile, searches for candidates, and produces the final packet.
+
+    Preferred flow: start with the earliest unfinished stage, require the ideal profile and ranking logic to be explicit before comparing prospects, and use one consistent qualification frame across the candidate set. When the quoted `native web search` tool is available to the current task, use it for open-web prospect discovery before relying only on narrower source paths. Remove weak candidates instead of forcing a longer list, and keep profile fit separate from urgency signals.
+
+    Recovery and exception handling: if the ideal profile is vague, if ranking rules change after search begins, if the available evidence is too weak to support a ranked packet, or if external search tooling does not surface enough credible candidates, keep the current stage open until the limitation is explicit. Do not convert partial search coverage into fake ranking confidence. If the strongest honest answer is a short list or a request for sharper targeting, record that directly.
+
+    Completion rules: finish only after the final packet records the ideal profile, ranked candidates, fit notes, urgency signals, risks or gaps, and recommended next actions. Stage-specific closure for this playbook: `profile-framing` stays open until the profile and ranking rules are explicit; `candidate-search` stays open until the available candidates are gathered and bounded; `prospect-packet` stays open until the final ranking follows from the recorded evidence. Guided closure rule: prefer a shorter but defensible candidate set over an inflated packet built from weak search coverage.
+  parameters:
+    - slug: ideal_profile
+      title: Ideal Profile
+      required: true
+    - slug: market_scope
+      title: Market Scope
+      required: false
+    - slug: ranking_rules
+      title: Ranking Rules
+      required: false
+  roles:
+    - Account Discovery Analyst
+  stages:
+    - name: profile-framing
+      goal: The ideal profile and ranking rules are explicit.
+      involves:
+        - Account Discovery Analyst
+    - name: candidate-search
+      goal: Candidate prospects are gathered and compared.
+      involves:
+        - Account Discovery Analyst
+    - name: prospect-packet
+      goal: A ranked prospect packet is documented.
+      involves:
+        - Account Discovery Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

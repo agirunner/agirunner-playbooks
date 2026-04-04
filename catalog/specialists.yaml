@@ -61,15 +61,33 @@ specialists:
     skill_ids:
       - research-methodology
     path: specialists/research/research-analyst/specialist.yaml
-  - id: lead-research-analyst
-    name: Lead Research Analyst
+  - id: discovery-analyst
+    name: Discovery Analyst
     category: research
     stability: stable
-    summary: Qualifies accounts or prospects based on fit, urgency, and next-step readiness.
+    summary: Produces scoped discovery packets, market maps, and evidence-backed candidate sets.
+    skill_ids:
+      - discovery-packet-discipline
+      - research-methodology
+    path: specialists/research/discovery-analyst/specialist.yaml
+  - id: lead-research-analyst
+    name: Account Discovery Analyst
+    category: research
+    stability: stable
+    summary: Qualifies accounts or prospects based on fit, urgency, risk, and next-step readiness.
     skill_ids:
       - lead-qualification-research
       - research-methodology
     path: specialists/research/lead-research-analyst/specialist.yaml
+  - id: research-reviewer
+    name: Research Reviewer
+    category: research
+    stability: stable
+    summary: Reviews research packets and reports for evidence support, missing contradictions, and overclaim risk.
+    skill_ids:
+      - research-review-rubric
+      - research-methodology
+    path: specialists/research/research-reviewer/specialist.yaml
   - id: vendor-analyst
     name: Vendor Analyst
     category: research

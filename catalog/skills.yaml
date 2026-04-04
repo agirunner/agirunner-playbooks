@@ -54,17 +54,29 @@ skills:
     summary: Turn a business question into options, tradeoffs, quantified impact, and a recommendation.
     path: skills/research/business-case-structuring/SKILL.md
   - id: lead-qualification-research
-    name: Lead Qualification Research
+    name: Account Discovery Research
     category: research
     stability: stable
-    summary: Assess a prospect or account for fit, urgency, risk, and next-step readiness.
+    summary: Assess an account or prospect for fit, urgency, risk, and next-step readiness.
     path: skills/research/lead-qualification-research/SKILL.md
+  - id: discovery-packet-discipline
+    name: Discovery Packet Discipline
+    category: research
+    stability: stable
+    summary: Turn an open discovery brief into an evidence-backed packet with ranked findings, gaps, and next actions.
+    path: skills/research/discovery-packet-discipline/SKILL.md
   - id: research-methodology
     name: Research Methodology
     category: research
     stability: stable
     summary: Frame research questions, gather evidence, resolve contradictions, and report confidence honestly.
     path: skills/research/research-methodology/SKILL.md
+  - id: research-review-rubric
+    name: Research Review Rubric
+    category: research
+    stability: stable
+    summary: Review a research packet or report for evidence support, contradiction handling, and overclaim risk.
+    path: skills/research/research-review-rubric/SKILL.md
   - id: vendor-assessment
     name: Vendor Assessment
     category: research

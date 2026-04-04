@@ -1,0 +1,65 @@
+id: research-brief-to-report
+version: 1.0.0
+name: Research Brief To Report
+author: agirunner
+slug: research-brief-to-report
+category: research
+stability: stable
+description: Turn a research brief into a reviewed report with sources, caveats, and decision-ready framing.
+outcome: A reviewed report exists with sourced findings, caveats, and clear recommendation framing.
+lifecycle: planned
+tags:
+  - research
+  - reporting
+  - synthesis
+specialist_ids:
+  - research-analyst
+  - research-reviewer
+definition:
+  outcome: A reviewed report exists with sourced findings, caveats, and clear recommendation framing.
+  process_instructions: |
+    Run the workflow through the authored stages `brief-framing`, `source-gathering`, `report-draft`, and `review`. Treat each stage as a distinct checkpoint of report quality: `brief-framing` exists to define the report objective, audience, and scope; `source-gathering` exists to assemble the evidence needed for the report; `report-draft` exists to structure that evidence into a readable report; `review` exists to verify that the report does not hide unsupported claims, missing contradictions, or caveat gaps.
+
+    Use these roles deliberately: `Research Analyst` frames the brief, gathers the evidence, and drafts the report; `Research Reviewer` checks the draft for evidence support, contradiction handling, and overclaim risk.
+
+    Preferred flow: start with the earliest unfinished stage, require the brief, target audience, and report objective to be explicit before drafting prose, and gather the evidence before locking the report narrative. When the quoted `native web search` tool is available to the current task, use it for open-web discovery before relying only on narrower source-access paths. Route the draft to `Research Reviewer` only after the report names its source base, caveats, and recommendation framing directly.
+
+    Recovery and exception handling: if the brief is vague, if evidence is missing for key claims, if the draft presents assumptions as fact, if contradictions are collapsed into one narrative, or if the available research tooling cannot surface the needed sources, keep the current stage open until the limitation is explicit. Do not let readable prose hide evidence weakness. If the strongest honest answer is a report draft with labeled open questions or unresolved caveats, record that instead of forcing a clean final report.
+
+    Completion rules: finish only after the reviewed report records the brief, target audience, sources consulted, key findings, caveats, contradictions or gaps, confidence, recommendation framing, and review disposition. Stage-specific closure for this playbook: `brief-framing` stays open until the report objective and audience are explicit; `source-gathering` stays open until the source base is assembled and bounded; `report-draft` stays open until the report is readable and source-aware; `review` stays open until blocking evidence issues are resolved or clearly called out. Guided closure rule: prefer a bounded report with explicit caveats over a cleaner-looking report that overstates what the evidence proves.
+  parameters:
+    - slug: research_brief
+      title: Research Brief
+      required: true
+    - slug: target_audience
+      title: Target Audience
+      required: false
+    - slug: source_constraints
+      title: Source Constraints
+      required: false
+  roles:
+    - Research Analyst
+    - Research Reviewer
+  stages:
+    - name: brief-framing
+      goal: The report brief, audience, and scope are explicit.
+      involves:
+        - Research Analyst
+    - name: source-gathering
+      goal: The evidence needed for the report has been gathered and bounded.
+      involves:
+        - Research Analyst
+    - name: report-draft
+      goal: A readable report draft exists with explicit sources and caveats.
+      involves:
+        - Research Analyst
+    - name: review
+      goal: The report has been reviewed for evidence support and overclaim risk.
+      involves:
+        - Research Reviewer
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 4
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

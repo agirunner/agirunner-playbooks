@@ -31,9 +31,9 @@ itself.
 
 ## What This Repository Contains
 
-- 17 shared skills under [`skills/`](skills)
-- 15 shared specialists under [`specialists/`](specialists)
-- 13 playbooks under [`playbooks/`](playbooks)
+- 19 shared skills under [`skills/`](skills)
+- 17 shared specialists under [`specialists/`](specialists)
+- 19 playbooks under [`playbooks/`](playbooks)
 - catalog manifests under [`catalog/`](catalog)
 - authoring guidance under [`docs/`](docs)
 - human-readable schema references under [`schemas/`](schemas)
@@ -164,7 +164,9 @@ type.
 
 Stable categories:
 - Operations: customer support triage, SOP creation, runbook creation
-- Research: research analysis, vendor evaluation, business case
+- Research: search discovery, account discovery, market map, prospect
+  search, deep research pipeline, research brief to report, research
+  analysis, vendor evaluation, business case
 - Compliance: policy review, contract review
 - Content: technical documentation, API documentation
 

@@ -1,0 +1,59 @@
+id: account-discovery
+version: 1.0.0
+name: Account Discovery
+author: agirunner
+slug: account-discovery
+category: research
+stability: stable
+description: Build an account qualification packet with fit, urgency, risk, and next-step guidance.
+outcome: An account discovery packet exists with summary, qualification signals, risks, and the recommended next step.
+lifecycle: planned
+tags:
+  - research
+  - discovery
+  - account
+specialist_ids:
+  - lead-research-analyst
+definition:
+  outcome: An account discovery packet exists with summary, qualification signals, risks, and the recommended next step.
+  process_instructions: |
+    Run the workflow through the authored stages `account-framing`, `signal-gathering`, and `qualification-packet`. Treat each stage as a distinct checkpoint of account qualification quality: `account-framing` exists to define the account, target outcome, and fit criteria; `signal-gathering` exists to gather the strongest available evidence about fit, urgency, and blockers; `qualification-packet` exists to convert that evidence into an operator-usable account packet.
+
+    Use these roles deliberately: `Account Discovery Analyst` owns the account framing, evidence gathering, qualification logic, and final packet.
+
+    Preferred flow: start with the earliest unfinished stage, require the named account and the qualification goal to be explicit before interpreting signals, and prefer direct company, product, funding, hiring, or customer evidence over generic firmographics. When the quoted `native web search` tool is available to the current task, use it for open-web account discovery before relying only on narrower source paths. Keep fit, urgency, and risk as separate lenses in the final packet.
+
+    Recovery and exception handling: if the account identity is ambiguous, if the qualification goal is unclear, if the evidence is too weak to support a strong recommendation, or if external search tooling does not surface the needed evidence, keep the current stage open until the limitation is explicit. Do not force a positive qualification when the stronger answer is defer, disqualify, or gather more data. If the best honest output is a bounded profile with open questions, record that directly.
+
+    Completion rules: finish only after the final packet records the account summary, fit signals, urgency signals, risks or gaps, qualification level, and the recommended next step. Stage-specific closure for this playbook: `account-framing` stays open until the account and qualification goal are explicit; `signal-gathering` stays open until the available evidence is compared and bounded; `qualification-packet` stays open until the final recommendation follows from the recorded signals instead of narrative preference. Guided closure rule: prefer a cautious qualification packet with explicit open questions over a confident but weakly supported recommendation.
+  parameters:
+    - slug: account_name
+      title: Account Name
+      required: true
+    - slug: qualification_goal
+      title: Qualification Goal
+      required: false
+    - slug: search_constraints
+      title: Search Constraints
+      required: false
+  roles:
+    - Account Discovery Analyst
+  stages:
+    - name: account-framing
+      goal: The account target and qualification goal are explicit.
+      involves:
+        - Account Discovery Analyst
+    - name: signal-gathering
+      goal: Account signals are gathered and compared.
+      involves:
+        - Account Discovery Analyst
+    - name: qualification-packet
+      goal: A qualification packet is documented.
+      involves:
+        - Account Discovery Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

@@ -79,6 +79,68 @@ playbooks:
     specialist_ids:
       - research-analyst
     path: playbooks/research/research-analysis/playbook.yaml
+  - id: search-discovery
+    name: Search Discovery
+    author: agirunner
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Discover and rank relevant external sources, entities, or signals for a scoped brief.
+    specialist_ids:
+      - discovery-analyst
+    path: playbooks/research/search-discovery/playbook.yaml
+  - id: account-discovery
+    name: Account Discovery
+    author: agirunner
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Build an account qualification packet with fit, urgency, risk, and next-step guidance.
+    specialist_ids:
+      - lead-research-analyst
+    path: playbooks/research/account-discovery/playbook.yaml
+  - id: market-map
+    name: Market Map
+    author: agirunner
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Map a market slice into relevant entities, segments, and evidence-backed comparisons.
+    specialist_ids:
+      - discovery-analyst
+    path: playbooks/research/market-map/playbook.yaml
+  - id: prospect-search
+    name: Prospect Search
+    author: agirunner
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Find and rank likely prospect targets against an ideal profile with evidence and confidence notes.
+    specialist_ids:
+      - lead-research-analyst
+    path: playbooks/research/prospect-search/playbook.yaml
+  - id: deep-research-pipeline
+    name: Deep Research Pipeline
+    author: agirunner
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Run multi-pass research from brief to reviewed synthesis with explicit evidence and contradiction handling.
+    specialist_ids:
+      - research-analyst
+      - research-reviewer
+    path: playbooks/research/deep-research-pipeline/playbook.yaml
+  - id: research-brief-to-report
+    name: Research Brief To Report
+    author: agirunner
+    category: research
+    stability: stable
+    version: 1.0.0
+    summary: Turn a research brief into a reviewed report with sources, caveats, and decision-ready framing.
+    specialist_ids:
+      - research-analyst
+      - research-reviewer
+    path: playbooks/research/research-brief-to-report/playbook.yaml
   - id: vendor-evaluation
     name: Vendor Evaluation
     author: agirunner

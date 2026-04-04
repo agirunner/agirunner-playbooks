@@ -12,6 +12,13 @@ is maintained as an ongoing catalog history rather than a release log.
 
 - Narrower shared tool profiles for repo mutation, read-only review,
   research search, and docs authoring
+- Phase 2 research playbooks:
+  `search-discovery`, `account-discovery`, `market-map`,
+  `prospect-search`, `deep-research-pipeline`, and
+  `research-brief-to-report`
+- Research specialists for discovery and research evidence review
+- Shared research skills for discovery packet shaping and research
+  review
 
 ### Changed
 
@@ -24,6 +31,8 @@ is maintained as an ongoing catalog history rather than a release log.
   research specialists no longer default to repo-mutating authority
 - Strengthened the playbook quality bar so authored prose must describe
   both strong-input and degraded-input execution paths
+- Repositioned the published `lead-research-analyst` specialist toward
+  account and prospect discovery without changing its id
 
 ### Removed
 

@@ -3,10 +3,11 @@ name: lead-qualification-research
 description: Use when a prospect, account, or partnership target needs to be assessed for fit, urgency, risk, and next-step readiness.
 ---
 
-# Lead Qualification Research
+# Account Discovery Research
 
 ## Purpose
-Turn scattered account information into an actionable qualification view.
+Turn scattered account information into an actionable qualification
+packet with explicit fit, urgency, risk, and next-step guidance.
 
 ## Use When
 - a sales or partnership team needs a research packet
@@ -18,6 +19,11 @@ Turn scattered account information into an actionable qualification view.
 - Look for trigger events, urgency signals, and obvious blockers.
 - Note whether the strongest signals are recent, stale, explicit, or inferred.
 - Separate strong evidence from soft inference.
+- Prefer direct company, product, funding, hiring, customer, or public
+  signal evidence over generic firmographics when stronger evidence is
+  available.
+- When strong evidence is missing, narrow the recommendation instead of
+  stretching weak signals into a confident qualification.
 - Recommend a next step that matches the qualification level.
 
 ## Do Not
