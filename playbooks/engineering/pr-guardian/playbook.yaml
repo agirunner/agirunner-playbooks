@@ -1,10 +1,10 @@
 id: pr-guardian
-version: 1.0.3
+version: 1.0.4
 name: PR Guardian
 author: agirunner
 slug: pr-guardian
 category: engineering
-stability: beta
+stability: experimental
 description: Guard a proposed change against merge risk with review, security, and regression scrutiny.
 outcome: A proposed change has a clear merge-readiness recommendation with explicit blockers and follow-up notes.
 lifecycle: planned

@@ -3,8 +3,8 @@ playbooks:
     name: Bug Fix
     author: agirunner
     category: engineering
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Diagnose and fix a bounded defect with review, security review, QA verification, and human release approval.
     specialist_ids:
       - developer
@@ -16,8 +16,8 @@ playbooks:
     name: Hotfix
     author: agirunner
     category: engineering
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Execute an urgent defect fix with explicit risk tradeoffs and human release approval.
     specialist_ids:
       - developer
@@ -29,8 +29,8 @@ playbooks:
     name: PR Guardian
     author: agirunner
     category: engineering
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Guard a proposed change against merge risk with review, security, and regression scrutiny.
     specialist_ids:
       - reviewer
@@ -41,8 +41,8 @@ playbooks:
     name: Release Readiness
     author: agirunner
     category: engineering
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Combine review, security, and verification evidence into a release recommendation for human approval.
     specialist_ids:
       - reviewer
@@ -53,8 +53,8 @@ playbooks:
     name: Eval Review
     author: agirunner
     category: engineering
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Review benchmark or evaluation results for quality deltas, evidence gaps, and adoption risk.
     specialist_ids:
       - evaluation-reviewer
@@ -64,8 +64,8 @@ playbooks:
     name: Customer Support Triage
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Classify, prioritize, and route an inbound support request with a clear next action.
     specialist_ids:
       - support-triage-analyst
@@ -74,8 +74,8 @@ playbooks:
     name: Support Case Resolution
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Resolve a support case into a customer-safe answer, internal notes, and next-step package.
     specialist_ids:
       - support-triage-analyst
@@ -85,8 +85,8 @@ playbooks:
     name: Support Escalation Investigation
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Investigate a support escalation into an evidence packet for the next responsible team or operator.
     specialist_ids:
       - support-triage-analyst
@@ -96,8 +96,8 @@ playbooks:
     name: Document Extraction
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Extract structured fields from a document with evidence notes, exceptions, and review-ready output.
     specialist_ids:
       - extraction-analyst
@@ -106,8 +106,8 @@ playbooks:
     name: Contract Term Extraction
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Extract contract terms into a structured packet with ambiguity notes and review-ready evidence.
     specialist_ids:
       - extraction-analyst
@@ -117,8 +117,8 @@ playbooks:
     name: Filing Extraction
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Extract structured fields from a filing with normalization notes, evidence links, and exceptions.
     specialist_ids:
       - extraction-analyst
@@ -127,8 +127,8 @@ playbooks:
     name: Web Data Extraction
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Extract structured data from web sources with source references, confidence notes, and exceptions.
     specialist_ids:
       - extraction-analyst
@@ -137,8 +137,8 @@ playbooks:
     name: SQL Investigation
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Investigate a data question with a bounded query plan, evidence review, and findings packet.
     specialist_ids:
       - analytics-analyst
@@ -147,8 +147,8 @@ playbooks:
     name: Analytics Question
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Turn a stakeholder analytics question into a bounded answer with query basis and caveats.
     specialist_ids:
       - analytics-analyst
@@ -157,8 +157,8 @@ playbooks:
     name: Query Review And Report
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Review a proposed query or analysis packet for safety, logic, and stakeholder-readiness.
     specialist_ids:
       - analytics-analyst
@@ -167,8 +167,8 @@ playbooks:
     name: Test Plan Execution
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Execute a bounded test plan into a verification packet with run status, failures, and gaps.
     specialist_ids:
       - qa-reviewer
@@ -177,8 +177,8 @@ playbooks:
     name: SOP Creation
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Draft a standard operating procedure with scope, owners, steps, and exception handling.
     specialist_ids:
       - process-designer
@@ -188,8 +188,8 @@ playbooks:
     name: Runbook Creation
     author: agirunner
     category: operations
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Draft a safe operational runbook with prerequisites, rollback, and validation steps.
     specialist_ids:
       - process-designer
@@ -199,8 +199,8 @@ playbooks:
     name: Research Analysis
     author: agirunner
     category: research
-    stability: beta
-    version: 1.0.4
+    stability: experimental
+    version: 1.0.5
     summary: Produce a grounded research synthesis with explicit evidence, contradictions, and confidence.
     specialist_ids:
       - research-analyst
@@ -209,8 +209,8 @@ playbooks:
     name: Search Discovery
     author: agirunner
     category: research
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Discover and rank relevant external sources, entities, or signals for a scoped brief.
     specialist_ids:
       - discovery-analyst
@@ -219,8 +219,8 @@ playbooks:
     name: Account Discovery
     author: agirunner
     category: research
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Build an account qualification packet with fit, urgency, risk, and next-step guidance.
     specialist_ids:
       - lead-research-analyst
@@ -229,8 +229,8 @@ playbooks:
     name: Market Map
     author: agirunner
     category: research
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Map a market slice into relevant entities, segments, and evidence-backed comparisons.
     specialist_ids:
       - discovery-analyst
@@ -239,8 +239,8 @@ playbooks:
     name: Prospect Search
     author: agirunner
     category: research
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Find and rank likely prospect targets against an ideal profile with evidence and confidence notes.
     specialist_ids:
       - lead-research-analyst
@@ -249,8 +249,8 @@ playbooks:
     name: Deep Research Pipeline
     author: agirunner
     category: research
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Run multi-pass research from brief to reviewed synthesis with explicit evidence and contradiction handling.
     specialist_ids:
       - research-analyst
@@ -260,8 +260,8 @@ playbooks:
     name: Research Brief To Report
     author: agirunner
     category: research
-    stability: beta
-    version: 1.0.2
+    stability: experimental
+    version: 1.0.3
     summary: Turn a research brief into a reviewed report with sources, caveats, and decision-ready framing.
     specialist_ids:
       - research-analyst
@@ -271,8 +271,8 @@ playbooks:
     name: Vendor Evaluation
     author: agirunner
     category: research
-    stability: beta
-    version: 1.0.4
+    stability: experimental
+    version: 1.0.5
     summary: Compare vendors against explicit requirements, risks, and decision criteria.
     specialist_ids:
       - vendor-analyst
@@ -282,8 +282,8 @@ playbooks:
     name: Business Case
     author: agirunner
     category: research
-    stability: beta
-    version: 1.0.4
+    stability: experimental
+    version: 1.0.5
     summary: Structure a decision-ready business case with options, tradeoffs, and recommendation logic.
     specialist_ids:
       - research-analyst
@@ -293,8 +293,8 @@ playbooks:
     name: Policy Review
     author: agirunner
     category: compliance
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Review policy text for obligations, ambiguity, conflicts, and process impact.
     specialist_ids:
       - policy-analyst
@@ -303,8 +303,8 @@ playbooks:
     name: Contract Review
     author: agirunner
     category: compliance
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Review a contract for obligations, deadlines, risk concentration, and follow-up items.
     specialist_ids:
       - contract-analyst
@@ -313,8 +313,8 @@ playbooks:
     name: Technical Documentation
     author: agirunner
     category: content
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Draft or revise task-oriented technical documentation with editorial review.
     specialist_ids:
       - technical-writer
@@ -324,8 +324,8 @@ playbooks:
     name: API Documentation
     author: agirunner
     category: content
-    stability: beta
-    version: 1.0.3
+    stability: experimental
+    version: 1.0.4
     summary: Draft or revise API reference material with editorial review and contract caveats.
     specialist_ids:
       - api-docs-writer

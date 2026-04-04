@@ -162,7 +162,7 @@ type.
 
 ## Current Catalog
 
-Beta playbooks by area:
+Experimental playbooks by area:
 - Operations: customer support triage, SOP creation, runbook creation
 - Research: search discovery, account discovery, market map, prospect
   search, deep research pipeline, research brief to report, research
@@ -170,18 +170,18 @@ Beta playbooks by area:
 - Compliance: policy review, contract review
 - Content: technical documentation, API documentation
 
-Beta engineering playbooks:
+Experimental engineering playbooks:
 - bug fix
 - hotfix
 - PR guardian
 - release readiness
 - eval review
 
-Beta operations playbooks:
+Experimental operations playbooks:
 - support case resolution
 - support escalation investigation
 
-Beta data and QA playbooks:
+Experimental data and QA playbooks:
 - document extraction
 - contract term extraction
 - filing extraction

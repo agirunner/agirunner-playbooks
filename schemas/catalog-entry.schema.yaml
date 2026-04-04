@@ -32,7 +32,7 @@ properties:
   stability:
     type: string
     enum:
-      - beta
+      - experimental
   tags:
     type: array
     items:

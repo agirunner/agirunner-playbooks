@@ -1,10 +1,10 @@
 id: search-discovery
-version: 1.0.2
+version: 1.0.3
 name: Search Discovery
 author: agirunner
 slug: search-discovery
 category: research
-stability: beta
+stability: experimental
 description: Discover and rank relevant external sources, entities, or signals for a scoped brief.
 outcome: A discovery packet exists with ranked findings, supporting evidence, gaps, and a recommended next step.
 lifecycle: planned

@@ -1,10 +1,10 @@
 id: vendor-evaluation
-version: 1.0.4
+version: 1.0.5
 name: Vendor Evaluation
 author: agirunner
 slug: vendor-evaluation
 category: research
-stability: beta
+stability: experimental
 description: Compare vendors against explicit requirements, risks, and decision criteria.
 outcome: A vendor comparison exists with criteria, risks, unknowns, and a recommendation or shortlist.
 lifecycle: planned

@@ -1,10 +1,10 @@
 id: query-review-and-report
-version: 1.0.2
+version: 1.0.3
 name: Query Review And Report
 author: agirunner
 slug: query-review-and-report
 category: operations
-stability: beta
+stability: experimental
 description: Review a proposed query or analysis packet for safety, logic, and stakeholder-readiness.
 outcome: A query review packet exists with scope, logic review, caveats, and a recommendation on whether the packet is ready to use.
 lifecycle: planned

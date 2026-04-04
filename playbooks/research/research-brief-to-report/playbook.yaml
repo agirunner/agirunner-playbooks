@@ -1,10 +1,10 @@
 id: research-brief-to-report
-version: 1.0.2
+version: 1.0.3
 name: Research Brief To Report
 author: agirunner
 slug: research-brief-to-report
 category: research
-stability: beta
+stability: experimental
 description: Turn a research brief into a reviewed report with sources, caveats, and decision-ready framing.
 outcome: A reviewed report exists with sourced findings, caveats, and clear recommendation framing.
 lifecycle: planned

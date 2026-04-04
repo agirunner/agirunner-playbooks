@@ -1,10 +1,10 @@
 id: contract-term-extraction
-version: 1.0.2
+version: 1.0.3
 name: Contract Term Extraction
 author: agirunner
 slug: contract-term-extraction
 category: operations
-stability: beta
+stability: experimental
 description: Extract contract terms into a structured packet with ambiguity notes and review-ready evidence.
 outcome: A structured contract-term packet exists with extracted terms, supporting clauses, ambiguity notes, and next-step guidance.
 lifecycle: planned

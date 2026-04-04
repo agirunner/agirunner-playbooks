@@ -1,10 +1,10 @@
 id: test-plan-execution
-version: 1.0.2
+version: 1.0.3
 name: Test Plan Execution
 author: agirunner
 slug: test-plan-execution
 category: operations
-stability: beta
+stability: experimental
 description: Execute a bounded test plan into a verification packet with run status, failures, and gaps.
 outcome: A verification packet exists with step results, failures, blocked or skipped steps, coverage gaps, and the recommended next step.
 lifecycle: planned

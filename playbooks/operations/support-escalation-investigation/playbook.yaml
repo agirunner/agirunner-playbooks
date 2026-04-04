@@ -1,10 +1,10 @@
 id: support-escalation-investigation
-version: 1.0.2
+version: 1.0.3
 name: Support Escalation Investigation
 author: agirunner
 slug: support-escalation-investigation
 category: operations
-stability: beta
+stability: experimental
 description: Investigate a support escalation into an evidence packet for the next responsible team or operator.
 outcome: A support escalation packet exists with the case summary, reviewed evidence, open questions, and a justified next route.
 lifecycle: planned

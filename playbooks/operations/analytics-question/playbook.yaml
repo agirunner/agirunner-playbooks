@@ -1,10 +1,10 @@
 id: analytics-question
-version: 1.0.2
+version: 1.0.3
 name: Analytics Question
 author: agirunner
 slug: analytics-question
 category: operations
-stability: beta
+stability: experimental
 description: Turn a stakeholder analytics question into a bounded answer with query basis and caveats.
 outcome: An analytics answer packet exists with the question scope, data basis, findings, caveats, and recommended next step.
 lifecycle: planned

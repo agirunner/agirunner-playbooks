@@ -1,10 +1,10 @@
 id: research-analysis
-version: 1.0.4
+version: 1.0.5
 name: Research Analysis
 author: agirunner
 slug: research-analysis
 category: research
-stability: beta
+stability: experimental
 description: Produce a grounded research synthesis with explicit evidence, contradictions, and confidence.
 outcome: A research synthesis exists with evidence, contradictions, confidence, and a recommendation or next step.
 lifecycle: planned

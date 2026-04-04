@@ -1,10 +1,10 @@
 id: business-case
-version: 1.0.4
+version: 1.0.5
 name: Business Case
 author: agirunner
 slug: business-case
 category: research
-stability: beta
+stability: experimental
 description: Structure a decision-ready business case with options, tradeoffs, and recommendation logic.
 outcome: A business case exists with decision framing, options, evidence, assumptions, and a recommendation.
 lifecycle: planned

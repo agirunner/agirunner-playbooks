@@ -41,6 +41,8 @@ is maintained as an ongoing catalog history rather than a release log.
   the published playbook catalog
 - Removed repeated default-board definitions from the retained catalog
   playbooks
+- Relabeled the published playbook catalog as experimental while
+  leaving specialist and skill stability labels unchanged
 - Tightened specialist tool posture so review, support, compliance, and
   research specialists no longer default to repo-mutating authority
 - Strengthened the playbook quality bar so authored prose must describe
@@ -72,9 +74,9 @@ is maintained as an ongoing catalog history rather than a release log.
 - 17 shared skills across engineering, operations, research, compliance,
   and content
 - 15 shared specialists built on those skills
-- 12 beta playbooks across operations, research, compliance, and
+- 12 experimental playbooks across operations, research, compliance, and
   content
-- 5 beta engineering playbooks for narrow SDLC workflows
+- 5 experimental engineering playbooks for narrow SDLC workflows
 
 ### Changed
 

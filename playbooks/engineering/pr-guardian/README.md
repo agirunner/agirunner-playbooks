@@ -25,5 +25,5 @@ This playbook is storage-agnostic and can operate from artifacts alone.
 
 ## Import Notes
 
-This playbook is beta and should stay focused on bounded change
+This playbook is experimental and should stay focused on bounded change
 sets rather than broad project governance.

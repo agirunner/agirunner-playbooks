@@ -1,10 +1,10 @@
 id: prospect-search
-version: 1.0.2
+version: 1.0.3
 name: Prospect Search
 author: agirunner
 slug: prospect-search
 category: research
-stability: beta
+stability: experimental
 description: Find and rank likely prospect targets against an ideal profile with evidence and confidence notes.
 outcome: A prospect packet exists with ranked candidates, fit notes, risks, and recommended next actions.
 lifecycle: planned

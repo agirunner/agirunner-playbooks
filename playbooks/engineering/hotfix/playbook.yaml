@@ -1,10 +1,10 @@
 id: hotfix
-version: 1.0.3
+version: 1.0.4
 name: Hotfix
 author: agirunner
 slug: hotfix
 category: engineering
-stability: beta
+stability: experimental
 description: Execute an urgent defect fix with explicit risk tradeoffs and human release approval.
 outcome: An urgent defect is fixed or converted into an advisory hotfix package with explicit risk and approval context.
 lifecycle: planned

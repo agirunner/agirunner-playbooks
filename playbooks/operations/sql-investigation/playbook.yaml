@@ -1,10 +1,10 @@
 id: sql-investigation
-version: 1.0.2
+version: 1.0.3
 name: SQL Investigation
 author: agirunner
 slug: sql-investigation
 category: operations
-stability: beta
+stability: experimental
 description: Investigate a data question with a bounded query plan, evidence review, and findings packet.
 outcome: A SQL investigation packet exists with scope, query logic summary, findings, caveats, and recommended next analysis.
 lifecycle: planned

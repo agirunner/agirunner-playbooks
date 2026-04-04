@@ -1,10 +1,10 @@
 id: web-data-extraction
-version: 1.0.2
+version: 1.0.3
 name: Web Data Extraction
 author: agirunner
 slug: web-data-extraction
 category: operations
-stability: beta
+stability: experimental
 description: Extract structured data from web sources with source references, confidence notes, and exceptions.
 outcome: A web extraction packet exists with structured output, source references, confidence notes, and exceptions.
 lifecycle: planned

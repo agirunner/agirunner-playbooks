@@ -28,5 +28,5 @@ must stay advisory.
 
 ## Import Notes
 
-This playbook is beta and should stay limited to narrow urgent
+This playbook is experimental and should stay limited to narrow urgent
 changes, not broad refactors under pressure.

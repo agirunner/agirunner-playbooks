@@ -39,7 +39,7 @@ properties:
   stability:
     type: string
     enum:
-      - beta
+      - experimental
   description:
     type: string
     minLength: 1

@@ -1,10 +1,10 @@
 id: runbook-creation
-version: 1.0.3
+version: 1.0.4
 name: Runbook Creation
 author: agirunner
 slug: runbook-creation
 category: operations
-stability: beta
+stability: experimental
 description: Draft a safe operational runbook with prerequisites, rollback, and validation steps.
 outcome: A runbook draft exists with safe sequencing, prerequisites, rollback guidance, and validation steps.
 lifecycle: planned
