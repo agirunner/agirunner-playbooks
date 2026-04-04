@@ -30,6 +30,8 @@ access than on writable repository access.
 
 If external research providers are configured for the imported
 specialists, especially when the current task and selected model expose
-the quoted `native web search` tool, the output quality improves
-materially. The workflow should still complete honestly when source
-access is limited or that tool is not enabled.
+the `native_search` tool for quoted `native web search`, the output
+quality improves materially when it is the first open-web discovery step
+and `web_fetch` is used afterward to inspect the strongest sources that
+search surfaced. The workflow should still complete honestly when
+source access is limited or that tool is not enabled.

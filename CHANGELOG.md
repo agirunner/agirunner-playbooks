@@ -54,6 +54,9 @@ is maintained as an ongoing catalog history rather than a release log.
   they enumerate available MCP and source-access tools first and treat
   quoted `native web search` as conditional on current task and model
   availability
+- Tightened research specialists and playbooks so they name the actual
+  `native_search` tool contract and explicitly prefer search-first,
+  fetch-second behavior when it is available
 - Repositioned the published `lead-research-analyst` specialist toward
   account and prospect discovery without changing its id
 - Expanded `QA Reviewer` so it can synthesize a release-readiness packet

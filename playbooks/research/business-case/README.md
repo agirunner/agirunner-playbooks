@@ -30,6 +30,8 @@ research access alone.
 
 This playbook benefits from external research access for the
 `Research Analyst`, especially when the current task and selected model
-expose the quoted `native web search` tool, but it should still close
-honestly with bounded assumptions when research access is limited or
-that tool is not enabled.
+expose the `native_search` tool for quoted `native web search` and make
+it the first open-web discovery step before using `web_fetch` to inspect
+the strongest sources that search surfaced, but it should
+still close honestly with bounded assumptions when research access is
+limited or that tool is not enabled.

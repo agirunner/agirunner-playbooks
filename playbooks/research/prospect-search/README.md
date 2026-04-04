@@ -29,8 +29,9 @@ access. It does not require a writable code workspace.
 
 ## Import Notes
 
-Best results come when the imported Account Discovery Analyst can use
-the quoted `native web search` tool when the current task and selected model expose it, or an equivalent
-external research integration. The authored workflow should still
-produce a smaller, bounded packet when those tools are unavailable, but
-it must not overstate ranking confidence.
+Best results come when the imported Account Discovery Analyst makes
+`native_search` its first open-web discovery step when the current task
+and selected model expose it, then uses `web_fetch` to inspect the
+strongest hits that search surfaced. The authored workflow should still produce a smaller,
+bounded packet when those tools are unavailable, but it must not
+overstate ranking confidence.

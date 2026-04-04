@@ -16,6 +16,8 @@ and unresolved uncertainty.
 
 ## Do
 - Start with the exact research question.
+- Use `tool_search` with exact tool ids or names, beginning with `native_search` and `web_fetch` when relevant, to confirm the current task's exposed tool list before deciding which research surfaces are actually available.
+- If `native_search` is exposed and the brief or task inputs say to prefer quoted `native web search`, use quoted `native web search` before starting open-web discovery with `web_fetch`.
 - Prefer primary or direct sources where possible.
 - Use a clear source hierarchy: primary first, direct secondary next, tertiary only with caution.
 - Track source recency explicitly when the topic can change quickly.
@@ -25,6 +27,8 @@ and unresolved uncertainty.
 - State confidence honestly.
 
 ## Do Not
+- Claim `native_search` or quoted `native web search` is unavailable after only a vague natural-language `tool_search` miss; check exact tool ids or names first.
+- Carry a stale tool-availability note from an earlier artifact forward when the current task exposes a different tool set.
 - Blend facts and interpretation without labeling them.
 - Ignore contradictory evidence.
 - Pretend weak sources support a strong conclusion.

@@ -29,9 +29,10 @@ access. It does not require a writable code workspace.
 
 ## Import Notes
 
-Best results come when the imported research specialist can use the
-quoted `native web search` tool when the current task and selected model expose it, or an equivalent external
-research integration. The authored Research Analyst guidance prefers
-that tool when the current task and selected model expose it, but the workflow should
-still function with documented source limits if it is not configured,
-not enabled, or does not surface the needed evidence.
+Best results come when the imported research specialist makes
+`native_search` its first open-web discovery step when the current task
+and selected model expose it, then uses `web_fetch` to inspect the
+strongest hits that search surfaced. The authored Research Analyst
+guidance requires that search-first flow, but the workflow should still
+function with documented source limits if it is not configured, not
+enabled, or does not surface the needed evidence.
