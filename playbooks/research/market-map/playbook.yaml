@@ -1,10 +1,10 @@
 id: market-map
-version: 1.0.0
+version: 1.0.1
 name: Market Map
 author: agirunner
 slug: market-map
 category: research
-stability: stable
+stability: beta
 description: Map a market slice into relevant entities, segments, and evidence-backed comparisons.
 outcome: A market map exists with grouped entities, comparison notes, gaps, and recommended next research steps.
 lifecycle: planned

@@ -1,10 +1,10 @@
 id: customer-support-triage
-version: 1.0.1
+version: 1.0.2
 name: Customer Support Triage
 author: agirunner
 slug: customer-support-triage
 category: operations
-stability: stable
+stability: beta
 description: Classify, prioritize, and route an inbound support request with a clear next action.
 outcome: An inbound support item is classified, prioritized, and routed with a concrete next responsible route and action.
 lifecycle: planned

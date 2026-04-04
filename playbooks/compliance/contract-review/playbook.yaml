@@ -1,10 +1,10 @@
 id: contract-review
-version: 1.0.1
+version: 1.0.2
 name: Contract Review
 author: agirunner
 slug: contract-review
 category: compliance
-stability: stable
+stability: beta
 description: Review a contract for obligations, deadlines, risk concentration, and follow-up items.
 outcome: A contract review exists with key obligations, risk areas, dates, and recommended follow-up.
 lifecycle: planned

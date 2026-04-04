@@ -1,10 +1,10 @@
 id: technical-documentation
-version: 1.0.1
+version: 1.0.2
 name: Technical Documentation
 author: agirunner
 slug: technical-documentation
 category: content
-stability: stable
+stability: beta
 description: Draft or revise task-oriented technical documentation with editorial review.
 outcome: A reviewed technical documentation draft exists with clear audience, steps, limits, and follow-up notes.
 lifecycle: planned

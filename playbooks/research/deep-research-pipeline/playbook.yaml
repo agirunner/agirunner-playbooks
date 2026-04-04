@@ -1,10 +1,10 @@
 id: deep-research-pipeline
-version: 1.0.0
+version: 1.0.1
 name: Deep Research Pipeline
 author: agirunner
 slug: deep-research-pipeline
 category: research
-stability: stable
+stability: beta
 description: Run multi-pass research from brief to reviewed synthesis with explicit evidence and contradiction handling.
 outcome: A reviewed research synthesis exists with evidence, contradictions, confidence, and an operator-usable recommendation.
 lifecycle: planned

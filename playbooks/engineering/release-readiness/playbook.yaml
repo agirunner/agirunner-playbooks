@@ -1,10 +1,10 @@
 id: release-readiness
-version: 1.0.0
+version: 1.0.1
 name: Release Readiness
 author: agirunner
 slug: release-readiness
 category: engineering
-stability: experimental
+stability: beta
 description: Combine review, security, and verification evidence into a release recommendation for human approval.
 outcome: A release-readiness packet exists with blocking findings, evidence summary, rollback notes, and a human-facing approval recommendation.
 lifecycle: planned

@@ -1,10 +1,10 @@
 id: policy-review
-version: 1.0.1
+version: 1.0.2
 name: Policy Review
 author: agirunner
 slug: policy-review
 category: compliance
-stability: stable
+stability: beta
 description: Review policy text for obligations, ambiguity, conflicts, and process impact.
 outcome: A policy review exists with obligations, ambiguities, process impacts, and recommended follow-up.
 lifecycle: planned

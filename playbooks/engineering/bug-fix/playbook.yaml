@@ -1,10 +1,10 @@
 id: bug-fix
-version: 1.0.1
+version: 1.0.2
 name: Bug Fix
 author: agirunner
 slug: bug-fix
 category: engineering
-stability: experimental
+stability: beta
 description: Diagnose and fix a bounded defect with review, security review, QA verification, and human release approval.
 outcome: A bounded defect is fixed or converted into an advisory fix package with review, verification, and release decision context.
 lifecycle: planned

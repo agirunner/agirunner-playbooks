@@ -1,10 +1,10 @@
 id: eval-review
-version: 1.0.0
+version: 1.0.1
 name: Eval Review
 author: agirunner
 slug: eval-review
 category: engineering
-stability: experimental
+stability: beta
 description: Review benchmark or evaluation results for quality deltas, evidence gaps, and adoption risk.
 outcome: An evaluation review packet exists with quality deltas, coverage gaps, and a recommendation on whether the revision is ready to adopt.
 lifecycle: planned

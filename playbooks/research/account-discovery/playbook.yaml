@@ -1,10 +1,10 @@
 id: account-discovery
-version: 1.0.0
+version: 1.0.1
 name: Account Discovery
 author: agirunner
 slug: account-discovery
 category: research
-stability: stable
+stability: beta
 description: Build an account qualification packet with fit, urgency, risk, and next-step guidance.
 outcome: An account discovery packet exists with summary, qualification signals, risks, and the recommended next step.
 lifecycle: planned

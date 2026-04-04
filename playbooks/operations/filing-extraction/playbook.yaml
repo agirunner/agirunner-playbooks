@@ -1,10 +1,10 @@
 id: filing-extraction
-version: 1.0.0
+version: 1.0.1
 name: Filing Extraction
 author: agirunner
 slug: filing-extraction
 category: operations
-stability: experimental
+stability: beta
 description: Extract structured fields from a filing with normalization notes, evidence links, and exceptions.
 outcome: A filing extraction packet exists with structured output, evidence notes, normalization notes, and exceptions.
 lifecycle: planned

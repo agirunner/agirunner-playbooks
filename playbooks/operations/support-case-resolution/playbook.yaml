@@ -1,10 +1,10 @@
 id: support-case-resolution
-version: 1.0.0
+version: 1.0.1
 name: Support Case Resolution
 author: agirunner
 slug: support-case-resolution
 category: operations
-stability: experimental
+stability: beta
 description: Resolve a support case into a customer-safe answer, internal notes, and next-step package.
 outcome: A support case resolution packet exists with a customer-safe response, internal notes, open questions, and a recommended next step.
 lifecycle: planned

@@ -1,10 +1,10 @@
 id: document-extraction
-version: 1.0.0
+version: 1.0.1
 name: Document Extraction
 author: agirunner
 slug: document-extraction
 category: operations
-stability: experimental
+stability: beta
 description: Extract structured fields from a document with evidence notes, exceptions, and review-ready output.
 outcome: A structured extraction packet exists with extracted fields, evidence notes, ambiguous fields, and exceptions.
 lifecycle: planned

@@ -1,10 +1,10 @@
 id: sop-creation
-version: 1.0.1
+version: 1.0.2
 name: SOP Creation
 author: agirunner
 slug: sop-creation
 category: operations
-stability: stable
+stability: beta
 description: Draft a standard operating procedure with scope, owners, steps, and exception handling.
 outcome: A decision-ready SOP draft exists with clear ownership, steps, and exception handling.
 lifecycle: planned

@@ -162,7 +162,7 @@ type.
 
 ## Current Catalog
 
-Stable categories:
+Beta playbooks by area:
 - Operations: customer support triage, SOP creation, runbook creation
 - Research: search discovery, account discovery, market map, prospect
   search, deep research pipeline, research brief to report, research
@@ -170,18 +170,18 @@ Stable categories:
 - Compliance: policy review, contract review
 - Content: technical documentation, API documentation
 
-Experimental engineering playbooks:
+Beta engineering playbooks:
 - bug fix
 - hotfix
 - PR guardian
 - release readiness
 - eval review
 
-Emerging experimental operations playbooks:
+Beta operations playbooks:
 - support case resolution
 - support escalation investigation
 
-Emerging experimental data and QA playbooks:
+Beta data and QA playbooks:
 - document extraction
 - contract term extraction
 - filing extraction

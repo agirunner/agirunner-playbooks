@@ -70,9 +70,9 @@ is maintained as an ongoing catalog history rather than a release log.
 - 17 shared skills across engineering, operations, research, compliance,
   and content
 - 15 shared specialists built on those skills
-- 12 stable playbooks across operations, research, compliance, and
+- 12 beta playbooks across operations, research, compliance, and
   content
-- 5 experimental engineering playbooks for narrow SDLC workflows
+- 5 beta engineering playbooks for narrow SDLC workflows
 
 ### Changed
 

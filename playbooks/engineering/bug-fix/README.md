@@ -31,5 +31,5 @@ This playbook is storage-agnostic.
 
 ## Import Notes
 
-This playbook is experimental. It should be used for bounded defects,
+This playbook is beta. It should be used for bounded defects,
 not large autonomous feature delivery.
