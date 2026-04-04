@@ -1,0 +1,59 @@
+id: web-data-extraction
+version: 1.0.0
+name: Web Data Extraction
+author: agirunner
+slug: web-data-extraction
+category: operations
+stability: experimental
+description: Extract structured data from web sources with source references, confidence notes, and exceptions.
+outcome: A web extraction packet exists with structured output, source references, confidence notes, and exceptions.
+lifecycle: planned
+tags:
+  - extraction
+  - web
+  - operations
+specialist_ids:
+  - extraction-analyst
+definition:
+  outcome: A web extraction packet exists with structured output, source references, confidence notes, and exceptions.
+  process_instructions: |
+    Run the workflow through the authored stages `source-framing`, `candidate-extraction`, and `exception-review`. Treat each stage as a distinct checkpoint of web extraction quality: `source-framing` exists to define the page set and target fields; `candidate-extraction` exists to gather candidate values from the available pages; `exception-review` exists to record low-confidence fields, missing values, and page-quality issues before closure.
+
+    Use these roles deliberately: `Extraction Analyst` frames the page scope, extracts the candidate structure, and records source references and exceptions.
+
+    Preferred flow: start with the earliest unfinished stage, require the page set and target fields to be explicit before extraction, and keep source references close to important values. Distinguish what is actually present on the pages from what is inferred. If multiple pages conflict, preserve the conflict instead of flattening it into one clean value.
+
+    Recovery and exception handling: if page coverage is thin, if important pages are missing or blocked, if the target fields require unsupported inference, or if the strongest honest output still contains unresolved ambiguity, keep the current stage open until the limitation is explicit. Do not present a web extraction packet as complete when page coverage is partial or stale.
+
+    Completion rules: finish only after the final packet records the target fields, structured output, source references, confidence notes, exceptions, and recommended next step. Stage-specific closure for this playbook: `source-framing` stays open until the page set and target fields are explicit; `candidate-extraction` stays open until a bounded structured output exists; `exception-review` stays open until the major confidence and coverage issues are recorded. Guided closure rule: prefer a smaller but well-sourced extraction packet over a broader output built from weak page evidence.
+  parameters:
+    - slug: source_pages
+      title: Source Pages
+      required: true
+    - slug: target_fields_or_schema
+      title: Target Fields Or Schema
+      required: true
+    - slug: extraction_constraints
+      title: Extraction Constraints
+      required: false
+  roles:
+    - Extraction Analyst
+  stages:
+    - name: source-framing
+      goal: The page set and target fields are explicit.
+      involves:
+        - Extraction Analyst
+    - name: candidate-extraction
+      goal: Candidate structured output exists with source references.
+      involves:
+        - Extraction Analyst
+    - name: exception-review
+      goal: Confidence notes and exceptions are recorded.
+      involves:
+        - Extraction Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

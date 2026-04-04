@@ -25,6 +25,12 @@ is maintained as an ongoing catalog history rather than a release log.
 - Phase 3 support playbooks: `support-case-resolution` and
   `support-escalation-investigation`
 - Support-resolution specialist and supporting rubric
+- Phase 3 extraction, analytics, and QA playbooks:
+  `document-extraction`, `contract-term-extraction`,
+  `filing-extraction`, `web-data-extraction`,
+  `sql-investigation`, `analytics-question`,
+  `query-review-and-report`, and `test-plan-execution`
+- Extraction and analytics specialists plus supporting skills
 
 ### Changed
 
@@ -41,6 +47,8 @@ is maintained as an ongoing catalog history rather than a release log.
   account and prospect discovery without changing its id
 - Expanded `QA Reviewer` so it can synthesize a release-readiness packet
   when a workflow asks for one
+- Expanded `QA Reviewer` so it can turn a bounded test plan into a
+  verification packet when a workflow asks for one
 
 ### Removed
 

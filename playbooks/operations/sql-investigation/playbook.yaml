@@ -1,0 +1,59 @@
+id: sql-investigation
+version: 1.0.0
+name: SQL Investigation
+author: agirunner
+slug: sql-investigation
+category: operations
+stability: experimental
+description: Investigate a data question with a bounded query plan, evidence review, and findings packet.
+outcome: A SQL investigation packet exists with scope, query logic summary, findings, caveats, and recommended next analysis.
+lifecycle: planned
+tags:
+  - analytics
+  - sql
+  - investigation
+specialist_ids:
+  - analytics-analyst
+definition:
+  outcome: A SQL investigation packet exists with scope, query logic summary, findings, caveats, and recommended next analysis.
+  process_instructions: |
+    Run the workflow through the authored stages `question-framing`, `query-plan`, and `findings-packet`. Treat each stage as a distinct checkpoint of analytics trustworthiness: `question-framing` exists to define the investigation question and data basis; `query-plan` exists to record the intended query or logic path; `findings-packet` exists to turn the reviewed results into a bounded findings packet with caveats.
+
+    Use these roles deliberately: `Analytics Analyst` frames the question, reviews or drafts the query logic, and produces the final findings packet.
+
+    Preferred flow: start with the earliest unfinished stage, require the investigation question and data basis to be explicit before relying on query output, and keep query logic separate from interpretation. If the evidence packet includes only a planned query path, say so directly. If the packet includes result data, use that data but preserve schema, filter, and coverage caveats in the final output.
+
+    Recovery and exception handling: if the data basis is unclear, if the query plan rests on missing schema assumptions, if the result set is too thin for the claimed conclusion, or if the strongest honest answer is “needs safer or broader analysis,” keep the current stage open until the limitation is explicit. Do not present directional results as precise fact. This workflow packages the investigation; it does not assume a first-party hosted SQL execution surface.
+
+    Completion rules: finish only after the final packet records the analysis scope, data basis, query or logic summary, findings, caveats, and recommended next step. Stage-specific closure for this playbook: `question-framing` stays open until the question and data basis are explicit; `query-plan` stays open until the query logic or evidence path is recorded; `findings-packet` stays open until the final interpretation follows from the recorded basis. Guided closure rule: prefer a bounded analytical packet with explicit caveats over a cleaner-looking answer that hides missing schema or coverage assumptions.
+  parameters:
+    - slug: investigation_question
+      title: Investigation Question
+      required: true
+    - slug: data_scope
+      title: Data Scope
+      required: false
+    - slug: query_constraints
+      title: Query Constraints
+      required: false
+  roles:
+    - Analytics Analyst
+  stages:
+    - name: question-framing
+      goal: The investigation question and data basis are explicit.
+      involves:
+        - Analytics Analyst
+    - name: query-plan
+      goal: The query logic or evidence path is recorded.
+      involves:
+        - Analytics Analyst
+    - name: findings-packet
+      goal: A bounded findings packet is documented.
+      involves:
+        - Analytics Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

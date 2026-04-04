@@ -1,0 +1,61 @@
+id: contract-term-extraction
+version: 1.0.0
+name: Contract Term Extraction
+author: agirunner
+slug: contract-term-extraction
+category: operations
+stability: experimental
+description: Extract contract terms into a structured packet with ambiguity notes and review-ready evidence.
+outcome: A structured contract-term packet exists with extracted terms, supporting clauses, ambiguity notes, and next-step guidance.
+lifecycle: planned
+tags:
+  - extraction
+  - contract
+  - operations
+specialist_ids:
+  - extraction-analyst
+  - contract-analyst
+definition:
+  outcome: A structured contract-term packet exists with extracted terms, supporting clauses, ambiguity notes, and next-step guidance.
+  process_instructions: |
+    Run the workflow through the authored stages `source-framing`, `candidate-extraction`, and `review`. Treat each stage as a distinct checkpoint of contract-term quality: `source-framing` exists to define the contract source and target terms; `candidate-extraction` exists to extract the candidate terms with clause support; `review` exists to surface ambiguity, missing clauses, and follow-up items before closure.
+
+    Use these roles deliberately: `Extraction Analyst` extracts the candidate structured terms and clause notes; `Contract Analyst` reviews the result for ambiguity, unsupported terms, and follow-up risk.
+
+    Preferred flow: start with the earliest unfinished stage, require the target terms and available contract source to be explicit before extraction, and keep clause support close to each important term. Use `Contract Analyst` only after the candidate packet records what source material was actually available and what terms remain uncertain.
+
+    Recovery and exception handling: if only excerpts are available, if the target terms are vague, if the source does not support a term confidently, or if the contract review shows the candidate structure hides ambiguity, keep the current stage open until the limitation is explicit. Do not convert inferred business meaning into a confirmed contract term. If the strongest honest output is a partial term packet with major exceptions, record that directly.
+
+    Completion rules: finish only after the final packet records the target terms, structured term output, supporting clauses or evidence notes, ambiguity notes, exceptions, and recommended next step. Stage-specific closure for this playbook: `source-framing` stays open until the source base and target terms are explicit; `candidate-extraction` stays open until a bounded term packet exists; `review` stays open until the major ambiguity and exception issues are recorded. Guided closure rule: prefer a partial but reviewable term packet over a cleaner-looking structure that overstates the contract source.
+  parameters:
+    - slug: contract_source
+      title: Contract Source
+      required: true
+    - slug: target_terms
+      title: Target Terms
+      required: false
+    - slug: normalization_rules
+      title: Normalization Rules
+      required: false
+  roles:
+    - Extraction Analyst
+    - Contract Analyst
+  stages:
+    - name: source-framing
+      goal: The contract source and target terms are explicit.
+      involves:
+        - Extraction Analyst
+    - name: candidate-extraction
+      goal: Candidate contract terms exist with supporting clause notes.
+      involves:
+        - Extraction Analyst
+    - name: review
+      goal: Ambiguity, exceptions, and next steps are recorded.
+      involves:
+        - Contract Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

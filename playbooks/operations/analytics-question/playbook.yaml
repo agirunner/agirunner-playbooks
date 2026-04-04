@@ -1,0 +1,59 @@
+id: analytics-question
+version: 1.0.0
+name: Analytics Question
+author: agirunner
+slug: analytics-question
+category: operations
+stability: experimental
+description: Turn a stakeholder analytics question into a bounded answer with query basis and caveats.
+outcome: An analytics answer packet exists with the question scope, data basis, findings, caveats, and recommended next step.
+lifecycle: planned
+tags:
+  - analytics
+  - question
+  - operations
+specialist_ids:
+  - analytics-analyst
+definition:
+  outcome: An analytics answer packet exists with the question scope, data basis, findings, caveats, and recommended next step.
+  process_instructions: |
+    Run the workflow through the authored stages `question-framing`, `analysis`, and `answer-packet`. Treat each stage as a distinct checkpoint of analytics clarity: `question-framing` exists to define the stakeholder question and what data basis is available; `analysis` exists to review the available query packet, result set, or logic path; `answer-packet` exists to translate that analysis into a bounded answer with caveats.
+
+    Use these roles deliberately: `Analytics Analyst` frames the question, reviews the available analytical basis, and produces the final answer packet.
+
+    Preferred flow: start with the earliest unfinished stage, require the stakeholder question and decision need to be explicit before interpreting data, and keep the analytical basis visible in the final answer. If the answer depends on a proposed query or a result set with thin coverage, say so directly instead of presenting the output as universally settled.
+
+    Recovery and exception handling: if the question is underspecified, if the data basis is weak, if the available result set cannot support the level of precision being requested, or if the strongest honest answer is “needs broader analysis,” keep the current stage open until the limitation is explicit. Do not turn a stakeholder-facing answer into false certainty.
+
+    Completion rules: finish only after the final packet records the analysis scope, data basis, query or logic summary, findings, caveats, and recommended next step. Stage-specific closure for this playbook: `question-framing` stays open until the stakeholder question and available basis are explicit; `analysis` stays open until the analytical path is reviewed and bounded; `answer-packet` stays open until the final answer follows from the recorded basis and caveats. Guided closure rule: prefer a bounded answer with explicit caveats over a smoother answer that hides data-basis weakness.
+  parameters:
+    - slug: stakeholder_question
+      title: Stakeholder Question
+      required: true
+    - slug: data_scope
+      title: Data Scope
+      required: false
+    - slug: decision_context
+      title: Decision Context
+      required: false
+  roles:
+    - Analytics Analyst
+  stages:
+    - name: question-framing
+      goal: The stakeholder question and data basis are explicit.
+      involves:
+        - Analytics Analyst
+    - name: analysis
+      goal: The analytical basis is reviewed and bounded.
+      involves:
+        - Analytics Analyst
+    - name: answer-packet
+      goal: A bounded analytics answer packet is documented.
+      involves:
+        - Analytics Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

@@ -92,6 +92,87 @@ playbooks:
       - support-triage-analyst
       - support-resolution-analyst
     path: playbooks/operations/support-escalation-investigation/playbook.yaml
+  - id: document-extraction
+    name: Document Extraction
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Extract structured fields from a document with evidence notes, exceptions, and review-ready output.
+    specialist_ids:
+      - extraction-analyst
+    path: playbooks/operations/document-extraction/playbook.yaml
+  - id: contract-term-extraction
+    name: Contract Term Extraction
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Extract contract terms into a structured packet with ambiguity notes and review-ready evidence.
+    specialist_ids:
+      - extraction-analyst
+      - contract-analyst
+    path: playbooks/operations/contract-term-extraction/playbook.yaml
+  - id: filing-extraction
+    name: Filing Extraction
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Extract structured fields from a filing with normalization notes, evidence links, and exceptions.
+    specialist_ids:
+      - extraction-analyst
+    path: playbooks/operations/filing-extraction/playbook.yaml
+  - id: web-data-extraction
+    name: Web Data Extraction
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Extract structured data from web sources with source references, confidence notes, and exceptions.
+    specialist_ids:
+      - extraction-analyst
+    path: playbooks/operations/web-data-extraction/playbook.yaml
+  - id: sql-investigation
+    name: SQL Investigation
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Investigate a data question with a bounded query plan, evidence review, and findings packet.
+    specialist_ids:
+      - analytics-analyst
+    path: playbooks/operations/sql-investigation/playbook.yaml
+  - id: analytics-question
+    name: Analytics Question
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Turn a stakeholder analytics question into a bounded answer with query basis and caveats.
+    specialist_ids:
+      - analytics-analyst
+    path: playbooks/operations/analytics-question/playbook.yaml
+  - id: query-review-and-report
+    name: Query Review And Report
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Review a proposed query or analysis packet for safety, logic, and stakeholder-readiness.
+    specialist_ids:
+      - analytics-analyst
+    path: playbooks/operations/query-review-and-report/playbook.yaml
+  - id: test-plan-execution
+    name: Test Plan Execution
+    author: agirunner
+    category: operations
+    stability: experimental
+    version: 1.0.0
+    summary: Execute a bounded test plan into a verification packet with run status, failures, and gaps.
+    specialist_ids:
+      - qa-reviewer
+    path: playbooks/operations/test-plan-execution/playbook.yaml
   - id: sop-creation
     name: SOP Creation
     author: agirunner

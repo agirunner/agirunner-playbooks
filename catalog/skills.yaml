@@ -5,6 +5,12 @@ skills:
     stability: experimental
     summary: Bound a defect before changing code and keep the claimed fix tied to observed evidence.
     path: skills/engineering/bug-reproduction-discipline/SKILL.md
+  - id: test-plan-execution-discipline
+    name: Test Plan Execution Discipline
+    category: engineering
+    stability: experimental
+    summary: Turn a bounded test plan into a stepwise verification packet with explicit run status and gaps.
+    path: skills/engineering/test-plan-execution-discipline/SKILL.md
   - id: code-review-rubric
     name: Code Review Rubric
     category: engineering
@@ -47,12 +53,24 @@ skills:
     stability: experimental
     summary: Turn a support case into a customer-safe resolution or escalation packet with explicit evidence and gaps.
     path: skills/operations/support-resolution-discipline/SKILL.md
+  - id: structured-extraction-discipline
+    name: Structured Extraction Discipline
+    category: operations
+    stability: experimental
+    summary: Extract structured fields from messy sources while preserving evidence, ambiguity, and exception handling.
+    path: skills/operations/structured-extraction-discipline/SKILL.md
   - id: runbook-safety-check
     name: Runbook Safety Check
     category: operations
     stability: stable
     summary: Review procedural runbooks for prerequisites, rollback safety, and operator clarity.
     path: skills/operations/runbook-safety-check/SKILL.md
+  - id: analytics-investigation-discipline
+    name: Analytics Investigation Discipline
+    category: operations
+    stability: experimental
+    summary: Turn a data question or query packet into a bounded analysis with explicit safety assumptions and caveats.
+    path: skills/operations/analytics-investigation-discipline/SKILL.md
   - id: sop-design-discipline
     name: SOP Design Discipline
     category: operations

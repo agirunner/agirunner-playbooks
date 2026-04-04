@@ -1,0 +1,59 @@
+id: query-review-and-report
+version: 1.0.0
+name: Query Review And Report
+author: agirunner
+slug: query-review-and-report
+category: operations
+stability: experimental
+description: Review a proposed query or analysis packet for safety, logic, and stakeholder-readiness.
+outcome: A query review packet exists with scope, logic review, caveats, and a recommendation on whether the packet is ready to use.
+lifecycle: planned
+tags:
+  - analytics
+  - review
+  - query
+specialist_ids:
+  - analytics-analyst
+definition:
+  outcome: A query review packet exists with scope, logic review, caveats, and a recommendation on whether the packet is ready to use.
+  process_instructions: |
+    Run the workflow through the authored stages `scope-framing`, `query-review`, and `report`. Treat each stage as a distinct checkpoint of analytical safety and clarity: `scope-framing` exists to define what query or analysis packet is being reviewed and why; `query-review` exists to inspect the logic, assumptions, and evidence basis; `report` exists to turn that review into a recommendation with clear caveats.
+
+    Use these roles deliberately: `Analytics Analyst` frames the review scope, inspects the query or analysis packet, and produces the final report.
+
+    Preferred flow: start with the earliest unfinished stage, require the review goal and packet scope to be explicit before judging safety or interpretability, and keep query logic separate from output narrative. If the packet depends on missing schema knowledge or implicit assumptions, make that visible in the report.
+
+    Recovery and exception handling: if the packet is incomplete, if the review goal is vague, if the logic depends on unsupported assumptions, or if the strongest honest answer is “not ready to use,” keep the current stage open until the limitation is explicit. Do not turn a quick query review into a false approval.
+
+    Completion rules: finish only after the final report records the review scope, query or logic summary, caveats, readiness recommendation, and recommended next step. Stage-specific closure for this playbook: `scope-framing` stays open until the review packet and goal are explicit; `query-review` stays open until the main logic and caveats are recorded; `report` stays open until the final recommendation follows from the reviewed basis. Guided closure rule: prefer a conservative not-ready report over a smoother approval that hides analytical assumptions.
+  parameters:
+    - slug: query_packet
+      title: Query Packet
+      required: true
+    - slug: stakeholder_context
+      title: Stakeholder Context
+      required: false
+    - slug: review_goal
+      title: Review Goal
+      required: false
+  roles:
+    - Analytics Analyst
+  stages:
+    - name: scope-framing
+      goal: The review scope and goal are explicit.
+      involves:
+        - Analytics Analyst
+    - name: query-review
+      goal: The query or analysis logic is reviewed and bounded.
+      involves:
+        - Analytics Analyst
+    - name: report
+      goal: A readiness report is documented.
+      involves:
+        - Analytics Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

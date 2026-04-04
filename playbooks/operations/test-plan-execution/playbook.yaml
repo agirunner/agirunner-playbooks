@@ -1,0 +1,59 @@
+id: test-plan-execution
+version: 1.0.0
+name: Test Plan Execution
+author: agirunner
+slug: test-plan-execution
+category: operations
+stability: experimental
+description: Execute a bounded test plan into a verification packet with run status, failures, and gaps.
+outcome: A verification packet exists with step results, failures, blocked or skipped steps, coverage gaps, and the recommended next step.
+lifecycle: planned
+tags:
+  - qa
+  - verification
+  - testing
+specialist_ids:
+  - qa-reviewer
+definition:
+  outcome: A verification packet exists with step results, failures, blocked or skipped steps, coverage gaps, and the recommended next step.
+  process_instructions: |
+    Run the workflow through the authored stages `plan-framing`, `execution`, and `verification-packet`. Treat each stage as a distinct checkpoint of verification honesty: `plan-framing` exists to define the test scope, steps, and available evidence path; `execution` exists to run or assess the plan using the strongest available path per step; `verification-packet` exists to turn the results into an explicit packet with failures, skips, and coverage gaps.
+
+    Use these roles deliberately: `QA Reviewer` frames the plan, executes or assesses the available verification path, and produces the final verification packet.
+
+    Preferred flow: start with the earliest unfinished stage, require the plan steps and scope to be explicit before execution, and record pass, fail, blocked, skipped, or not-run status per step. Use the strongest available evidence path for each step. If direct execution is not possible, say what evidence was used instead and what remains unverified.
+
+    Recovery and exception handling: if the plan is underspecified, if the environment is unavailable, if key steps cannot be run, or if the strongest honest answer is a partial verification packet, keep the current stage open until the limitation is explicit. Do not label the full plan green when important steps were blocked or not run. If the packet is advisory-only, say so directly.
+
+    Completion rules: finish only after the final packet records the test scope, step results, failures, blocked or skipped steps, coverage gaps, and recommended next step. Stage-specific closure for this playbook: `plan-framing` stays open until the plan scope and steps are explicit; `execution` stays open until the available verification path has been carried out or bounded; `verification-packet` stays open until the final packet preserves what was and was not actually verified. Guided closure rule: prefer a partial but honest verification packet over a smoother packet that hides blocked or skipped steps.
+  parameters:
+    - slug: test_plan
+      title: Test Plan
+      required: true
+    - slug: test_scope
+      title: Test Scope
+      required: false
+    - slug: environment_notes
+      title: Environment Notes
+      required: false
+  roles:
+    - QA Reviewer
+  stages:
+    - name: plan-framing
+      goal: The test scope and plan steps are explicit.
+      involves:
+        - QA Reviewer
+    - name: execution
+      goal: Step results are recorded from the strongest available path.
+      involves:
+        - QA Reviewer
+    - name: verification-packet
+      goal: A verification packet with failures and gaps is documented.
+      involves:
+        - QA Reviewer
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

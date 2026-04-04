@@ -31,9 +31,9 @@ itself.
 
 ## What This Repository Contains
 
-- 21 shared skills under [`skills/`](skills)
-- 19 shared specialists under [`specialists/`](specialists)
-- 23 playbooks under [`playbooks/`](playbooks)
+- 24 shared skills under [`skills/`](skills)
+- 21 shared specialists under [`specialists/`](specialists)
+- 31 playbooks under [`playbooks/`](playbooks)
 - catalog manifests under [`catalog/`](catalog)
 - authoring guidance under [`docs/`](docs)
 - human-readable schema references under [`schemas/`](schemas)
@@ -180,6 +180,16 @@ Experimental engineering playbooks:
 Emerging experimental operations playbooks:
 - support case resolution
 - support escalation investigation
+
+Emerging experimental data and QA playbooks:
+- document extraction
+- contract term extraction
+- filing extraction
+- web data extraction
+- SQL investigation
+- analytics question
+- query review and report
+- test plan execution
 
 The current engineering set is intentionally narrow. These workflows are
 meant for bounded SDLC tasks with explicit review and human judgment,

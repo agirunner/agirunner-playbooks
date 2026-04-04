@@ -1,0 +1,59 @@
+id: filing-extraction
+version: 1.0.0
+name: Filing Extraction
+author: agirunner
+slug: filing-extraction
+category: operations
+stability: experimental
+description: Extract structured fields from a filing with normalization notes, evidence links, and exceptions.
+outcome: A filing extraction packet exists with structured output, evidence notes, normalization notes, and exceptions.
+lifecycle: planned
+tags:
+  - extraction
+  - filing
+  - operations
+specialist_ids:
+  - extraction-analyst
+definition:
+  outcome: A filing extraction packet exists with structured output, evidence notes, normalization notes, and exceptions.
+  process_instructions: |
+    Run the workflow through the authored stages `source-framing`, `candidate-extraction`, and `exception-review`. Treat each stage as a distinct checkpoint of filing extraction quality: `source-framing` exists to define the filing source and target fields; `candidate-extraction` exists to gather candidate values and supporting evidence; `exception-review` exists to record normalization assumptions, ambiguous fields, and missing values before closure.
+
+    Use these roles deliberately: `Extraction Analyst` frames the filing extraction, produces the candidate structured output, and records exceptions.
+
+    Preferred flow: start with the earliest unfinished stage, require the filing source and target fields to be explicit before extraction, and keep source references close to important values. Normalize dates, amounts, and identifiers only when the source supports it. Treat derived or transformed values as derived, not confirmed, unless the filing itself makes them explicit.
+
+    Recovery and exception handling: if the filing source is incomplete, if section boundaries are unclear, if target fields cannot be supported confidently, or if normalization requires unsupported assumptions, keep the current stage open until the limitation is explicit. Do not flatten ambiguous or missing values into a clean-looking filing packet. If the best honest output is partial, record the exceptions directly.
+
+    Completion rules: finish only after the final packet records the target fields, structured output, evidence notes, normalization notes, exceptions, and recommended next step. Stage-specific closure for this playbook: `source-framing` stays open until the filing source and field list are explicit; `candidate-extraction` stays open until a bounded structured output exists; `exception-review` stays open until major ambiguity and normalization issues are recorded. Guided closure rule: prefer a bounded filing packet with explicit exceptions over a complete-looking extraction that hides uncertainty.
+  parameters:
+    - slug: filing_source
+      title: Filing Source
+      required: true
+    - slug: target_fields_or_schema
+      title: Target Fields Or Schema
+      required: true
+    - slug: normalization_rules
+      title: Normalization Rules
+      required: false
+  roles:
+    - Extraction Analyst
+  stages:
+    - name: source-framing
+      goal: The filing source and target fields are explicit.
+      involves:
+        - Extraction Analyst
+    - name: candidate-extraction
+      goal: Candidate structured output exists with evidence notes.
+      involves:
+        - Extraction Analyst
+    - name: exception-review
+      goal: Normalization notes and exceptions are recorded.
+      involves:
+        - Extraction Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

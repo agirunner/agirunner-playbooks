@@ -1,0 +1,59 @@
+id: document-extraction
+version: 1.0.0
+name: Document Extraction
+author: agirunner
+slug: document-extraction
+category: operations
+stability: experimental
+description: Extract structured fields from a document with evidence notes, exceptions, and review-ready output.
+outcome: A structured extraction packet exists with extracted fields, evidence notes, ambiguous fields, and exceptions.
+lifecycle: planned
+tags:
+  - extraction
+  - document
+  - operations
+specialist_ids:
+  - extraction-analyst
+definition:
+  outcome: A structured extraction packet exists with extracted fields, evidence notes, ambiguous fields, and exceptions.
+  process_instructions: |
+    Run the workflow through the authored stages `source-framing`, `candidate-extraction`, and `exception-review`. Treat each stage as a distinct checkpoint of extraction quality: `source-framing` exists to define the source, target schema, and extraction expectations; `candidate-extraction` exists to produce the candidate structured output with evidence notes; `exception-review` exists to surface ambiguous, missing, or low-confidence fields before closure.
+
+    Use these roles deliberately: `Extraction Analyst` frames the extraction target, produces the candidate structured output, and records ambiguities and exceptions.
+
+    Preferred flow: start with the earliest unfinished stage, require the target fields or schema to be explicit before extraction, and keep source evidence close to important values. Normalize formats only when the source supports it. Distinguish missing, ambiguous, and not-applicable values instead of flattening them into one clean structure.
+
+    Recovery and exception handling: if the source is incomplete, if the target schema is underspecified, if important fields cannot be supported from the source, or if the strongest honest output still contains unresolved ambiguity, keep the current stage open until the limitation is explicit. Do not invent values because the schema expects them. If the source packet cannot support full extraction, produce the best bounded structure with clear exception notes.
+
+    Completion rules: finish only after the final packet records the target schema or fields, structured output, evidence notes, ambiguous fields, exceptions, and recommended next step. Stage-specific closure for this playbook: `source-framing` stays open until the source and target fields are explicit; `candidate-extraction` stays open until a bounded structured output exists; `exception-review` stays open until the major ambiguities and exceptions are recorded. Guided closure rule: prefer a partial but well-evidenced structure over a complete-looking output that hides ambiguity.
+  parameters:
+    - slug: source_document
+      title: Source Document
+      required: true
+    - slug: target_fields_or_schema
+      title: Target Fields Or Schema
+      required: true
+    - slug: normalization_rules
+      title: Normalization Rules
+      required: false
+  roles:
+    - Extraction Analyst
+  stages:
+    - name: source-framing
+      goal: The source and target extraction fields are explicit.
+      involves:
+        - Extraction Analyst
+    - name: candidate-extraction
+      goal: Candidate structured output exists with evidence notes.
+      involves:
+        - Extraction Analyst
+    - name: exception-review
+      goal: Ambiguous fields and exceptions are recorded.
+      involves:
+        - Extraction Analyst
+  lifecycle: planned
+  orchestrator:
+    max_rework_iterations: 3
+    max_active_tasks: 2
+    max_active_tasks_per_work_item: 1
+    allow_parallel_work_items: false

@@ -33,6 +33,7 @@ specialists:
     summary: Verifies observed behavior, regression evidence, and release confidence.
     skill_ids:
       - bug-reproduction-discipline
+      - test-plan-execution-discipline
       - regression-proof-required
       - release-readiness-check
     path: specialists/engineering/qa-reviewer/specialist.yaml
@@ -61,6 +62,22 @@ specialists:
     skill_ids:
       - support-resolution-discipline
     path: specialists/operations/support-resolution-analyst/specialist.yaml
+  - id: extraction-analyst
+    name: Extraction Analyst
+    category: operations
+    stability: experimental
+    summary: Extracts structured fields from documents, web sources, and filings with explicit evidence and exceptions.
+    skill_ids:
+      - structured-extraction-discipline
+    path: specialists/operations/extraction-analyst/specialist.yaml
+  - id: analytics-analyst
+    name: Analytics Analyst
+    category: operations
+    stability: experimental
+    summary: Turns data questions, query packets, and result sets into bounded analysis with explicit caveats.
+    skill_ids:
+      - analytics-investigation-discipline
+    path: specialists/operations/analytics-analyst/specialist.yaml
   - id: process-designer
     name: Process Designer
     category: operations
