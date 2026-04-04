@@ -29,7 +29,9 @@ access. It does not require a writable code workspace.
 
 ## Import Notes
 
-Best results come when the imported research specialist has access to a
-good web research provider or equivalent MCP integration, but the
-workflow should still function with documented source limits if that is
-not configured.
+Best results come when the imported research specialist can use the
+quoted `native web search` tool for the task or an equivalent external
+research integration. The authored Research Analyst guidance prefers
+that tool when it is available to the task, but the workflow should
+still function with documented source limits if it is not configured,
+not enabled, or does not surface the needed evidence.

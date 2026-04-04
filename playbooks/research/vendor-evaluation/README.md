@@ -29,5 +29,7 @@ access than on writable repository access.
 ## Import Notes
 
 If external research providers are configured for the imported
-specialists, the output quality improves materially. The workflow should
-still complete honestly when source access is limited.
+specialists, especially when the quoted `native web search` tool is
+available to the task, the output quality improves materially. The
+workflow should still complete honestly when source access is limited or
+that tool is not enabled.

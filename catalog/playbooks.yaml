@@ -97,7 +97,7 @@ playbooks:
     author: agirunner
     category: research
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Produce a grounded research synthesis with explicit evidence, contradictions, and confidence.
     specialist_ids:
       - research-analyst
@@ -107,7 +107,7 @@ playbooks:
     author: agirunner
     category: research
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Qualify an account or prospect with fit, urgency, risk, and next-step guidance.
     specialist_ids:
       - lead-research-analyst
@@ -117,7 +117,7 @@ playbooks:
     author: agirunner
     category: research
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Compare vendors against explicit requirements, risks, and decision criteria.
     specialist_ids:
       - vendor-analyst
@@ -128,7 +128,7 @@ playbooks:
     author: agirunner
     category: research
     stability: stable
-    version: 1.0.0
+    version: 1.0.1
     summary: Structure a decision-ready business case with options, tradeoffs, and recommendation logic.
     specialist_ids:
       - research-analyst

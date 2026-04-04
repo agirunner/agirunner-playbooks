@@ -29,6 +29,7 @@ artifacts and external research sources.
 
 ## Import Notes
 
-The imported specialist benefits from strong external research access.
-If that is not configured, the workflow should still complete with clear
-source limits and confidence notes.
+The imported specialist benefits from strong external research access,
+especially when the quoted `native web search` tool is available to the
+task. If that is not configured or not enabled, the workflow should
+still complete with clear source limits and confidence notes.

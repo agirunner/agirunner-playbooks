@@ -1,5 +1,5 @@
 id: business-case
-version: 1.0.0
+version: 1.0.1
 name: Business Case
 author: agirunner
 slug: business-case
@@ -22,9 +22,9 @@ definition:
 
     Use these roles deliberately: `Business Case Analyst` frames the decision and produces the final business case; `Research Analyst` gathers or synthesizes the supporting evidence needed for the comparison.
 
-    Preferred flow: start with the earliest unfinished stage, require a clear decision framing, explicit evaluation criteria, and the status quo option before collecting evidence, then use `Research Analyst` to gather the supporting facts and route the result back to `Business Case Analyst` for the final recommendation. Lack of a writable workspace is not blocking for this playbook because the final product is the business case itself.
+    Preferred flow: start with the earliest unfinished stage, require a clear decision framing, explicit evaluation criteria, and the status quo option before collecting evidence, then use `Research Analyst` to gather the supporting facts and route the result back to `Business Case Analyst` for the final recommendation. When the quoted `native web search` tool is available to the current task, use it while gathering external evidence before relying only on narrower source-access paths. Lack of a writable workspace is not blocking for this playbook because the final product is the business case itself.
 
-    Recovery and exception handling: if the options are undefined, if the evaluation criteria drift, if evidence is too weak to support a recommendation, or if assumptions are being presented as facts, keep the current stage open and require the handoff to label those issues explicitly. Do not manufacture certainty or quantified precision where the evidence is only directional.
+    Recovery and exception handling: if the options are undefined, if the evaluation criteria drift, if evidence is too weak to support a recommendation, or if assumptions are being presented as facts, keep the current stage open and require the handoff to label those issues explicitly. Do not manufacture certainty or quantified precision where the evidence is only directional. If the quoted `native web search` tool is unavailable to the task, disabled for it, or does not surface the needed evidence, use the best available sources and record that limitation.
 
     Completion rules: finish only after the final business case records the decision, options, criteria, evidence and assumptions, decision-critical unknowns, recommendation, and confidence. Stage-specific closure for this playbook: `decision-framing` stays open until the decision, options, and criteria are explicit; `evidence-collection` stays open until the supporting evidence is assembled and bounded; `recommendation` stays open until the final recommendation follows from the recorded evidence instead of narrative preference. Guided closure rule: prefer a cautious recommendation with explicit assumptions over a polished but unsupported answer.
   parameters:
