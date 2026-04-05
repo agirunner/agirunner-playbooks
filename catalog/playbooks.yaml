@@ -200,7 +200,7 @@ playbooks:
     author: agirunner
     category: research
     stability: experimental
-    version: 1.0.7
+    version: 1.0.8
     summary: Produce a grounded research synthesis with explicit evidence, contradictions, and confidence.
     specialist_ids:
       - research-analyst

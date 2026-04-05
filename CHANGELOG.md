@@ -34,6 +34,10 @@ is maintained as an ongoing catalog history rather than a release log.
 
 ### Changed
 
+- Tightened `research-analysis` so the final synthesis artifact itself
+  must expose visible source grounding and source-quality notes instead
+  of leaving that evidence only in predecessor artifacts or handoff
+  prose
 - Made the catalog's human-readable playbook schema and authoring docs
   match the product's canonical default-board support, so standard-board
   playbooks can omit `definition.board`

@@ -1,5 +1,5 @@
 id: research-analysis
-version: 1.0.7
+version: 1.0.8
 name: Research Analysis
 author: agirunner
 slug: research-analysis
@@ -25,7 +25,7 @@ definition:
 
     Recovery and exception handling: if the source base is weak, contradictory, incomplete, or stale relative to the question, keep the current stage open until the handoff makes those limits explicit. Do not close the playbook on vague confidence language or selective sourcing. If the strongest honest answer is “more research needed,” record that as the next step instead of manufacturing a definitive conclusion. If the quoted `native web search` tool is not exposed by the current task or selected model, is disabled for the task, or does not surface the needed evidence, use the best available sources and record that limitation plainly. Lack of a writable workspace is not blocking for this playbook.
 
-    Completion rules: finish only after the synthesis clearly states the question, sources consulted, source quality notes, findings, contradictions or gaps, confidence, and recommendation or next step. Stage-specific closure for this playbook: `question-framing` stays open until the question and decision context are explicit; `source-review` stays open until the available evidence has been compared and bounded; `synthesis` stays open until the final output is internally consistent and honest about uncertainty. Guided closure rule: follow the preferred stage order when useful, but prioritize an honest bounded answer over false precision.
+    Completion rules: finish only after the synthesis clearly states the question, sources consulted, source quality notes, findings, contradictions or gaps, confidence, and recommendation or next step. The final operator-facing synthesis artifact itself MUST expose that evidence basis; do not leave source grounding only in predecessor artifacts, handoff prose, or workflow memory. For the final synthesis, include explicit `Sources consulted` and `Source quality notes` sections, or equally explicit equivalents, that name the source-review artifact and the principal external sources or source families that support the answer. Stage-specific closure for this playbook: `question-framing` stays open until the question and decision context are explicit; `source-review` stays open until the available evidence has been compared and bounded; `synthesis` stays open until the final output is internally consistent, visibly source-grounded, and honest about uncertainty. Guided closure rule: follow the preferred stage order when useful, but prioritize an honest bounded answer over false precision.
   parameters:
     - slug: research_question
       title: Research Question

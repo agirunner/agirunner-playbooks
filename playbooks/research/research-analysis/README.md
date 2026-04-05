@@ -17,6 +17,7 @@ confidence.
 The workflow should produce:
 - research question framing
 - sources consulted
+- source quality notes
 - findings
 - contradictions or gaps
 - confidence
